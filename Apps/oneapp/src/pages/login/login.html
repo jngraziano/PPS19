@@ -9,11 +9,30 @@
 
 <ion-content>
   <form (submit)="doLogin()">
-    <ion-list>
+    <ion-list >
 
-      <ion-item>
-        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      <!-- <ion-item> -->
+        <!-- <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label> -->
+        <!-- <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input> -->
+        <!-- <ion-input type="email" [(ngModel)]="account.email" placeholder="email" name="email"></ion-input> -->
+
+      <!-- </ion-item> -->
+
+      <!-- <ion-item padding style="background-color: rgba(255,255,255,0.1) !important; color: black; border-radius: 10px;"> -->
+        <!-- <ion-label class="titulo" style="color: black;" fixed>Correo</ion-label> -->
+       
+      
+      
+      <ion-item id="item" padding style="background-color: rgba(255,255,255,0.1) !important; color: black; border-radius: 10px;">
+        <!-- <ion-label>
+          correo
+        </ion-label> -->
+        <ion-input  type="email" style="color: rgba(6, 98, 235, 0.658);" placeholder="email" name="email" ></ion-input>
+      </ion-item>
+
+      <ion-item padding style="background-color: rgba(255,255,255,0.1) !important; color: rgba(6, 98, 235, 0.658); border-radius: 10px;">
+        <!-- <ion-label class="titulo" style="color: black;" fixed>Contraseña</ion-label> -->
+        <ion-input   style="color: black;" type="password" placeholder="contraseña" name="clave" ></ion-input>
       </ion-item>
 
       <!--
@@ -25,10 +44,10 @@
       </ion-item>
       -->
 
-      <ion-item>
-        <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
-      </ion-item>
+      <!-- <ion-item> -->
+        <!-- <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label> -->
+        <!-- <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item> -->
 
       <div padding>
         <button ion-button color="primary" block>{{ 'LOGIN_BUTTON' | translate }}</button>

@@ -4,14 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase: {
-    apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
-    authDomain: "ppslogindata.firebaseapp.com",
-    databaseURL: "https://ppslogindata.firebaseio.com",
-    projectId: "ppslogindata",
-    storageBucket: "ppslogindata.appspot.com",
-    messagingSenderId: "794910733526"
-  }
+  
 };
 
 /*

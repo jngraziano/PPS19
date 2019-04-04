@@ -32,4 +32,10 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
+  onClickLogin(event)
+  {
+   alert("estoy aca");
+   
+  }
+
 }

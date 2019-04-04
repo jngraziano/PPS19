@@ -3,8 +3,11 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
  
-  { path: '', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule' }
+  { path: '', loadChildren: './login/login.module#LoginPageModule'},
+  { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule'},
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
+
+  
   //Cambio en la ruta, para que la pagina Login sea la primera. 
   
 ];

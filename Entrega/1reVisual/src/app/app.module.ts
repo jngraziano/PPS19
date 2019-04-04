@@ -18,7 +18,7 @@ import { TranslateService } from '@ngx-translate/core';
   providers: [
     StatusBar,
     SplashScreen,
-    TranslateService,
+    TranslateService,//lo instalé yo
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

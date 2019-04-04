@@ -73,6 +73,12 @@
               <div padding>
                 <!-- <ion-button size="large" href="/touchid" expand="block">LOGIN</ion-button> -->
                 <ion-button size="large"  routerLink="/tabs" routerDirection="root"  expand="block">LOGIN</ion-button>
+                <!-- <ion-button class="facebook-button" (click)="tryFacebookLogin()">Facebook Login</ion-button>
+                <ion-button class="twitter-button" (click)="tryTwitterLogin()">Twitter Login</ion-button>
+                <ion-button class="google-button"  (click)="tryGoogleLogin()">Google Login</ion-button> -->
+                <ion-button (click)="onClick()">
+                  <ion-icon slot="icon-only" name="add"></ion-icon>
+                </ion-button>
                 <!-- <ion-button size="large"  [href]="'tabs'" routerDirection="root"  expand="block">LOGIN</ion-button> -->
 
                

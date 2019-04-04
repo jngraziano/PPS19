@@ -8,7 +8,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
+//Agregadas:
 import { TranslateService } from '@ngx-translate/core';
+import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+
 
 
 @NgModule({
@@ -18,7 +22,9 @@ import { TranslateService } from '@ngx-translate/core';
   providers: [
     StatusBar,
     SplashScreen,
-    TranslateService,//lo instalé yo
+    //Instaladas =>
+    TranslateService,
+    FirebaseAuthentication,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

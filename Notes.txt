@@ -1,0 +1,20 @@
+IONIC
+Instalar nodeJS
+En CMD:
+npm install -g ionic
+
+Para crear una app:
+ionic start oneapp super --type=ionic-angular (elegir entre: tabs/blank/sidemenu/super)
+
+Para correrla:
+cd "nombreAPP"
+ionic serve --lab
+
+Para buildear:
+ionic cordova build android
+o
+ionic cordova run android (directamente)
+
+Para instalar los componentes de otra app:
+Ir a la carpeta de la app
+npm install 

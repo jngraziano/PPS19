@@ -25,6 +25,9 @@ export class LoginPage implements OnInit {
     password: 'ejem'
   };
 
+  private username: string;
+  private password: string;
+
   // Our translated text strings
   private loginErrorString: string;
   private opt: string = 'signin';
@@ -43,7 +46,9 @@ export class LoginPage implements OnInit {
  
   login()
   {
-      this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
+      // this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
+      this.auth.loginUser(this.username,this.password ).then((user) => {
+
       alert("okay");   
       }
       ) 

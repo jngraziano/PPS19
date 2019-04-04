@@ -1,8 +1,8 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Relevamiento Visual</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 
 
@@ -12,17 +12,50 @@
 
 
 
-  <!-- IMG -->
-    <ion-list>
-        <ion-item *ngFor="let item of items">
-          <ion-thumbnail slot="start">
-            <ion-img [src]="https://myslu.slu.edu/res/images/cas-padlock-icon.png"></ion-img>
-          </ion-thumbnail>
-          <ion-label>{{item.text}}</ion-label>
+    <ion-list >
+
+        <!-- <ion-item> -->
+          <!-- <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label> -->
+          <!-- <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input> -->
+          <!-- <ion-input type="email" [(ngModel)]="account.email" placeholder="email" name="email"></ion-input> -->
+  
+        <!-- </ion-item> -->
+  
+        <!-- <ion-item padding style="background-color: rgba(255,255,255,0.1) !important; color: black; border-radius: 10px;"> -->
+          <!-- <ion-label class="titulo" style="color: black;" fixed>Correo</ion-label> -->
+         
+        
+            <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="200px" height="200px">
+
+        
+        <ion-item id="item" padding>
+         
+        <ion-input  type="email" style="color: black" placeholder="email" name="email" ></ion-input>
         </ion-item>
+        <ion-item id="item2" padding>
+        <ion-input   style="color: black;" type="password" placeholder="contraseña" name="clave" ></ion-input>
+        </ion-item>
+  
+      
+        <!--
+        Want to use a Username instead of an Email? Here you go:
+  
+        <ion-item>
+          <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
+          <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+        </ion-item>
+        -->
+  
+        <!-- <ion-item> -->
+          <!-- <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label> -->
+          <!-- <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        </ion-item> -->
+  
+        <div padding>
+            <ion-button expand="block">LOGIN</ion-button>
+        </div>
+  
       </ion-list>
-
-
 
 
 

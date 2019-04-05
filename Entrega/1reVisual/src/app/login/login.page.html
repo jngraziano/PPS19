@@ -75,20 +75,26 @@
                 </ion-card>
 
               </div>
+              
               <div padding>
-                <ion-item>
-                  <ion-input type="email" [(ngModel)]="username" placeholder="email@email.com"></ion-input>
-                </ion-item>
-        
-                <ion-item>
-                  <ion-input type="password" [(ngModel)]="password" placeholder="Password"></ion-input>
-                </ion-item>
+                
+              <ion-item>
+                <ion-input type="email" [(ngModel)]="username" placeholder="email@email.com"></ion-input>
+              </ion-item>
+      
+              <ion-item>
+                <ion-input type="password" [(ngModel)]="password" placeholder="password"></ion-input>
+              </ion-item>
               </div>
         
+
+
+
+
               <div padding>
                 <!-- <ion-button size="large" href="/touchid" expand="block">LOGIN</ion-button> -->
                 <!-- <ion-button size="large"  routerLink="/tabs" routerDirection="root"  expand="block">LOGIN</ion-button> -->
-                <ion-button size="large"  (click)="login()" routerDirection="root"  expand="block">LOGIN</ion-button>
+                <ion-button size="large" color="dark" (click)="login()" routerDirection="root"  expand="block">LOGIN</ion-button>
 
                
 

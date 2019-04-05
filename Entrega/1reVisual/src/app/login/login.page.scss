@@ -33,12 +33,15 @@ ion-row {
 }
 
 ion-col {
-    border: 1px solid #488aff;
+    border: 1px solid black;
     background: $white-color;
 }
 
 ion-button {
-    font-weight: 300;
+    font-weight: 600;
+}
+ion-input{
+    text-align: center;
 }
 
 @media (min-width: 240px) and (max-width: 768px) {

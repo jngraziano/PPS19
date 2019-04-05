@@ -5,7 +5,9 @@ import { Component, OnInit } from '@angular/core';
 // import {User} from "../../models/user";
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { AuthService } from "../auth.service";
-import { AppRoutingModule } from "../app-routing.module";
+import { Router } from "@angular/router";
+import { AlertController } from '@ionic/angular';
+
 
 
 
@@ -34,31 +36,56 @@ export class LoginPage implements OnInit {
   private opt: string = 'signin';
 
 
-  constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: AppRoutingModule) { }
+  constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: Router,
+              public alertController: AlertController) { }
 
   ngOnInit() {
   }
-
-  // onClickLogin(event)
-  // {
-  //  alert("estoy aca");
-   
-  // }
  
   login()
   {
       
       // this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
       this.auth.loginUser(this.username,this.password ).then((user) => {
-      this.router.navigateByUrl('/tabs');
-      alert("okay");   
+      this.presentAlert(true);  
+      this.router.navigateByUrl('/tabs'); 
       }
       ) 
       .catch(err=>{
         
-        alert("error");
+        this.presentAlert(false);  
       });
+  }
+
+  async presentAlert(estado: boolean) {
+   
+    if(estado == true)
+    {
+      const alert = await this.alertController.create({
+        header: 'Bienvenido.',
+        subHeader: '',
+        message: 'Autenticación exitosa.',
+        buttons: ['OK']
+      });
+  
+      await alert.present();
+     
+
     }
+    else{
+      const alert = await this.alertController.create({
+        header: 'Error',
+        subHeader: '',
+        message: 'Usuario/Contraseña incorrectos.',
+        buttons: ['OK']
+      });
+  
+      await alert.present();
+
+    }
+
+   
+  }
 
 
   

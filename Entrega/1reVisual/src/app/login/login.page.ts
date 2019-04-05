@@ -47,6 +47,10 @@ export class LoginPage implements OnInit {
       
       // this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
       this.auth.loginUser(this.username,this.password ).then((user) => {
+        if(this.username == "" || this.password == "")
+        {
+          this.presentAlert(false);  
+        }
       this.presentAlert(true);  
       this.router.navigateByUrl('/tabs'); 
       }

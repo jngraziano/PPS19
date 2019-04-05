@@ -1,14 +1,16 @@
 <ion-header>
-    <ion-toolbar>
-      <!-- <ion-title style=" text-align: center"> -->
-      <ion-title slot="start">
-      Relevamiento Visual    
-      </ion-title>
-      <ion-button color="danger" slot="end" routerLink="/login" routerDirection="root" style="width: 63px;height:60px">
-        LogOUT
-      </ion-button>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <!-- <ion-title style=" text-align: center"> -->
+    <ion-title slot="start">
+    Relevamiento Visual    
+    </ion-title>
+    <ion-button color="danger" slot="end" (click)="logoff()" routerDirection="root" style="width: 63px;height:60px">
+      LogOUT
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
 <!--   
   <ion-content>  
       <ion-card id="tab3card">

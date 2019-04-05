@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 // import {User} from "../../models/user";
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { AuthService } from "../auth.service";
+import { AppRoutingModule } from "../app-routing.module";
 
 
 
@@ -20,10 +21,10 @@ export class LoginPage implements OnInit {
    // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  user = {
-    email: 'ejemplo@ejemplo.com',
-    password: 'ejem'
-  };
+  // user = {
+  //   email: 'ejemplo@ejemplo.com',
+  //   password: 'ejem'
+  // };
 
   private username: string;
   private password: string;
@@ -33,7 +34,7 @@ export class LoginPage implements OnInit {
   private opt: string = 'signin';
 
 
-  constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService) { }
+  constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: AppRoutingModule) { }
 
   ngOnInit() {
   }
@@ -46,9 +47,10 @@ export class LoginPage implements OnInit {
  
   login()
   {
+      
       // this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
       this.auth.loginUser(this.username,this.password ).then((user) => {
-
+      this.router.navigateByUrl('/tabs');
       alert("okay");   
       }
       ) 

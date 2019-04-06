@@ -6,6 +6,10 @@ app-login {
 $white-color: #fff;
 $height100: 100%;
 
+    ion-content {
+        --background: url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center fixed cover;
+        --background-size: cover;
+      }
 ion-grid {
     width:100%;
     height: $height100;
@@ -37,10 +41,8 @@ ion-col {
     border: 1px solid black;
     background: $white-color;
 }
-ion-content{
-  --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
-  
-}
+
+
 
 ion-button {
     font-weight: 600;

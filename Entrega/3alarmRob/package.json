@@ -1,5 +1,5 @@
 {
-  "name": "1reVisual",
+  "name": "3alarmRob",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -29,7 +29,7 @@
     "@ngx-translate/core": "^11.0.1",
     "add": "^2.0.6",
     "angularfire2": "^5.1.2",
-    "cordova-android": "8.0.0",
+    "cordova-android": "^8.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-firebase-authentication": "1.1.2",
     "cordova-plugin-ionic-keyboard": "^2.1.3",

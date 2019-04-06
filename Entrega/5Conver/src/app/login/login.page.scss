@@ -1,0 +1,55 @@
+app-login {
+    
+}
+
+$white-color: #fff;
+$height100: 100%;
+
+ion-grid {
+    width:100%;
+    height: $height100;
+    background: #dfdfdf;
+}
+.twitter-button{
+    margin: 0px;
+    margin-top: 20px;
+    // @include call-to-action-button-styles(color($colors, twitter, base), color($colors, twitter, contrast));
+  }
+  .facebook-button
+  {
+    margin: 0px;
+    // @include call-to-action-button-styles(color($colors, facebook, base), color($colors, facebook, contrast));
+  }
+
+  .google-button
+  {
+    margin: 0px;
+    margin-top: 20px;
+    // @include call-to-action-button-styles(color($colors, google, base), color($colors, google, contrast));
+  }
+
+ion-row {
+    height: $height100;
+}
+
+ion-col {
+    border: 1px solid black;
+    background: $white-color;
+}
+
+ion-button {
+    font-weight: 600;
+}
+ion-input{
+    text-align: center;
+}
+
+@media (min-width: 240px) and (max-width: 768px) {
+    ion-grid {
+        background: $white-color;
+    }
+    ion-col {
+        border: none;
+    }
+}
+

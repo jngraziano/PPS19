@@ -12,43 +12,7 @@
 
 
 
-    <!-- <ion-list > -->
-        <!-- <ion-item> -->
-          <!-- <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label> -->
-          <!-- <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input> -->
-          <!-- <ion-input type="email" [(ngModel)]="account.email" placeholder="email" name="email"></ion-input> -->
-  
-        <!-- </ion-item> -->
-  
-        <!-- <ion-item padding style="background-color: rgba(255,255,255,0.1) !important; color: black; border-radius: 10px;"> -->
-          <!-- <ion-label class="titulo" style="color: black;" fixed>Correo</ion-label> -->
-         
-        
-            <!-- 
-
-        
-        <ion-item id="item" padding>
-         
-        <ion-input  type="email" style="color: black" placeholder="email" name="email" ></ion-input>
-        </ion-item>
-        <ion-item id="item2" padding>
-        <ion-input   style="color: black;" type="password" placeholder="contraseña" name="clave" ></ion-input>
-        </ion-item> -->
-  
-      
-        <!--
-        Want to use a Username instead of an Email? Here you go:
-  
-        <ion-item>
-          <ion-label floating>{{ 'USERNAME' | translate }}</ion-label>
-          <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
-        </ion-item>
-        -->
-  
-        <!-- <ion-item> -->
-          <!-- <ion-label fixed>{{ 'PASSWORD' | translate }}</ion-label> -->
-          <!-- <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
-        </ion-item> -->
+    
         
 
 
@@ -57,16 +21,11 @@
             <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
               <div text-center>
                 <br><br>
-                  <!-- <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="200px" height="200px"> -->
-                 
-                 
-                  <!-- <ion-img [src]="https://myslu.slu.edu/res/images/cas-padlock-icon.png" width="200px" height="200px"></ion-img> -->
-                  <!-- <ion-img [src]="https://image.freepik.com/vector-gratis/dibujos-animados-edificio-estado-real_24640-38977.jpg" width="200px" height="200px"></ion-img> -->
-                  <img src="https://image.freepik.com/vector-gratis/dibujos-animados-edificio-estado-real_24640-38977.jpg"  width="200px" height="200px" alt="" srcset="">
+                  <img src="data:image/png;base64,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"  width="200px" height="200px" alt="" srcset="">
                
                 <ion-card>
                   <ion-card-header>
-                    <ion-card-subtitle>Relevamiento Visual</ion-card-subtitle>
+                    <ion-card-subtitle>Conversando en el aula</ion-card-subtitle>
                     <ion-card-title>Bienvenido</ion-card-title>
                   </ion-card-header>
                
@@ -92,21 +51,9 @@
 
 
               <div padding>
-                <!-- <ion-button size="large" href="/touchid" expand="block">LOGIN</ion-button> -->
-                <!-- <ion-button size="large"  routerLink="/tabs" routerDirection="root"  expand="block">LOGIN</ion-button> -->
-                <ion-button size="large" color="dark" (click)="login()" routerDirection="root"  expand="block">LOGIN</ion-button>
+                <ion-button size="large" color="light" (click)="login()" routerDirection="root"  expand="block">LOGIN</ion-button>
 
-               
-
-                <!-- <ion-button (click)="login()">
-                  <ion-icon slot="icon-only" name="add"></ion-icon>
-                </ion-button> -->
-
-                <!-- Otra forma: -->
-                <!-- <ion-button size="large"  [href]="'tabs'" routerDirection="root"  expand="block">LOGIN</ion-button> -->
-
-               
-                <!-- (click)='onClickLogin($event)' -->
+   
 
               </div>
             </ion-col>

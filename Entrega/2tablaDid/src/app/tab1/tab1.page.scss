@@ -1,0 +1,17 @@
+.welcome-card ion-img {
+  max-height: 35vh;
+  overflow: hidden;
+}
+
+// .hydrated{
+//   background-image: url('');
+//   background-color: transparent;
+// }
+
+#tab1card{
+  --background: #fff;
+}
+
+ion-content{
+  --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
+}

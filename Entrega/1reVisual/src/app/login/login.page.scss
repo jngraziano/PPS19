@@ -10,23 +10,56 @@ ion-grid {
     height: $height100;
     background: #dfdfdf;
 }
-.twitter-button{
-    margin: 0px;
-    margin-top: 20px;
-    // @include call-to-action-button-styles(color($colors, twitter, base), color($colors, twitter, contrast));
-  }
-  .facebook-button
-  {
-    margin: 0px;
-    // @include call-to-action-button-styles(color($colors, facebook, base), color($colors, facebook, contrast));
-  }
 
-  .google-button
-  {
-    margin: 0px;
-    margin-top: 20px;
-    // @include call-to-action-button-styles(color($colors, google, base), color($colors, google, contrast));
-  }
+ion-card{
+
+    background-color: rgba(3, 190, 190, 0.5);
+    width: 85%;
+    height: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+#imgicon{
+    width : 100px;
+    height : 80px ;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#imgapp{
+    width: 85%;
+    height: 150%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inputs{
+    width: 90%;
+    height: 100px;
+    margin: 10px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 10px;
+    margin-bottom: 30px;  
+
+}
+
+.fonte{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+
+ion-card-subtitle{
+    color: black;
+}
+
 
 ion-row {
     height: $height100;

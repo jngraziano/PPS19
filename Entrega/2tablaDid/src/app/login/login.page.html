@@ -13,32 +13,32 @@
           <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
             <div text-center>
               <br><br>
-              
+
               <img src="https://image.freepik.com/free-vector/ink-school-elements_23-2147496278.jpg"  width="200px" height="200px" alt="" srcset="">
-             
+
               <ion-card>
                 <ion-card-header>
                   <ion-card-subtitle>Tabla dinamica</ion-card-subtitle>
                   <ion-card-title>Bienvenido</ion-card-title>
                 </ion-card-header>
-             
+
                 <ion-card-content>
                 </ion-card-content>
               </ion-card>
 
             </div>
-            
+
             <div padding>
-              
+
             <ion-item>
               <ion-input type="email" [(ngModel)]="username" placeholder="email@email.com"></ion-input>
             </ion-item>
-    
+
             <ion-item>
               <ion-input type="password" [(ngModel)]="password" placeholder="password"></ion-input>
             </ion-item>
             </div>
-      
+
 
 
 
@@ -46,7 +46,7 @@
             <div padding>
             <ion-button size="large" color="primary" (click)="login()" routerDirection="root"  expand="block">INGRESAR</ion-button>
 
-             
+
 
 
             </div>
@@ -55,36 +55,39 @@
       </ion-grid>
 
 
-  
+
 
 
 
 </ion-content> -->
 
-<<!DOCTYPE html>
-<html>
+
+
     <head>
-        <title>Formulário de login HTML/CSS</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <!-- <link rel="stylesheet" href="css/estilo.css"> -->
+        <!-- <title>Formulário de login HTML/CSS</title> -->
+        <ion-title>Relevamiento Visual</ion-title>
+
     </head>
     <body>
         <div class="login-box">
-            <h1>Login</h1>
-            <div class="textbox">
-                <i class="fa fa-user" aria-hidden="true"></i>
-                <ion-icon name="contact"></ion-icon>
-                <input type="text" placeholder="Usuário" name="" value="">
-            </div>
+          <h1>Login</h1>
+          <div class="textbox">
+              <ion-icon name="contact"></ion-icon>
+              <input type="email" [(ngModel)]="username" placeholder="email@email.com" required>
+          </div>
 
-            <div class="textbox">
-                <i class="fa fa-lock" aria-hidden="true"></i>
-                <!-- <ion-icon name="lock"></ion-icon> -->
-                <input type="password" placeholder="Senha" name="" value="">
-            </div>
-
-            <input type="submit" class="btn" name="" value="Entrar">
+          <div class="textbox">
+              <ion-icon name="lock"></ion-icon>
+              <input type="password" [(ngModel)]="password" placeholder="password" required>
+          </div>
+          <div id="buttons">
+          <button class="btn" (click)="login()">INGRESAR</button>
+          <button class="btn" id="creoSheetCss"  (click)="creoSheet()">
+            Acceder como...
+          </button>
+          </div>
         </div>
+
+      
+
     </body>
-</html>

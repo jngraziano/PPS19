@@ -34,24 +34,25 @@
                   </ion-card-content>
                 </ion-card>
 
+
+                <div class="inputs">
+                  <ion-item >
+                      <ion-label position="fixed">Usuario:</ion-label>
+                    <ion-input id="user" class="fonte" type="email" [(ngModel)]="username" placeholder="email"></ion-input>
+                  </ion-item>
+    
+                  <ion-item >
+                      <ion-label position="fixed">Contraseña:</ion-label>
+                    <ion-input id="pass" class="fonte" type="password" [(ngModel)]="password" placeholder="*****"></ion-input>
+                  </ion-item>
+
+                  </div>
+                  <ion-button size="large" class="fonte" color="dark" (click)="login()" routerDirection="root"  expand="block">INGRESAR</ion-button>
+    
               </div>
 
 
-              <div class="inputs">
-              <ion-item >
-                  <ion-label position="fixed">Usuario:</ion-label>
-                <ion-input id="user" class="fonte" type="email" [(ngModel)]="username" placeholder="email@email"></ion-input>
-              </ion-item>
-
-              <ion-item >
-                  <ion-label position="fixed">Contraseña:</ion-label>
-                <ion-input id="pass" class="fonte" type="password" [(ngModel)]="password" placeholder="*******"></ion-input>
-              </ion-item>
-              </div>
-                <div>
-               <ion-button size="large" color="dark" (click)="login()" routerDirection="root"  expand="block">INGRESAR</ion-button>
-              </div>
-
+              
             </ion-col>
           </ion-row>
         </ion-grid>

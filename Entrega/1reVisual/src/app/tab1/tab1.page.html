@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <!-- <ion-title style=" text-align: center"> -->
-    <ion-title slot="start">
+    <!-- <ion-title slot="start">
     Relevamiento Visual    
-    </ion-title>
+    </ion-title> -->
     <ion-button class="io" color="danger" class="io" slot="end" (click)="logoff()" routerDirection="root">
         <!-- style="width: 43px;height:40px; border-radius: 60%" -->
       <ion-icon name="power"></ion-icon>
@@ -46,7 +46,7 @@
     </ion-list> -->
 
 
-    <ion-card id="tab1card">
+    <!-- <ion-card id="tab1card">
         <ion-card-header>
           <ion-card-subtitle>Relevamiento Visual</ion-card-subtitle>
           <ion-card-title>Bienvenido</ion-card-title>
@@ -54,7 +54,37 @@
         Sistema de relevamiento visual de edificios.
         <ion-card-content>
         </ion-card-content>
-      </ion-card>
+      </ion-card> -->
+
+      <div class="buttons">
+      <ion-button (click)="onClick()">
+       Cosas Lindas del Edificio
+      </ion-button>
+    
+
+  
+      <ion-button (click)="onClick()">
+        Cosas Feas del Edificio
+       </ion-button>
+      </div>
+
+<!-- 
+      <ion-grid>
+        <ion-row>
+          <ion-col class="col" >
+            <ion-button expand="full">
+            </ion-button>
+          </ion-col>
+
+          
+          <ion-col class="col" >
+            <ion-button expand="full">
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid> -->
+
+
 
 
 

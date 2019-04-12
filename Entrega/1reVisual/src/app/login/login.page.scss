@@ -14,7 +14,7 @@ ion-grid {
 ion-card{
 
     background-color: rgba(3, 190, 190, 0.5);
-    width: 85%;
+    width: 75%;
     height: 30%;
     display: block;
     margin-left: auto;
@@ -22,11 +22,7 @@ ion-card{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
-ion-col{
-    margin-top: 17%;
-    width: 94%;
-    margin-left: 6%;
-}
+
 
 #imgicon{
     width : 100px;
@@ -73,14 +69,22 @@ ion-row {
 ion-col {
     border: 1px solid black;
     background: $white-color;
+    margin-top: 17%;
+    // width: 94%;
+    margin-left:3%;
 }
 
 ion-button {
-    font-weight: 600;
+    margin-top: 5%;
+    margin-left: -1%;
+    margin-right: 2%;
 }
 ion-input{
     text-align: center;
+
 }
+
+
 
 @media (min-width: 240px) and (max-width: 768px) {
     ion-grid {
@@ -90,4 +94,6 @@ ion-input{
         border: none;
     }
 }
+
+
 

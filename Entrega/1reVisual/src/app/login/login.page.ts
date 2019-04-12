@@ -6,12 +6,9 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
-import { AlertController, 
-         ActionSheetController, 
+import { ActionSheetController, 
          ToastController   } from '@ionic/angular';
 
-// import { ActionSheetController } from '@ionic/angular';
-// import { ToastController } '@ionic/angular'; 
 
 
 
@@ -37,13 +34,8 @@ export class LoginPage implements OnInit {
   private username: string;
   private password: string;
 
-  // Our translated text strings
-  private loginErrorString: string;
-  private opt: string = 'signin';
-
 
   constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: Router,
-              public alertController: AlertController,
               public toastController: ToastController,
               public actionSheetController: ActionSheetController) { }
 

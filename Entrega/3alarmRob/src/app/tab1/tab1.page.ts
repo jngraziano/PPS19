@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+
 import { Router } from "@angular/router";
 import { ToastController } from "@ionic/angular";
 
@@ -13,8 +13,7 @@ import { ToastController } from "@ionic/angular";
 })
 export class Tab1Page {
 
-  constructor(public alertController: AlertController, 
-              public router: Router,
+  constructor(public router: Router,
               public toastController: ToastController){}
 
   async logoff(){

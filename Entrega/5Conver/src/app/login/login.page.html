@@ -6,15 +6,7 @@
 
 
 
-<ion-content>
-  
-
-
-
-
-    
-        
-
+<!-- <ion-content>
 
         <ion-grid>
           <ion-row justify-content-center>
@@ -61,11 +53,26 @@
         </ion-grid>
 
   
-      <!-- </ion-list> -->
 
 
 
 
 
 
-</ion-content>
+</ion-content> -->
+
+
+<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+        <img id="imgicon" src="../../assets/icon/icon.png" alt="">
+			<!-- <div>qq<span>www</span></div> -->
+		</div>
+		<br>
+		<div class="login">
+        
+        <button class="acces" (click)="creoSheet()" >Acceder como...</button>
+        <input type="text"  [(ngModel)]="username" name="username" placeholder="email@email.com">
+        <input type="password" [(ngModel)]="password" name="pass" placeholder="********">
+				<button class="loginB" (click)="login()" >Ingresar</button>
+		</div>

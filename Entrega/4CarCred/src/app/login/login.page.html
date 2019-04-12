@@ -66,33 +66,31 @@
       <h1>Bienvenido</h1>
       
       <form class="form">
-        <input type="text" [(ngModel)]="username" placeholder="email@email.com">
-        <input type="password" [(ngModel)]="password" placeholder="password">
-
+        <input type="text"  [(ngModel)]="username" name="username" placeholder="email@email.com">
+        <input type="password" [(ngModel)]="password" name="pass" placeholder="********">
+<!-- 
+        <input type="text" id="login"  [(ngModel)]="username" placeholder="email@email.com">
+        <input type="password" id="password" [(ngModel)]="password" placeholder="********">
+   -->
+    
         <div padding>
-            <!-- <button class="btn" (click)="login()">INGRESAR</button> -->
+                       
             <ion-button color="dark"  (click)="login()">
-               INGRESAR
-            </ion-button>
-            <ion-button id="accesorap"  color="warning"  (click)="creoSheet()">
+                INGRESAR
+             </ion-button>
+
+            <ion-button  color="tertiary"  (click)="creoSheet()">
                 Acceder como...
             </ion-button>
   
           </div>
 
-      </form>
+        </form>
+        <img id="imgicon" src="../../assets/icon/icon.png" alt="">
     </div>
+   
     
-    <!-- <ul class="bg-bubbles">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul> -->
+
+
+
   </div>

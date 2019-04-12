@@ -5,7 +5,7 @@
 </ion-header> -->
 
 
-
+<!-- 
 <ion-content>
   
 
@@ -52,11 +52,47 @@
         </ion-grid>
 
   
-      <!-- </ion-list> -->
+     
 
 
 
 
 
 
-</ion-content>
+</ion-content> -->
+
+<div class="wrapper">
+    <div id="content" class="container">
+      <h1>Bienvenido</h1>
+      
+      <form class="form">
+        <input type="text" [(ngModel)]="username" placeholder="email@email.com">
+        <input type="password" [(ngModel)]="password" placeholder="password">
+
+        <div padding>
+            <!-- <button class="btn" (click)="login()">INGRESAR</button> -->
+            <ion-button color="dark"  (click)="login()">
+               INGRESAR
+            </ion-button>
+            <ion-button id="accesorap"  color="warning"  (click)="creoSheet()">
+                Acceder como...
+            </ion-button>
+  
+          </div>
+
+      </form>
+    </div>
+    
+    <!-- <ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul> -->
+  </div>

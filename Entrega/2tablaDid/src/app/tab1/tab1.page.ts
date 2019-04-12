@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from "@angular/router";
+import { ToastController } from "@ionic/angular";
 
 
 
@@ -11,20 +12,25 @@ import { Router } from "@angular/router";
 })
 export class Tab1Page {
 
-  constructor(public alertController: AlertController, public router: Router){}
+  constructor(public alertController: AlertController, 
+              public router: Router,
+              public toastController: ToastController){}
 
-  async logoff(){
+              async logoff(){
 
 
-    const alert = await this.alertController.create({
-      header: 'Salida.',
-      subHeader: '',
-      message: 'Sesion cerrada.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-    this.router.navigateByUrl('/login'); 
-
-  }
+                const toast = await this.toastController.create({
+                  message: 'Sesion Finalizada.',
+                  color: 'light',
+                  showCloseButton: false,
+                  position: 'top',
+                  closeButtonText: 'Done',
+                  duration: 2000 
+                });
+            
+                toast.present();
+            
+                this.router.navigateByUrl('/login'); 
+            
+              }
 }

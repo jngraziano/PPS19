@@ -91,7 +91,7 @@ export class LoginPage implements OnInit {
       cssClass: 'actSheet',
       buttons: [{
         text: 'admin',
-        icon: 'body',
+        icon: 'build',
         handler: () => {
           
           this.username = "admin@gmail.com";
@@ -107,21 +107,21 @@ export class LoginPage implements OnInit {
         }
       }, {
         text: 'usuario',
-        icon: 'body',
+        icon: 'sad',
         handler: () => {
           this.username = "usuario@gmail.com";
           this.password= "usuario3333";
         }
       }, {
         text: 'anonimo',
-        icon: 'body',
+        icon: 'logo-snapchat',
         handler: () => {
           this.username = "anonimo@gmail.com";
           this.password= "anonimo4444";
         }
       },{
         text: 'tester',
-        icon: 'body',
+        icon: 'phone-portrait',
         handler: () => {
           this.username = "tester@gmail.com";
           this.password= "tester5555";

@@ -14,6 +14,8 @@ import { AlertController,
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
+  providers: [FirebaseAuthentication, AuthService],
+
 })
 export class LoginPage implements OnInit {
 
@@ -48,9 +50,9 @@ async creoToast(rta: boolean) {
   {
     const toast = await this.toastController.create({
       message: 'Autenticación exitosa.',
-      color: 'danger',
+      color: 'success',
       showCloseButton: false,
-      position: 'bottom',
+      position: 'top',
       closeButtonText: 'Done',
       duration: 2000 
     });
@@ -83,7 +85,7 @@ async creoSheet() {
     cssClass: 'actSheet',
       buttons: [{
       text: 'admin',
-      icon: 'body',
+      icon: 'build',
       handler: () => {
         
         this.username = "admin@gmail.com";
@@ -99,21 +101,21 @@ async creoSheet() {
       }
     }, {
       text: 'usuario',
-      icon: 'body',
+      icon: 'sad',
       handler: () => {
         this.username = "usuario@gmail.com";
         this.password= "usuario3333";
       }
     }, {
       text: 'anonimo',
-      icon: 'body',
+      icon: 'logo-snapchat',
       handler: () => {
         this.username = "anonimo@gmail.com";
         this.password= "anonimo4444";
       }
     },{
       text: 'tester',
-      icon: 'body',
+      icon: 'phone-portrait',
       handler: () => {
         this.username = "tester@gmail.com";
         this.password= "tester5555";

@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
-import { AlertController } from '@ionic/angular';
+
+import { AlertController, 
+  ActionSheetController, 
+  ToastController   } from '@ionic/angular';
 
 
 
@@ -37,61 +40,123 @@ export class LoginPage implements OnInit {
 
 
   constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: Router,
-              public alertController: AlertController) { }
+              public alertController: AlertController,
+              public toastController: ToastController,
+              public actionSheetController: ActionSheetController) { }
 
   ngOnInit() {
   }
  
-  login()
-  {
-      
-      // this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
-      this.auth.loginUser(this.username,this.password ).then((user) => {
-        if(this.username == "" || this.password == "")
-        {
-          this.presentAlert(false);  
-        }
-      this.presentAlert(true);  
-      this.router.navigateByUrl('/tabs'); 
-      }
-      ) 
-      .catch(err=>{
-        
-        this.presentAlert(false);  
-      });
-  }
+  async creoToast(rta: boolean) {
 
-  async presentAlert(estado: boolean) {
-   
-    if(estado == true)
+    if(rta == true)
     {
-      const alert = await this.alertController.create({
-        header: 'Bienvenido.',
-        subHeader: '',
+      const toast = await this.toastController.create({
         message: 'Autenticación exitosa.',
-        buttons: ['OK']
+        color: 'success',
+        showCloseButton: false,
+        position: 'top',
+        closeButtonText: 'Done',
+        duration: 2000 
       });
   
-      await alert.present();
-     
-
+      toast.present();
+  
+  
     }
     else{
-      const alert = await this.alertController.create({
-        header: 'Error',
-        subHeader: '',
-        message: 'Usuario/Contraseña incorrectos.',
-        buttons: ['OK']
+      const toast = await this.toastController.create({
+        message: 'Usuario/contraseña incorrectos.',
+        color: 'dark',
+        showCloseButton: false,
+        position: 'top',
+        closeButtonText: 'Done',
+        duration: 2000 
       });
   
-      await alert.present();
-
+      toast.present();
+  
     }
-
    
+      
   }
-
-
+  
+  
+  async creoSheet() {
+    const actionSheet = await this.actionSheetController.create({
+      header: 'Ingresar como ...',
+      cssClass: 'actSheet',
+        buttons: [{
+        text: 'admin',
+        icon: 'build',
+        handler: () => {
+          
+          this.username = "admin@gmail.com";
+          this.password= "admin1111";
+  
+        }
+      }, {
+        text: 'invitado',
+        icon: 'body',
+        handler: () => {
+          this.username = "invitado@gmail.com";
+          this.password= "invitado2222";
+        }
+      }, {
+        text: 'usuario',
+        icon: 'sad',
+        handler: () => {
+          this.username = "usuario@gmail.com";
+          this.password= "usuario3333";
+        }
+      }, {
+        text: 'anonimo',
+        icon: 'logo-snapchat',
+        handler: () => {
+          this.username = "anonimo@gmail.com";
+          this.password= "anonimo4444";
+        }
+      },{
+        text: 'tester',
+        icon: 'phone-portrait',
+        handler: () => {
+          this.username = "tester@gmail.com";
+          this.password= "tester5555";
+        }
+      }, {
+        text: 'Cancelar',
+        icon: 'close',
+        cssClass: 'btnCancel',
+        role: 'cancel',
+        handler: () => {
+         
+        }
+      }]
+    });
+    await actionSheet.present();
+  }
+  
+  
+  
+  
+  
+  login()
+  {
+  
+    this.auth.loginUser(this.username,this.password ).then((user) => {
+      // if(this.username == "" || this.password == "")
+      // {
+      //   this.creoToast(false);  
+      // }
+    this.creoToast(true);  
+    this.router.navigateByUrl('/tabs'); 
+    }
+    ) 
+    .catch(err=>{
+      
+      this.creoToast(false);  
+    });
+  }
   
 
   }

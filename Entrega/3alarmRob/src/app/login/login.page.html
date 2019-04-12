@@ -6,7 +6,7 @@
 
 
 
-<ion-content>
+<!-- <ion-content>
   
 
 
@@ -60,4 +60,54 @@
 
 
 
-</ion-content>
+</ion-content> -->
+
+
+
+<div id="divMayor">
+<div class="wrapper">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <br>
+    <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="130px" height="130aapx" alt="" srcset="">
+   
+    <!-- <h2 class="inactive underlineHover">Sign Up </h2> -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+        <h2 class="active"> Bienvenido </h2>
+      <!-- <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" /> -->
+    </div>
+
+    <!-- Login Form -->
+    
+    <!-- <input type="text" id="login" class="fadeIn second" name="login" placeholder="login"> -->
+      <input type="text" id="login"  [(ngModel)]="username" placeholder="email@email.com">
+      <input type="password" id="password" [(ngModel)]="password" placeholder="********">
+
+      
+ 
+      <!-- <input type="submit" class="fadeIn fourth" value="Log In"> -->
+      <!-- <div padding>
+          <ion-button size="large" color="success" (click)="login()" routerDirection="root"  expand="block">LOGIN</ion-button>
+       </div> -->
+
+       <div padding>
+          <!-- <button class="btn" (click)="login()">INGRESAR</button> -->
+          <ion-button color="danger" size="block"  (click)="login()">
+             INGRESAR
+          </ion-button>
+          <ion-button color="dark" size="block" (click)="creoSheet()">
+              Acceder como...
+          </ion-button>
+
+        </div>
+
+<!--    
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div> -->
+
+  </div>
+</div>
+</div>

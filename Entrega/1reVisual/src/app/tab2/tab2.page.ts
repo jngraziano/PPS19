@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AlertController } from '@ionic/angular';
 import { Router } from "@angular/router";
 import { ToastController } from "@ionic/angular";
 
@@ -11,7 +10,7 @@ import { ToastController } from "@ionic/angular";
 })
 export class Tab2Page {
 
-  constructor(public alertController: AlertController, 
+  constructor( 
               public router: Router,
               public toastController: ToastController){}
 
@@ -30,6 +29,11 @@ export class Tab2Page {
     toast.present();
 
     this.router.navigateByUrl('/login'); 
+
+  }
+
+  mainM(){
+    this.router.navigateByUrl('/tabs'); 
 
   }
 

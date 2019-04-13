@@ -32,4 +32,15 @@ export class Tab1Page {
     this.router.navigateByUrl('/login'); 
 
   }
+
+  greenB(){
+    this.router.navigateByUrl('/tab2'); 
+
+  }
+  redB(){
+    this.router.navigateByUrl('/tab3'); 
+
+  }
+
+
 }

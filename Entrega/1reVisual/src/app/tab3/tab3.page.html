@@ -1,27 +1,31 @@
 <ion-header>
   <ion-toolbar>
-    <!-- <ion-title style=" text-align: center"> -->
-    <ion-title slot="start">
-    Relevamiento Visual    
-    </ion-title>
-    <ion-button color="danger" slot="end" (click)="logoff()" routerDirection="root" style="width: 63px;height:60px">
-      LogOUT
-    </ion-button>
+      <ion-button color="tertiary" class="io" slot="start" (click)="mainM()" routerDirection="root">
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
+      <ion-button  color="danger" class="io" slot="end" (click)="logoff()" routerDirection="root">
+          <!-- style="width: 43px;height:40px; border-radius: 60%" -->
+        <ion-icon name="power"></ion-icon>
+      </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<!--   
-  <ion-content>  
-      <ion-card id="tab3card">
-          <ion-card-header>
-            <ion-card-subtitle>Relevamiento Visual</ion-card-subtitle>
-            <ion-card-title>Bienvenido</ion-card-title>
-          </ion-card-header>
-          Sistema de relevamiento visual de edificios.
-          <ion-card-content>
-          </ion-card-content>
-        </ion-card> -->
+    <ion-card id="tab2card">
+        <ion-card-header>
+          <ion-card-subtitle></ion-card-subtitle>
+          <ion-card-title>Agregar foto</ion-card-title>
+        </ion-card-header>
+       Pulse para agregar una foto.
+       
+        <ion-card-content>
+
+            <ion-button class="io" slot="end" (click)="onClick()" routerDirection="root">
+                <!-- style="width: 43px;height:40px; border-radius: 60%" -->
+            <ion-icon name="camera"></ion-icon>
+            </ion-button>
+        </ion-card-content>
+      </ion-card>
   
   
   

@@ -13,7 +13,8 @@
 }
 
 ion-content{
-  --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
+  // --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
+  // background-color: 
 }
 
 .io{
@@ -30,6 +31,13 @@ ion-content{
 // }
 
 
-ion-grid, ion-row, ion-col, ion-button{
+ion-grid, ion-row, ion-col{
   height: 100%;
+}
+ion-button{
+  height: 95%;
+}
+
+ion-tab-button{
+  visibility: hidden;
 }

@@ -14,7 +14,7 @@
 
 ion-content{
   // --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
-  background-color: black;
+  background-color: rgb(80, 118, 177);
 }
 
 
@@ -24,6 +24,45 @@ ion-content{
   height:40px; 
   border-radius: 50%;
 }
+
+ion-grid, ion-row, ion-col{
+  margin-left: 10px;
+  
+  height: 69%;
+  width: 90%;
+}
+ion-button{
+  height: 95%;
+  
+
+}
+
+.fondo{
+  background-color: rgb(80, 118, 177);
+  height: 100%;
+  width: 100%;
+  
+}
+
+
+#imgicon{
+  width : 100px;
+  height : 80px ;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+#imgapp{
+  
+  width: 85%;
+  height: 104%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 
 

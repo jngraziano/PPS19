@@ -15,6 +15,8 @@ export class Tab1Page {
               public router: Router,
               public toastController: ToastController){}
 
+
+              
               async logoff(){
 
 
@@ -32,4 +34,6 @@ export class Tab1Page {
                 this.router.navigateByUrl('/login'); 
             
               }
+
+              
 }

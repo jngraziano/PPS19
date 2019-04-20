@@ -1,74 +1,59 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>Relevamiento Visual</ion-title>
-  </ion-toolbar>
-</ion-header> -->
+<div id="custom-overlay" [style.display]=" splash ? 'block' : 'none' ">
+    
+
+    <!-- <div class="container"> -->
+        <!-- <div class="scroller contenedorPresentacion">
+        <div class="inner">
+       
+        <span>JULIAN GRAZIANO</span>
+        <span>DIVISIÓN 4A</span>
+        <span>RELEVAMIENTO VISUAL</span>
+
+        </div>
+        </div> -->
+        <!-- </div> -->
+        <div class="contenedorPresentacion">
+
+        <div><p>RELEVAMIENTO VISUAL 
+          <br>
+                PPS 19 UTN <br>
+                JULIAN GRAZIANO <br>
+                DIVISION 4A
+        </p></div>
+
+      </div>
+        <div class="logoPresentacion">
+            <img id="imgScreen"  src="../../assets/icon/icon.png">	
+            
+          </div> 
 
 
-
-  <!-- ANTERIOR -->
-<!-- <ion-content>
-   <ion-grid>
-        <ion-row justify-content-center>
-          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-            <div text-center>
-              <br><br>
-
-              <img src="https://image.freepik.com/free-vector/ink-school-elements_23-2147496278.jpg"  width="200px" height="200px" alt="" srcset="">
-
-              <ion-card>
-                <ion-card-header>
-                  <ion-card-subtitle>Tabla dinamica</ion-card-subtitle>
-                  <ion-card-title>Bienvenido</ion-card-title>
-                </ion-card-header>
-
-                <ion-card-content>
-                </ion-card-content>
-              </ion-card>
-
-            </div>
-
-            <div padding>
-
-            <ion-item>
-              <ion-input type="email" [(ngModel)]="username" placeholder="email@email.com"></ion-input>
-            </ion-item>
-
-            <ion-item>
-              <ion-input type="password" [(ngModel)]="password" placeholder="password"></ion-input>
-            </ion-item>
-            </div>
+   
+<!-- 
+  	 <div class="contenedorPresentacion logoPresentacion">
+     
+        <div class="fuente"><p> RELEVAMIENTO VISUAL </p></div>
+        <div class="fuente"><p> JULIAN GRAZIANO </p></div><br>
+        <div class="fuente"><p>UTN PPS 2019 </p></div>
+        <div class="fuente"><p>DIVISIÓN 4A </p></div>
+    </div>
+ 
+	<div class="logoPresentacion">
+    <img id="imgScreen"  src="../../assets/icon/icon.png">	
+    
+	</div> 
+	 -->
+</div> 
 
 
+    <!-- <head >
 
-
-
-            <div padding>
-            <ion-button size="large" color="primary" (click)="login()" routerDirection="root"  expand="block">INGRESAR</ion-button>
-
-
-
-
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
-
-
-
-
-
-</ion-content> -->
-
-
-
-    <head>
-        <!-- <title>Formulário de login HTML/CSS</title> -->
         <ion-title>Tabla Didactica</ion-title>
 
-    </head>
-    <body>
+    </head> -->
+
+
+    <body [style.display]=" splash ? 'none' : 'block'">
         <div class="login-box">
           <h1>Login</h1>
           <div class="textbox">

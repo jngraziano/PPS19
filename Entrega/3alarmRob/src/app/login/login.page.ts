@@ -22,16 +22,17 @@ import { ActionSheetController,
   providers: [FirebaseAuthentication, AuthService],
 })
 export class LoginPage implements OnInit {
-   // The account fields for the login form.
-  // If you're using the username field with or without email, make
-  // sure to add it to the type
-  // user = {
-  //   email: 'ejemplo@ejemplo.com',
-  //   password: 'ejem'
-  // };
+
 
   private username: string;
   private password: string;
+
+  splash = true;
+
+  ionViewDidEnter() 
+  {
+    setTimeout(() => this.splash = false, 6000);
+  }
 
 
   constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: Router,         

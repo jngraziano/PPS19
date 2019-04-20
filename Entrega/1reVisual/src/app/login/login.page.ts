@@ -11,11 +11,6 @@ import { ActionSheetController,
 
 
 
-
-
-
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',

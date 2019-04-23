@@ -12,6 +12,8 @@ import { ToastController } from "@ionic/angular";
 })
 export class Tab1Page {
 
+  private saldoPantalla: string;
+
   constructor(public toastController: ToastController, 
               public router: Router){}
 

@@ -28,10 +28,22 @@ export class LoginPage implements OnInit {
 
   splash = true;
 
-  ionViewDidEnter() 
-  {
-    setTimeout(() => this.splash = false, 6000);
-  }
+  // ionViewWillEnter() 
+  // {
+  //   setTimeout(() => this.splash = false, 6000);
+  // }
+
+  // ngAfterViewInit() {
+  
+    // this.username = null;
+    // this.password = null;
+
+    ionViewWillEnter(){
+
+      setTimeout(() => this.splash = false, 6000);
+    
+    }
+    
 
   constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: Router,
     public toastController: ToastController,

@@ -10,8 +10,21 @@ const routes: Routes = [
   //nuevas:
   { path: '', loadChildren: './login/login.module#LoginPageModule'},
   { path: 'login', loadChildren: './login/login.module#LoginPageModule'},
+
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule'},
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
+
+  { path: '', loadChildren: './tab1/tab1.module#Tab1PageModule' },
+  { path: 'tab1', loadChildren: './tab1/tab1.module#Tab1PageModule' },
+
+  { path: '', loadChildren: './tab2/tab2.module#Tab2PageModule' },
+  { path: 'tab2', loadChildren: './tab2/tab2.module#Tab2PageModule' },
+
+  { path: '', loadChildren: './tab3/tab3.module#Tab3PageModule' },
+  { path: 'tab3', loadChildren: './tab3/tab3.module#Tab3PageModule' },
+  
+  { path: '', loadChildren: './tab4/tab4.module#Tab4PageModule' },
+  { path: 'tab4', loadChildren: './tab4/tab4.module#Tab4PageModule' }
 
 
 ];

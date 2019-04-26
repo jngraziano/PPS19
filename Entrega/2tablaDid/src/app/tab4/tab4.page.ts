@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss']
+  selector: 'app-tab4',
+  templateUrl: './tab4.page.html',
+  styleUrls: ['./tab4.page.scss'],
 })
-export class Tab3Page {
+export class Tab4Page {
 
   constructor(public alertController: AlertController, public router: Router){}
 
@@ -29,5 +29,4 @@ export class Tab3Page {
     this.router.navigateByUrl('/tab1'); 
 
   }
-  
 }

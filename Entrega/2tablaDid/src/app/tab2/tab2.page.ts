@@ -26,4 +26,10 @@ export class Tab2Page {
 
   }
 
+  mainM(){
+    this.router.navigateByUrl('/tab1'); 
+
+  }
+  
+
 }

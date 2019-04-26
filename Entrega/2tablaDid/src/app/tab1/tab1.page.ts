@@ -35,5 +35,19 @@ export class Tab1Page {
             
               }
 
+              animalB(){
+                this.router.navigateByUrl('/tab2'); 
+              }
+
+              
+              colorsB(){
+                this.router.navigateByUrl('/tab3'); 
+            
+              }
+              numbersB(){
+                this.router.navigateByUrl('/tab4'); 
+            
+              }
+
               
 }

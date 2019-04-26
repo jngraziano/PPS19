@@ -1,32 +1,121 @@
 <ion-header>
+
+  
+
   <ion-toolbar>
-    <!-- <ion-title style=" text-align: center"> -->
-    <ion-title slot="start">
-   Conversando en el aula    
-    </ion-title>
-    <ion-button class="io" color="danger" class="io" slot="end" (click)="logoff()" routerDirection="root">
-        <!-- style="width: 43px;height:40px; border-radius: 60%" -->
+   
+         
+
+
+        <!-- <ion-button color="tertiary" class="io" slot="end" (click)="mainM()" routerDirection="root">
+          <ion-icon name="home"></ion-icon>
+        </ion-button> -->
+    <ion-button class="io" color="danger"  slot="end" (click)="logoff()" routerDirection="root">
+      
       <ion-icon name="power"></ion-icon>
     </ion-button>
+  
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-    
+  <!-- <div padding > 
+  Recientes
+  </div> -->
+
+  <ion-list id="section-notices">
+     
+            <ion-item>
+                <ion-thumbnail slot="start">
+                    <img src="../../assets/icon/boy1.png">
+                </ion-thumbnail>
+                <ion-label text-wrap>
+                  <h3>Matias</h3>
+                  <p>Hoy hay partido a las 18 hs.</p>
+                </ion-label>
+                <ion-button fill="outline" slot="end">
+                  <ion-icon name="chatbubbles"></ion-icon>
+                </ion-button>
+              </ion-item>
+              
+              <ion-item>
+                  <ion-thumbnail slot="start">
+                      <img src="../../assets/icon/boy5.png">
+                  </ion-thumbnail>
+                  <ion-label text-wrap>
+                    <h3>Emiliano</h3>
+                    <p>Todo bien vos?</p>
+                  </ion-label>
+                  <ion-button fill="outline" slot="end">
+                    <ion-icon name="chatbubbles"></ion-icon>
+                  </ion-button>
+                </ion-item>
+                
+                <ion-item>
+                    <ion-thumbnail slot="start">
+                        <img src="../../assets/icon/boy2.png">
+                    </ion-thumbnail>
+                    <ion-label text-wrap>
+                      <h3>Jonathan</h3>
+                      <p>Traes la comida, bro?</p>
+                    </ion-label>
+                    <ion-button fill="outline" slot="end">
+                      <ion-icon name="chatbubbles"></ion-icon>
+                    </ion-button>
+                  </ion-item>
+                  
+                  <ion-item>
+                      <ion-thumbnail slot="start">
+                          <img src="../../assets/icon/boy4.png">
+                      </ion-thumbnail>
+                      <ion-label text-wrap>
+                        <h3>Leandro</h3>
+                        <p>Tengo que aprobar esta materia.</p>
+                      </ion-label>
+                      <ion-button fill="outline" slot="end">
+                        <ion-icon name="chatbubbles"></ion-icon>
+                      </ion-button>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-thumbnail slot="start">
+                            <img src="../../assets/icon/boy3.png">
+                        </ion-thumbnail>
+                        <ion-label text-wrap>
+                          <h3>Franco</h3>
+                          <p>Mañana empiezo primer grado.</p>
+                        </ion-label>
+                        <ion-button fill="outline" slot="end">
+                          <ion-icon name="chatbubbles"></ion-icon>
+                        </ion-button>
+                      </ion-item>
+                      
+                      <ion-item>
+                          <ion-thumbnail slot="start">
+                              <img src="../../assets/icon/girl1.png">
+                          </ion-thumbnail>
+                          <ion-label text-wrap>
+                            <h3>Fernanda</h3>
+                            <p>El trabajo practico es para mañana.</p>
+                          </ion-label>
+                          <ion-button fill="outline" slot="end">
+                            <ion-icon name="chatbubbles"></ion-icon>
+                          </ion-button>
+                        </ion-item>
+            
+                        <!-- <ion-item>
+                            <ion-thumbnail slot="start">
+                                <img src="../../assets/imgs/user7.png">
+                            </ion-thumbnail>
+                            <ion-label text-wrap>
+                              <h3>Tin</h3>
+                              <p>OK</p>
+                            </ion-label>
+                            <ion-button fill="outline" slot="end">Ver</ion-button>
+                          </ion-item>
+               -->
 
 
-    <ion-card id="tab1card">
-        <ion-card-header>
-          <ion-card-subtitle>Conversando en el aula</ion-card-subtitle>
-          <ion-card-title>Bienvenido</ion-card-title>
-        </ion-card-header>
-        Sistema de charlas.
-        <ion-card-content>
-        </ion-card-content>
-      </ion-card>
-
-
-
-
-
+  </ion-list>
 </ion-content>

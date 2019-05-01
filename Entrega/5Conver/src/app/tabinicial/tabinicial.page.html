@@ -1,0 +1,66 @@
+<ion-header>
+
+  
+
+  <ion-toolbar>
+
+    <ion-button class="io" color="danger"  slot="end" (click)="logoff()" routerDirection="root">
+      
+      <ion-icon name="power"></ion-icon>
+    </ion-button>
+  
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content>
+
+  
+    <br>
+     <!-- <ion-item>
+      
+         <ion-button color="outline" (click)="animalB()" expand="full" >
+        
+             <ion-text class="fuente" color="light">
+                 <h1>Curso A</h1>
+               </ion-text>
+         </ion-button>
+       
+     </ion-item> -->
+     
+     <ion-card (click)="cursoA()"  expand="full">
+      <ion-card-header color="dark" ><b></b></ion-card-header>
+      <ion-card-content class="cursoA">
+        <br>
+        <br>
+       
+        <h1>Curso A</h1>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card (click)="cursoB()"  expand="full">
+        <ion-card-header color="dark" ><b></b></ion-card-header>
+        <ion-card-content class="cursoB">
+          <br>
+          <br>
+        
+          <h1>Curso B</h1>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card (click)="cursoC()"  expand="full">
+          <ion-card-header color="dark" ><b></b></ion-card-header>
+          <ion-card-content class="cursoC">
+         
+            <br>
+          <br>
+           
+        
+           
+            <h1>Curso C</h1>
+            </ion-card-content>
+          <!-- </ion-card-content> -->
+        </ion-card>
+
+
+  </ion-content>
+ 

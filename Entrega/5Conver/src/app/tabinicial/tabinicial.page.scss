@@ -1,0 +1,119 @@
+ 
+  
+  .io{
+  
+    width: 43px;
+    height:40px; 
+    border-radius: 50%;
+  }
+  
+  
+  ion-button{
+    height: 95%;
+    width: 100%;
+    
+    
+  
+  }
+  
+  h1{
+    // font-family: Georgia, 'Times New Roman', Times, serif;
+    // font-size: 42px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+    // margin-top: 300%;
+    color: white; 
+    font-weight: bolder; 
+    font-size: xx-large; 
+    text-align:center;  
+    text-shadow: 2px 0 0 black, -1px 0 0 black, 0 1px 0 black, 0 -1px 0 black, 1px 1px black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+  
+  
+  }
+  ion-header,  ion-list, ion-item, ion-toolbar{
+    --background: #22333B;
+  }
+ 
+
+
+ion-content {
+  //
+  //
+  --background: #22333B;
+
+  h3{
+    color: white;
+  }
+  p{
+    color: lightgrey;
+  }
+
+  #section-notices {
+    background-color: #22333B;
+
+    ion-item {
+ 
+
+      &.checked {
+        opacity: 0.6;
+      }
+
+      .pic {
+        height: 45px;
+        max-width: 80px;
+        overflow: hidden;
+        margin-right: 0;
+        line-height: 45px;
+
+        img {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+
+  
+  
+  #imgicon{
+    width : 100px;
+    height : 80px ;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  #imgapp{
+    
+    width: 41%;
+    height: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+        
+  }
+  
+ .cursoA{
+	 background-image: url("../../assets/icon/aulacursoA.jpg");
+     background-size: cover;
+    //  -webkit-filter: blur(5px);
+    //  z-index: 0;
+    height: 97%;
+  }
+  .cursoB{
+    background-image: url("../../assets/icon/aulacursoB.jpg");
+    background-size: cover;
+	// -webkit-filter: blur(5px);
+	// z-index: 0;
+   height: 94%;
+ }
+ .cursoC{
+    background-image: url("../../assets/icon/aulacursoC.jpg");
+    background-size: cover;
+	// -webkit-filter: blur(5px);
+	// z-index: 0;
+   height: 97%;
+ }
+
+
+  ion-card{
+      height: 34%
+  }

@@ -137,7 +137,7 @@ export class LoginPage implements OnInit {
       // this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
         this.auth.loginUser(this.username,this.password ).then((user) => {
           this.creoToast(true);  
-        this.router.navigateByUrl('/tabs'); 
+        this.router.navigateByUrl('/tabinicial'); 
         }
         ) 
         .catch(err=>{

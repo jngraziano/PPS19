@@ -31,4 +31,8 @@ export class Tab1Page {
                 this.router.navigateByUrl('/login'); 
             
               }
+
+              mainM(){
+                this.router.navigateByUrl('/tabinicial'); 
+              }
 }

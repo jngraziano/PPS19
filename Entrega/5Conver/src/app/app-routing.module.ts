@@ -5,11 +5,24 @@ const routes: Routes = [
  
   { path: '', loadChildren: './login/login.module#LoginPageModule'},
   { path: 'login', loadChildren: './login/login.module#LoginPageModule'},
+
   { path: 'tabs', loadChildren: './tabs/tabs.module#TabsPageModule'},
-  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' }
+  { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
+
+  { path: '', loadChildren: './tab1/tab1.module#Tab1PageModule' },
+  { path: 'tab1', loadChildren: './tab1/tab1.module#Tab1PageModule' },
+
+  { path: '', loadChildren: './tab2/tab2.module#Tab2PageModule' },
+  { path: 'tab2', loadChildren: './tab2/tab2.module#Tab2PageModule' },
+
+  { path: '', loadChildren: './tab3/tab3.module#Tab3PageModule' },
+  { path: 'tab3', loadChildren: './tab3/tab3.module#Tab3PageModule' },
+
+  { path: '', loadChildren: './tabinicial/tabinicial.module#TabinicialPageModule' },
+  { path: 'tabinicial', loadChildren: './tabinicial/tabinicial.module#TabinicialPageModule' }
 
   
-  //Cambio en la ruta, para que la pagina Login sea la primera. 
+
   
 ];
 @NgModule({

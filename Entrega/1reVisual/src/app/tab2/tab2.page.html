@@ -28,14 +28,15 @@
          
           <ion-card-content>
 
-              <ion-button class="io" slot="end" (click)="onClick()" routerDirection="root">
+              <ion-button class="io" slot="end" (click)="capturar()" routerDirection="root">
                   <!-- style="width: 43px;height:40px; border-radius: 60%" -->
               <ion-icon name="camera"></ion-icon>
               </ion-button>
           </ion-card-content>
         </ion-card>
   
-  
+        <p>{{imagen}}</p>
+        <img src="{{imagen}}">
   
   
   

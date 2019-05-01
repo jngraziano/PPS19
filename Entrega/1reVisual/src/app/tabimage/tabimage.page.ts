@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { Router } from "@angular/router";
 import { ToastController } from "@ionic/angular";
 
 
-
 @Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+  selector: 'app-tabimage',
+  templateUrl: './tabimage.page.html',
+  styleUrls: ['./tabimage.page.scss'],
 })
-export class Tab1Page {
+export class TabimagePage {
 
-
-  constructor(
+  constructor(public navCtrl: NavController,
               public router: Router,
-              public toastController: ToastController
-             ){}
+              public toastController: ToastController) { }
+  galleryType = 'pinterest';
 
   async logoff(){
-
 
     const toast = await this.toastController.create({
       message: 'Sesion Finalizada.',
@@ -34,15 +32,5 @@ export class Tab1Page {
     this.router.navigateByUrl('/login'); 
 
   }
-
-  greenB(){
-    this.router.navigateByUrl('/tab2'); 
-
-  }
-  redB(){
-    this.router.navigateByUrl('/tab3'); 
-
-  }
-
 
 }

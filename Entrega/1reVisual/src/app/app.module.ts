@@ -18,6 +18,15 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AuthService } from "../app/auth.service";
 
+
+//FILE/CAMARA
+import { Camera, CameraOptions } from '@ionic-native/Camera/ngx';
+import { HttpClientModule } from '@angular/common/http';
+import { File } from '@ionic-native/File/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { IonicStorageModule } from '@ionic/storage';
+
 export const firebaseConfig = {
   apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
   authDomain: "ppslogindata.firebaseapp.com",
@@ -30,17 +39,27 @@ export const firebaseConfig = {
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    //estos los agregue yo:
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule],
+  imports: [BrowserModule,
+            IonicModule.forRoot(), 
+            AppRoutingModule,
+            //estos los agregue yo:
+            AngularFireModule.initializeApp(firebaseConfig),
+            AngularFireDatabaseModule,
+            AngularFireAuthModule,
+            HttpClientModule,
+            IonicStorageModule.forRoot()
+          
+          ],
 
   providers: [
     StatusBar,
     SplashScreen,
     //Instaladas =>
     TranslateService,
+    Camera,
+    File,
+    FilePath,
+    WebView,
     FirebaseAuthentication,
     AuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

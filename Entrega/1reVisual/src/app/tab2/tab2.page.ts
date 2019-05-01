@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 import { ToastController } from "@ionic/angular";
+import { Camera, CameraOptions } from "@ionic-native/Camera/ngx";
+
 
 
 @Component({
@@ -10,9 +12,12 @@ import { ToastController } from "@ionic/angular";
 })
 export class Tab2Page {
 
+  imagen:any;
+  
   constructor( 
               public router: Router,
-              public toastController: ToastController){}
+              public toastController: ToastController,
+              public camera: Camera){}
 
   async logoff(){
 
@@ -37,4 +42,21 @@ export class Tab2Page {
 
   }
 
+  capturar(){
+      let options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE
+    }
+
+    this.camera.getPicture( options )
+    .then( (imageData) => {
+      this.imagen=(<any>window).Ionic.WebView.convertFileSrc(imageData);
+    })
+    .catch(error =>{
+      console.error( error );
+    });
+  }
+  
 }

@@ -26,8 +26,8 @@ export class LoginPage implements OnInit {
   //   password: 'ejem'
   // };
 
-  private username: string;
-  private password: string;
+  public username: string;
+  public password: string;
 
   splash = true;
 

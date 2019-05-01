@@ -33,6 +33,7 @@ Firebase authentication
 https://ionicframework.com/docs/native/firebase-authentication
 ionic cordova plugin add cordova-plugin-firebase-authentication
 npm install @ionic-native/firebase-authentication
+npm install angularfire2 firebase --save
 
 Dentro de enviroments.ts
 export const environment = {
@@ -52,3 +53,23 @@ https://medium.com/learn-ionic-framework/construye-una-app-con-ionic-y-firebase-
 Login:
 https://medium.com/sourcebytes/how-to-build-a-responsive-login-form-using-ionic-4-7a74b776884d
 
+
+Ionic File:
+https://ionicframework.com/docs/native/file
+Instalar:
+ionic cordova plugin add cordova-plugin-file
+npm install @ionic-native/file
+import { File } from '@ionic-native/File/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+
+Ionic File-path:
+https://ionicframework.com/docs/native/file-path
+Instalar:
+ionic cordova plugin add cordova-plugin-filepath
+npm install @ionic-native/file-path
+
+Ionic storage:
+https://ionicframework.com/docs/building/storage
+Instalar:
+ionic cordova plugin add cordova-sqlite-storage
+npm install --save @ionic/storage

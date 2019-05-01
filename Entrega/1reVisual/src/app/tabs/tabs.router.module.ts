@@ -20,11 +20,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'tab2',
+        path: 'tabimage',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../tabimage/tabimage.module#TabimagePageModule'
           }
         ]
       },
@@ -49,6 +49,7 @@ const routes: Routes = [
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
   }
+  
 ];
 
 @NgModule({

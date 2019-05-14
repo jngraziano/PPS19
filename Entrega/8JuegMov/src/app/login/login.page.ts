@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { IonicPage, NavController, MenuController } from 'ionic-angular';
-// import {UserProvider} from "../../providers/user/user";
-// import {HttpProvider} from "../../providers/http/http";
-// import {User} from "../../models/user";
+
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
@@ -10,21 +7,12 @@ import { ActionSheetController,
          ToastController   } from '@ionic/angular';
 
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  providers: [FirebaseAuthentication, AuthService],
 })
-export class LoginPage implements OnInit {
-   // The account fields for the login form.
-  // If you're using the username field with or without email, make
-  // sure to add it to the type
-  // user = {
-  //   email: 'ejemplo@ejemplo.com',
-  //   password: 'ejem'
-  // };
+export class LoginPage implements OnInit{
 
   public username: string;
   public password: string;
@@ -36,7 +24,7 @@ export class LoginPage implements OnInit {
     setTimeout(() => this.splash = false, 5700);
   }
 
-  // private firebaseAuthentication: FirebaseAuthentication,
+
   constructor( 
               private auth: AuthService, private router: Router,
               public toastController: ToastController,
@@ -154,5 +142,4 @@ export class LoginPage implements OnInit {
   }
 
 
-
-  }
+}

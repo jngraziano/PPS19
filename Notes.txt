@@ -10,6 +10,10 @@ Para correrla:
 cd "nombreAPP"
 ionic serve --lab
 
+Para agregar plataforma para Android:
+ionic cordova platform add android
+ionic cordova platform remove android (desinstalarla)
+
 Para buildear:
 ionic cordova build android
 o
@@ -53,6 +57,14 @@ https://medium.com/learn-ionic-framework/construye-una-app-con-ionic-y-firebase-
 Login:
 https://medium.com/sourcebytes/how-to-build-a-responsive-login-form-using-ionic-4-7a74b776884d
 
+Ionic Camera:
+https://ionicframework.com/docs/native/camera
+Instalar:
+ionic cordova plugin add cordova-plugin-camera
+npm install @ionic-native/camera
+ts:
+import { Camera, CameraOptions } from "@ionic-native/Camera/ngx";
+
 
 Ionic File:
 https://ionicframework.com/docs/native/file
@@ -60,6 +72,13 @@ Instalar:
 ionic cordova plugin add cordova-plugin-file
 npm install @ionic-native/file
 import { File } from '@ionic-native/File/ngx';
+Ionic WebView:
+Instalar:
+ionic cordova plugin add cordova-plugin-ionic-webview
+Ionic WebView:
+https://ionicframework.com/docs/native/ionic-webview
+ionic cordova plugin add cordova-plugin-ionic-webview
+npm install @ionic-native/ionic-webview
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 
 Ionic File-path:

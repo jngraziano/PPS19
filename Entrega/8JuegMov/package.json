@@ -26,11 +26,13 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.1.0",
     "@ionic/pro": "2.0.4",
+    "angularfire2": "^5.1.3",
     "cordova-android": "8.0.0",
     "cordova-plugin-firebase-authentication": "1.1.2",
     "cordova-support-android-plugin": "1.0.1",
     "cordova-support-google-services": "1.3.1",
     "core-js": "^2.5.4",
+    "firebase": "^6.0.2",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.29"
@@ -45,6 +47,7 @@
     "@angular/compiler-cli": "~7.2.2",
     "@angular/language-service": "~7.2.2",
     "@ionic/angular-toolkit": "~1.5.1",
+    "@ionic/lab": "1.0.24",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~12.0.0",
@@ -78,9 +81,7 @@
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
       "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-firebase-authentication": {
-        "FIREBASE_AUTH_VERSION": "16.1.+"
-      }
+      "cordova-plugin-firebase-authentication": {}
     },
     "platforms": [
       "android"

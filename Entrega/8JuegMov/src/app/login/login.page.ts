@@ -11,6 +11,7 @@ import { ActionSheetController,
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
+  providers: [FirebaseAuthentication, AuthService],
 })
 export class LoginPage implements OnInit{
 

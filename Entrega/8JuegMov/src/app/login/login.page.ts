@@ -22,7 +22,7 @@ export class LoginPage implements OnInit{
 
   ionViewDidEnter() 
   {
-    setTimeout(() => this.splash = false, 5700);
+    setTimeout(() => this.splash = false, 6300);
   }
 
 

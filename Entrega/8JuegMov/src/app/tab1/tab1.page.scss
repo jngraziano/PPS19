@@ -2,3 +2,101 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+ion-toolbar{
+  // --background: url('../../assets/icon/marvel-logo.webp')  center / cover;
+  --height:10%;
+}
+
+ion-content{
+  // --ion-background-color:#3C3744;
+  --background: url('../../assets/icon/marvel-thanos.jpg') no-repeat center / cover;
+
+  height: 35%;
+}
+
+
+ion-item{
+  // --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
+  // background: rgb(80, 118, 177);
+  // background-image: url('../../img/inner_bg.png');
+  --ion-background-color: transparent;
+  
+  height: 35%;
+  // margin-top: 5%;
+  // margin-top:5%;
+}
+
+
+
+.io{
+
+  width: 43px;
+  height:40px; 
+  border-radius: 50%;
+}
+
+
+
+
+
+
+ion-button{
+  height: 100%;
+  width: 100%;
+  // background: transparent;
+  // border: black;
+  
+  
+
+}
+
+h1{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 10px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
+  margin-top: 300%;
+
+
+}
+
+
+
+
+
+#imgicon{
+  width : 100px;
+  height : 80px ;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+#imgapp{
+  
+  width: 41%;
+  height: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+      
+}
+
+#bird{
+  width: 34%;
+  height: 60%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#monkey{
+  width: 31%;
+  height: 45%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+

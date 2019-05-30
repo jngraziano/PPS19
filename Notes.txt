@@ -6,6 +6,8 @@ npm install -g ionic
 Para crear una app:
 ionic start oneapp super --type=ionic-angular (elegir entre: tabs/blank/sidemenu/super)
 
+ionic start oneapp super --type=ionic-angular
+
 Para correrla:
 cd "nombreAPP"
 ionic serve --lab
@@ -39,6 +41,7 @@ ionic cordova plugin add cordova-plugin-firebase-authentication
 npm install @ionic-native/firebase-authentication
 npm install angularfire2 firebase --save
 
+
 Dentro de enviroments.ts
 export const environment = {
   production: false,
@@ -51,6 +54,10 @@ export const environment = {
     messagingSenderId: "794910733526"
   }
 };
+Copiar archivo auth.service
+Modificar app.module.ts imports y providers
+
+
 https://medium.com/learn-ionic-framework/construye-una-app-con-ionic-y-firebase-paso-a-paso-218105b77263
 
 
@@ -92,3 +99,12 @@ https://ionicframework.com/docs/building/storage
 Instalar:
 ionic cordova plugin add cordova-sqlite-storage
 npm install --save @ionic/storage
+
+
+
+
+branch github
+git checkout jngraziano      # gets you "on branch jngraziano"
+git fetch origin        # gets you up to date with origin
+git merge origin/master
+

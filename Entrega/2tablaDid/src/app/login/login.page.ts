@@ -4,7 +4,8 @@ import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ng
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
 import { ActionSheetController, 
-        ToastController   } from '@ionic/angular';
+        ToastController,
+        LoadingController   } from '@ionic/angular';
 
 
 
@@ -23,15 +24,18 @@ export class LoginPage implements OnInit {
   private password: string;
 
   splash = true;
+  spinner:boolean; 
+
 
   ionViewDidEnter() 
   {
-    setTimeout(() => this.splash = false, 6000);
+    setTimeout(() => this.splash = false, 5000);
   }
 
  
   constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: Router,
     public toastController: ToastController,
+    public loadingController: LoadingController,
     public actionSheetController: ActionSheetController
     ) { }
 
@@ -135,10 +139,9 @@ login()
 {
 
   this.auth.loginUser(this.username,this.password ).then((user) => {
-    // if(this.username == "" || this.password == "")
-    // {
-    //   this.creoToast(false);  
-    // }
+    
+    setTimeout(() => this.spinner = false , 2000);
+
   this.creoToast(true);  
   this.router.navigateByUrl('/tabs'); 
   }

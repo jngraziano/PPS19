@@ -16,22 +16,6 @@
             
           </div> 
 
-
-   
-<!-- 
-  	 <div class="contenedorPresentacion logoPresentacion">
-     
-        <div class="fuente"><p> RELEVAMIENTO VISUAL </p></div>
-        <div class="fuente"><p> JULIAN GRAZIANO </p></div><br>
-        <div class="fuente"><p>UTN PPS 2019 </p></div>
-        <div class="fuente"><p>DIVISIÓN 4A </p></div>
-    </div>
- 
-	<div class="logoPresentacion">
-    <img id="imgScreen"  src="../../assets/icon/icon.png">	
-    
-	</div> 
-	 -->
 </div> 
 
 
@@ -39,19 +23,24 @@
 
     <ion-content [style.display]=" splash ? 'none' : 'block'">
         <div class="login-box">
-          <h1>Login</h1>
-          <div class="textbox">
-              <ion-icon name="contact"></ion-icon>
-              <input type="email" [(ngModel)]="username" placeholder="email@email.com" >
+            <!-- SPINNER -->
+          <ion-spinner *ngIf="spinner" class="color-green" name="crescent"></ion-spinner>
+                  
+          <h1 *ngIf="!spinner">Login</h1>
+         
+          <div class="textbox" *ngIf="!spinner">
+            <ion-icon name="contact"></ion-icon>
+            <input type="email" [(ngModel)]="username" placeholder="email@email.com" >
           </div>
 
-          <div class="textbox">
-              <ion-icon name="lock"></ion-icon>
-              <input type="password" [(ngModel)]="password" placeholder="password" >
+          <div class="textbox" *ngIf="!spinner">
+            <ion-icon name="lock"></ion-icon>
+            <input type="password" [(ngModel)]="password" placeholder="password" >
           </div>
-          <div id="buttons">
-          <button class="btn" (click)="login()">INGRESAR</button>
-          <button class="btn" id="creoSheetCss"  (click)="creoSheet()">
+        
+          <div id="buttons" *ngIf="!spinner">
+          <button *ngIf="!spinner" class="btn" (click)="login()">INGRESAR</button>
+          <button *ngIf="!spinner" class="btn" id="creoSheetCss"  (click)="creoSheet()">
             Acceder como...
           </button>
           </div>

@@ -22,15 +22,6 @@
 
 </div> 
 
-
-
-<!-- 
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-content>
 
   <div class="wrapper">
@@ -38,21 +29,22 @@
    
       <div class="face face-front">
         <div class="content">
-          <h2>Log in</h2>
+          <h2 *ngIf="!spinner" >Log in</h2>
         
-            <div class="field-wrapper">
+            <div *ngIf="!spinner"  class="field-wrapper">
               <input type="text" name="username" [(ngModel)]="username" placeholder="Usuario">
               <label>Usuario</label>
             </div>
-            <div class="field-wrapper">
+            <ion-spinner *ngIf="spinner" name="circles"></ion-spinner>                
+            <div *ngIf="!spinner"  class="field-wrapper">
               <input type="password" name="password" [(ngModel)]="password" placeholder="Contraseña" autocomplete="new-password">
               <label>Contraseña</label>
             </div>
-            <div class="field-wrapper">
+            <div *ngIf="!spinner"  class="field-wrapper">
               <!-- <input type="submit" (click)="login()"> -->
               <ion-button color=light (click)="login()" routerDirection="root">INGRESAR</ion-button>
             </div>
-            <ion-button expand="full" color="dark" (click)="creoSheet()">
+            <ion-button *ngIf="!spinner"  expand="full" color="dark" (click)="creoSheet()">
               Acceder como...
               </ion-button>
            

@@ -137,10 +137,11 @@ async creoSheet() {
 
 login()
 {
+  this.spinner = true; 
 
   this.auth.loginUser(this.username,this.password ).then((user) => {
     
-    setTimeout(() => this.spinner = false , 2000);
+    setTimeout(() => this.spinner = false , 5000);
 
   this.creoToast(true);  
   this.router.navigateByUrl('/tabs'); 

@@ -34,25 +34,26 @@
 
 <div class="wrapper">
   <div id="formContent">
- 
+    <ion-spinner *ngIf="spinner" name="bubbles"></ion-spinner>
+
     <br>
-    <img src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="130px" height="130aapx" alt="" srcset="">
+    <img *ngIf="!spinner" src="https://myslu.slu.edu/res/images/cas-padlock-icon.png"  width="130px" height="130aapx" alt="" srcset="">
    
    
     <!-- Icon -->
-    <div class="fadeIn first">
+    <div *ngIf="!spinner" class="fadeIn first">
         <h2 class="active"> Bienvenido </h2>
      
     </div>
 
   
-      <input type="text" id="login"  [(ngModel)]="username" placeholder="email@email.com">
-      <input type="password" id="password" [(ngModel)]="password" placeholder="********">
+      <input type="text" *ngIf="!spinner" id="login"  [(ngModel)]="username" placeholder="email@email.com">
+      <input type="password" *ngIf="!spinner" id="password" [(ngModel)]="password" placeholder="********">
 
       
  
       
-       <div padding>
+       <div *ngIf="!spinner" padding>
           
           <ion-button color="danger" size="full"  (click)="login()">
              INGRESAR

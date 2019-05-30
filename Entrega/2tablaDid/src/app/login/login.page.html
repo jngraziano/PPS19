@@ -24,21 +24,21 @@
     <ion-content [style.display]=" splash ? 'none' : 'block'">
         <div class="login-box">
             <!-- SPINNER -->
-          <ion-spinner *ngIf="spinner" class="color-green" name="crescent"></ion-spinner>
+          <ion-spinner *ngIf="spinner" name="crescent"></ion-spinner>
                   
           <h1 *ngIf="!spinner">Login</h1>
          
           <div class="textbox" *ngIf="!spinner">
-            <ion-icon name="contact"></ion-icon>
-            <input type="email" [(ngModel)]="username" placeholder="email@email.com" >
+            <ion-icon *ngIf="!spinner" name="contact"></ion-icon>
+            <input type="email" *ngIf="!spinner" [(ngModel)]="username" placeholder="email@email.com" >
           </div>
 
           <div class="textbox" *ngIf="!spinner">
-            <ion-icon name="lock"></ion-icon>
-            <input type="password" [(ngModel)]="password" placeholder="password" >
+            <ion-icon *ngIf="!spinner" name="lock"></ion-icon>
+            <input  type="password" *ngIf="!spinner" [(ngModel)]="password" placeholder="password" >
           </div>
         
-          <div id="buttons" *ngIf="!spinner">
+          <div id="buttons">
           <button *ngIf="!spinner" class="btn" (click)="login()">INGRESAR</button>
           <button *ngIf="!spinner" class="btn" id="creoSheetCss"  (click)="creoSheet()">
             Acceder como...

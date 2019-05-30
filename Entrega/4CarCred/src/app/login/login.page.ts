@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { IonicPage, NavController, MenuController } from 'ionic-angular';
-// import {UserProvider} from "../../providers/user/user";
-// import {HttpProvider} from "../../providers/http/http";
-// import {User} from "../../models/user";
+
 import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
 import { AuthService } from "../auth.service";
 import { Router } from "@angular/router";
@@ -27,16 +24,7 @@ export class LoginPage implements OnInit {
 
 
   splash = true;
-
-  // ionViewWillEnter() 
-  // {
-  //   setTimeout(() => this.splash = false, 6000);
-  // }
-
-  // ngAfterViewInit() {
-  
-    // this.username = null;
-    // this.password = null;
+  spinner:boolean; 
 
     ionViewWillEnter(){
 
@@ -146,8 +134,10 @@ export class LoginPage implements OnInit {
   login()
   {
       
-      // this.auth.loginUser(this.user.email,this.user.password ).then((user) => {
+     this.spinner = true; 
+     
       this.auth.loginUser(this.username,this.password ).then((user) => {
+        setTimeout(() => this.spinner = false , 5000);
         this.creoToast(true);  
       this.router.navigateByUrl('/tabs'); 
       }

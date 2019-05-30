@@ -27,27 +27,28 @@
 
 <div class="wrapper">
     <div id="content" class="container">
-      <h1>Bienvenido</h1>
+       
+      <h1 *ngIf="!spinner">Bienvenido</h1>
       
-      <form class="form">
-        <input type="text"  [(ngModel)]="username" name="username" placeholder="email@email.com">
-        <input type="password" [(ngModel)]="password" name="pass" placeholder="********">
-
+      <form  class="form">
+        <input type="text" *ngIf="!spinner"  [(ngModel)]="username" name="username" placeholder="email@email.com">
+        <input type="password" *ngIf="!spinner" [(ngModel)]="password" name="pass" placeholder="********">
+       
     
-        <div padding>
-                       
-            <ion-button color="dark"  (click)="login()">
+        <div  padding>
+            <ion-spinner *ngIf="spinner" name="circles"></ion-spinner>                
+            <ion-button *ngIf="!spinner" color="dark"  (click)="login()">
                 INGRESAR
              </ion-button>
 
-            <ion-button  color="tertiary"  (click)="creoSheet()">
+            <ion-button *ngIf="!spinner"  color="tertiary"  (click)="creoSheet()">
                 Acceder como...
             </ion-button>
   
           </div>
 
         </form>
-        <img id="imgicon" src="../../assets/icon/icon.png" alt="">
+        <img *ngIf="!spinner" id="imgicon" src="../../assets/icon/icon.png" alt="">
     </div>
    
     

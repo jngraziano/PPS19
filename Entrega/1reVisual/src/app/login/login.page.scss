@@ -86,7 +86,7 @@ ion-row {
 ion-col {
     border: 1px solid black;
     background: $white-color;
-    margin-top: 17%;
+    margin-top: -25%;
     // width: 94%;
     margin-left:3%;
 }
@@ -259,6 +259,13 @@ ion-input{
     100% {
       background-position: 500%;
     }
+  }
+
+  .ingresar{
+    margin-left: 4%;
+    height: 115%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
   }
 
 

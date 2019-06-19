@@ -4,7 +4,7 @@
       <!-- <ion-title slot="start">
       Relevamiento Visual    
       </ion-title> -->
-      <ion-button color="tertiary" class="io" slot="start" (click)="mainM()" routerDirection="root">
+      <ion-button color="darnger" class="io" slot="end" (click)="mainM()" routerDirection="root">
           <ion-icon name="home"></ion-icon>
         </ion-button>
       <!-- <ion-button  color="danger" class="io" slot="end" (click)="logoff()" routerDirection="root"> -->
@@ -35,8 +35,24 @@
           </ion-card-content>
         </ion-card>
   
-        <p>{{imagen}}</p>
-        <img src="{{imagen}}">
+        <ion-card>
+          <ion-card-content>
+            <!-- <p>{{imagen}}</p>
+            <img src="{{imagen}}"> -->
+
+            <ion-slides>
+              <ion-slide *ngFor="let foto of captureDataUrl">
+                <img class="vistaprevia" [src]="foto" *ngIf="captureDataUrl" />
+              </ion-slide>
+            </ion-slides>
+
+
+            <ion-button (click)="guardaImg()">
+              Guardar Imagen
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+       
   
   
   

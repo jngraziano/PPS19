@@ -10,13 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 //Agregadas:
-import { TranslateService } from '@ngx-translate/core';
-import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { FirebaseService } from "../app/services/firebase.service";
+// import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+// import { AngularFireModule } from 'angularfire2';
+// import { AngularFireDatabaseModule } from 'angularfire2/database';
+// import { AngularFireAuthModule } from 'angularfire2/auth';
 
-import { AuthService } from "../app/auth.service";
+// import { AuthService } from "../app/auth.service";
 
 
 //FILE/CAMARA
@@ -27,14 +27,14 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
-  authDomain: "ppslogindata.firebaseapp.com",
-  databaseURL: "https://ppslogindata.firebaseio.com",
-  projectId: "ppslogindata",
-  storageBucket: "ppslogindata.appspot.com",
-  messagingSenderId: "794910733526"
-};
+// export const firebaseConfig = {
+//   apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
+//   authDomain: "ppslogindata.firebaseapp.com",
+//   databaseURL: "https://ppslogindata.firebaseio.com",
+//   projectId: "ppslogindata",
+//   storageBucket: "ppslogindata.appspot.com",
+//   messagingSenderId: "794910733526"
+// };
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,9 +43,9 @@ export const firebaseConfig = {
             IonicModule.forRoot(), 
             AppRoutingModule,
             //estos los agregue yo:
-            AngularFireModule.initializeApp(firebaseConfig),
-            AngularFireDatabaseModule,
-            AngularFireAuthModule,
+            // AngularFireModule.initializeApp(firebaseConfig),
+            // AngularFireDatabaseModule,
+            // AngularFireAuthModule,
             HttpClientModule,
             IonicStorageModule.forRoot()
           
@@ -55,13 +55,13 @@ export const firebaseConfig = {
     StatusBar,
     SplashScreen,
     //Instaladas =>
-    TranslateService,
+    // TranslateService,
     Camera,
     File,
     FilePath,
     WebView,
-    FirebaseAuthentication,
-    AuthService,
+    FirebaseService,
+    // AuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

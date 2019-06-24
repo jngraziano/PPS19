@@ -144,29 +144,29 @@ export class LoginPage implements OnInit {
  
   login()
   {
-    console.log(this.cuenta);
+    // console.log(this.cuenta);
     this.spinner = true; 
-    this.baseService.getItems("usuario").then(users => {
+    this.baseService.getItems("Usuarios").then(users => {
       setTimeout(() => this.spinner = false, 2000);
-      console.log(this.usuarios);
-      console.log(users);
+      // console.log(this.usuarios);
+      // console.log(users);
 
       this.usuarios = users;
 
       let usuarioLogueado = this.usuarios.find(elem => (elem.correo == this.cuenta.usuario && elem.clave == this.cuenta.password));
-      console.log(usuarioLogueado);
-      console.log(this.cuenta);
-      // if (usuarioLogueado !== undefined) {
-        sessionStorage.setItem('Usuario', JSON.stringify(usuarioLogueado));
+      // console.log(usuarioLogueado);
+      // console.log(this.cuenta);
+      if (usuarioLogueado !== undefined) {
+        sessionStorage.setItem('Usuarios', JSON.stringify(usuarioLogueado));
 
         // this.events.publish('usuarioLogueado', usuarioLogueado.perfil);
         this.creoToast(true);
  
         this.router.navigateByUrl('/tabs'); 
-      // }
-      // else{
-      //   this.creoToast(false);
-      // }
+      }
+      else{
+        this.creoToast(false);
+      }
     });
   }
 

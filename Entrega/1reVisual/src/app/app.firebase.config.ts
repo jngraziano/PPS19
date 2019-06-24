@@ -1,11 +1,11 @@
 export const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
-  authDomain: "ppslogindata.firebaseapp.com",
-  databaseURL: "https://ppslogindata.firebaseio.com",
-  projectId: "ppslogindata",
-  storageBucket: "ppslogindata.appspot.com",
-  messagingSenderId: "794910733526",
-  appId: "1:794910733526:web:852b9525ee69fdee"
+  apiKey: "AIzaSyCT73t0Wmw7mMmwyRZoAOV4XFZ_xz3INMQ",
+  authDomain: "aplicacionesentregadb.firebaseapp.com",
+  databaseURL: "https://aplicacionesentregadb.firebaseio.com",
+  projectId: "aplicacionesentregadb",
+  storageBucket: "",
+  messagingSenderId: "44730010403",
+  appId: "1:44730010403:web:390231128ef8fc85"
 };
 
 export const snapshotToArray = snapshot => {

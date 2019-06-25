@@ -24,8 +24,8 @@ import { FirebaseService } from '../services/firebase.service';
 })
 export class LoginPage implements OnInit {
  
-  username: string;
-  password: string;
+  // username: string;
+  // password: string;
 
   splash = true;
   spinner:boolean ; 

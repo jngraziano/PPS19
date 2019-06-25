@@ -30,12 +30,12 @@
          
           <div class="textbox" *ngIf="!spinner">
             <ion-icon *ngIf="!spinner" name="contact"></ion-icon>
-            <input type="email" *ngIf="!spinner" [(ngModel)]="username" placeholder="email@email.com" >
+            <input type="email" *ngIf="!spinner" [(ngModel)]="cuenta.usuario" placeholder="email@email.com" >
           </div>
 
           <div class="textbox" *ngIf="!spinner">
             <ion-icon *ngIf="!spinner" name="lock"></ion-icon>
-            <input  type="password" *ngIf="!spinner" [(ngModel)]="password" placeholder="password" >
+            <input  type="password" *ngIf="!spinner" [(ngModel)]="cuenta.password" placeholder="password" >
           </div>
         
           <div id="buttons">

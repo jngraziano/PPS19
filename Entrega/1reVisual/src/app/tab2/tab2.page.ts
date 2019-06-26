@@ -28,28 +28,11 @@ export class Tab2Page {
               public camera: Camera){
 
                 this.captureDataUrl = new Array<string>();
-                this.usuarioLogueado = JSON.parse(sessionStorage.getItem('usuario'));
-
+                this.usuarioLogueado = JSON.parse(sessionStorage.getItem('Usuarios'));
+                // console.log(this.usuarioLogueado);
 
               }
 
-  async logoff(){
-
-
-    const toast = await this.toastController.create({
-      message: 'Sesion Finalizada.',
-      color: 'dark',
-      showCloseButton: false,
-      position: 'top',
-      closeButtonText: 'Done',
-      duration: 2000 
-    });
-
-    toast.present();
-
-    this.router.navigateByUrl('/login'); 
-
-  }
 
   mainM(){
     this.router.navigateByUrl('/tabs'); 
@@ -89,7 +72,7 @@ export class Tab2Page {
 
     this.captureDataUrl.forEach(foto => {
       let filename: string = this.usuarioLogueado.correo + "_" + contador;
-      const imageRef = storageRef.child(`cosasLindas/${filename}.jpg`);
+      const imageRef = storageRef.child(`1relVis/CosasLindas/${filename}.jpg`);
 
       // let datos: any = { 'nombre': this.nombre, 'apellido': this.apellido, 'DNI': this.DNI, 'CUIL': this.CUIL , 'perfil': this.perfil, 'correo': this.correo, 'clave': this.clave };
       // console.log(datos);
@@ -98,6 +81,7 @@ export class Tab2Page {
       // let imageData = storageRef.push();
       // imageData.set(datos);
 
+      console.log(imageRef);
       imageRef.putString(foto, firebase.storage.StringFormat.DATA_URL).then((snapshot) => {
       })
         .catch(() => {

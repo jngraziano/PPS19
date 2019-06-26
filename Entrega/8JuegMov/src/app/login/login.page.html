@@ -32,12 +32,12 @@
           <h2 *ngIf="!spinner" >Log in</h2>
         
             <div *ngIf="!spinner"  class="field-wrapper">
-              <input type="text" name="username" [(ngModel)]="username" placeholder="Usuario">
+              <input type="text" name="username" [(ngModel)]="cuenta.usuario" placeholder="Usuario">
               <label>Usuario</label>
             </div>
             <ion-spinner *ngIf="spinner" name="circles"></ion-spinner>                
             <div *ngIf="!spinner"  class="field-wrapper">
-              <input type="password" name="password" [(ngModel)]="password" placeholder="Contraseña" autocomplete="new-password">
+              <input type="password" name="password" [(ngModel)]="cuenta.password" placeholder="Contraseña" autocomplete="new-password">
               <label>Contraseña</label>
             </div>
             <div *ngIf="!spinner"  class="field-wrapper">

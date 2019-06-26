@@ -40,8 +40,8 @@
         <ion-spinner *ngIf="spinner" name="circles"></ion-spinner>   
         <button *ngIf="!spinner" class="acces" (click)="creoSheet()" >Acceder como...</button>
              
-        <input type="text" *ngIf="!spinner"  [(ngModel)]="username" name="username" placeholder="email@email.com">
-        <input type="password" *ngIf="!spinner" [(ngModel)]="password" name="pass" placeholder="********">
+        <input type="text" *ngIf="!spinner"  [(ngModel)]="cuenta.usuario" name="username" placeholder="email@email.com">
+        <input type="password" *ngIf="!spinner" [(ngModel)]="cuenta.password" name="pass" placeholder="********">
 				<button class="loginB" *ngIf="!spinner" (click)="login()" >Ingresar</button>
     </div>
     

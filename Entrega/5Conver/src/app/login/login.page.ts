@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
-import { AuthService } from "../auth.service";
+// import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+// import { AuthService } from "../auth.service";
+
 import { Router } from "@angular/router";
 import { ActionSheetController, 
-        ToastController   } from '@ionic/angular';
+        ToastController,
+        LoadingController   } from '@ionic/angular';
+import { FirebaseService } from '../services/firebase.service';
+
 
 
 
@@ -14,16 +18,23 @@ import { ActionSheetController,
   selector: 'app-login',
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
-  providers: [FirebaseAuthentication, AuthService],
+  // providers: [FirebaseAuthentication, AuthService],
 })
 export class LoginPage implements OnInit {
 
 
-  private username: string;
-  private password: string;
+  // private username: string;
+  // private password: string;
 
   splash = true;
   spinner:boolean; 
+
+  usuarios: any[];
+  
+  cuenta: { usuario: string, password: string } = {
+    usuario: '',
+    password: ''
+  };
 
 
   ionViewDidEnter() 
@@ -33,7 +44,10 @@ export class LoginPage implements OnInit {
 
 
 
-  constructor(private firebaseAuthentication: FirebaseAuthentication, private auth: AuthService, private router: Router,
+  constructor(
+    public loadingController: LoadingController,
+    private baseService: FirebaseService,
+    private router: Router,
     public toastController: ToastController,
     public actionSheetController: ActionSheetController) { }
 
@@ -84,37 +98,37 @@ export class LoginPage implements OnInit {
         icon: 'build',
         handler: () => {
           
-          this.username = "admin@gmail.com";
-          this.password= "admin1111";
+          this.cuenta.usuario = "admin@gmail.com";
+          this.cuenta.password= "1111";
   
         }
       }, {
         text: 'invitado',
         icon: 'body',
         handler: () => {
-          this.username = "invitado@gmail.com";
-          this.password= "invitado2222";
+          this.cuenta.usuario = "invitado@gmail.com";
+          this.cuenta.password= "2222";
         }
       }, {
         text: 'usuario',
         icon: 'sad',
         handler: () => {
-          this.username = "usuario@gmail.com";
-          this.password= "usuario3333";
+          this.cuenta.usuario = "usuario@gmail.com";
+          this.cuenta.password= "3333";
         }
       }, {
         text: 'anonimo',
         icon: 'logo-snapchat',
         handler: () => {
-          this.username = "anonimo@gmail.com";
-          this.password= "anonimo4444";
+          this.cuenta.usuario = "anonimo@gmail.com";
+          this.cuenta.password= "4444";
         }
       },{
         text: 'tester',
         icon: 'phone-portrait',
         handler: () => {
-          this.username = "tester@gmail.com";
-          this.password= "tester5555";
+          this.cuenta.usuario = "tester@gmail.com";
+          this.cuenta.password= "5555";
         }
       }, {
         text: 'Cancelar',
@@ -133,16 +147,27 @@ export class LoginPage implements OnInit {
   {
       
     this.spinner = true; 
-        this.auth.loginUser(this.username,this.password ).then((user) => {
-          setTimeout(() => this.spinner = false , 5000);
-          this.creoToast(true);  
-        this.router.navigateByUrl('/tabinicial'); 
-        }
-        ) 
-        .catch(err=>{
-          
-          this.creoToast(false);  
-        });
+
+    // this.auth.loginUser(this.username,this.password ).then((user) => {
+    this.baseService.getItems("Usuarios").then(users => {
+    
+      setTimeout(() => this.spinner = false , 2000);
+  
+      this.usuarios = users;
+  
+      let usuarioLogueado = this.usuarios.find(elem => (elem.correo == this.cuenta.usuario && elem.clave == this.cuenta.password));
+      if (usuarioLogueado !== undefined) {
+        sessionStorage.setItem('Usuarios', JSON.stringify(usuarioLogueado));
+  
+        // this.events.publish('usuarioLogueado', usuarioLogueado.perfil);
+        this.creoToast(true);
+  
+        this.router.navigateByUrl('/tabs'); 
+      }
+      else{
+        this.creoToast(false);
+      }
+    });
   }
 
    

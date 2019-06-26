@@ -31,8 +31,8 @@
       <h1 *ngIf="!spinner">Bienvenido</h1>
       
       <form  class="form">
-        <input type="text" *ngIf="!spinner"  [(ngModel)]="username" name="username" placeholder="email@email.com">
-        <input type="password" *ngIf="!spinner" [(ngModel)]="password" name="pass" placeholder="********">
+        <input type="text" *ngIf="!spinner"  [(ngModel)]="cuenta.usuario" name="username" placeholder="email@email.com">
+        <input type="password" *ngIf="!spinner" [(ngModel)]="cuenta.password" name="pass" placeholder="********">
        
     
         <div  padding>

@@ -35,11 +35,11 @@ export class Tab2Page {
 
               }
 
+              mainM(){
+                this.router.navigateByUrl('/tabs'); 
+            
+              }
 
-  mainM(){
-    this.router.navigateByUrl('/tabs'); 
-
-  }
 
   capturar(){
     const options: CameraOptions = {
@@ -80,27 +80,23 @@ export class Tab2Page {
       minuto: date.getMinutes()
     }
 
-    
-
-
- 
-      // (this.formClienteRegistrado.get('nombreRegistrado').value).replace(' ', '_');
-     
       this.captureDataUrl.forEach(foto => {
         let numeroRandom = Math.floor(Math.random() * Math.floor(1000000));
 
         let filename: string = this.usuarioLogueado.correo + "_" + numeroRandom;
         const imageRef = storageRef.child(`1relVis/CosasLindas/${filename}.jpg`);
-
+      
 
         let objetoEnviar = {
           "nombreFile": filename,
           "correo": usuarioLogueado.correo,
-          "fechaSubida": fechaSubida
+          "fechaSubida": fechaSubida,
+          "tipo": "cosalinda",
+          "url": foto
           
         }
   
-        this.baseService.addItem('cosasLindasEdificio', objetoEnviar);
+        this.baseService.addItem('cosasEdificio', objetoEnviar);
 
       console.log(imageRef);
       imageRef.putString(foto, firebase.storage.StringFormat.DATA_URL).then((snapshot) => {
@@ -111,6 +107,43 @@ export class Tab2Page {
         });
     });
 
-  }
+    if (errores == 0)
+      this.creoToast(true);
+    else
+    this.creoToast(false);
   
+
+  }
+
+  async creoToast(rta: boolean) {
+
+    if(rta == true)
+    {
+      const toast = await this.toastController.create({
+        message: 'Imagenes subidas con exito.',
+        color: 'dark',
+        showCloseButton: false,
+        position: 'top',
+        closeButtonText: 'Done',
+        duration: 2000 
+      });
+  
+      toast.present();
+
+
+    }
+    else{
+      const toast = await this.toastController.create({
+        message: 'Error cargar imagen',
+        color: 'dark',
+        showCloseButton: false,
+        position: 'top',
+        closeButtonText: 'Done',
+        duration: 2000 
+      });
+  
+      toast.present();
+
+    }
+  }
 }

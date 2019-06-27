@@ -19,8 +19,13 @@ export class TabimagePage {
   selectedPhoto;
   loading;
   imagen : any;
-  imagenes: Array<string>;
+  imagenes: [] = [];
+  // imgInfo: Array<string>;
   imagenesLindas : any;
+  imagenesFeas : any;
+  spinner:boolean ; 
+
+
 
 
   constructor(
@@ -29,15 +34,21 @@ export class TabimagePage {
               public router: Router,
               public baseService: FirebaseService,
               public toastController: ToastController) {
-                this.imagenes = new Array<string>();
-                this.traerImagenes();
+              
+                this.spinner = true;
+
+                this.traerImagenesLindas();
+                this.traerImagenesFeas();
+                setTimeout(() => this.spinner = false , 3000);
               }
   // galleryType = 'pinterest';
 
   ngOnInit() {
     // this. getSomeText();
     // this.imagen = this.navParams.get('img');
-   
+    // this.traerImagenesLindas();
+    // this.traerImagenesFeas();
+
 
   }
  
@@ -66,45 +77,30 @@ export class TabimagePage {
 
 
 
-   traerImagenes() {
+   traerImagenesLindas() {
 
-     this.baseService.getItems('cosasLindasEdificio').then( ped => {
+     this.baseService.getItems('cosasEdificio').then(ped => {
       this.imagenesLindas = ped;
-      console.log(ped);
-      for (let index = 0; index < this.imagenesLindas.length; index++) {
-        // const element = this.imagenesLindas[index];
-              // this.captureDataUrl.push('data:image/jpeg;base64,' + imageData);
-
-        let promise = this.traerFoto(this.imagenesLindas[index].nombreFile);
-      //  this.imagenes.imagen =  this.traerFoto(this.imagenesLindas[index].nombreFile);
-        //  this.imagenarray.imagen = ;
-
-        Promise.resolve(promise)
-        .then(url => {
-          console.log(index);
-          // this.imagen = url;
-          this.imagenes.push(url);
-
-        });
-         
-        // await this.traerFoto(this.imagenesLindas[index].nombreFile);
-      }
+      this.imagenesLindas = this.imagenesLindas.filter(imagen => imagen.tipo == "cosalinda");
     
-      // console.log(this.imagenesLindas[0].nombreFile);
-
-      
-     
-
     });  
   }
+  traerImagenesFeas() {
 
- traerFoto(nombre:string){
-    // nombre = nombre.replace(' ', '_');
-    let storageRef = firebase.storage().ref();
-    console.log(nombre);
-    const imageRef = storageRef.child('1relVis/CosasLindas/' + nombre + '.jpg');
-    return imageRef.getDownloadURL();
-  }
+    this.baseService.getItems('cosasEdificio').then(ped => {
+     this.imagenesFeas = ped;
+     this.imagenesFeas = this.imagenesFeas.filter(imagen => imagen.tipo == "cosafea");
+   
+   });  
+ }
+
+//  traerFoto(nombre:string){
+//     // nombre = nombre.replace(' ', '_');
+//     let storageRef = firebase.storage().ref();
+//     console.log(nombre);
+//     const imageRef = storageRef.child('1relVis/CosasLindas/' + nombre + '.jpg');
+//     return imageRef.getDownloadURL();
+//   }
    
   
   

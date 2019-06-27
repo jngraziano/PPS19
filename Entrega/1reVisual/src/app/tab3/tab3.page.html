@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-      <ion-button color="tertiary" class="io" slot="start" (click)="mainM()" routerDirection="root">
+      <ion-button color="danger" class="io" slot="end" (click)="mainM()" routerDirection="root">
           <ion-icon name="home"></ion-icon>
         </ion-button>
       <!-- <ion-button  color="danger" class="io" slot="end" (click)="logoff()" routerDirection="root"> -->
@@ -20,12 +20,25 @@
        
         <ion-card-content>
 
-            <ion-button class="io" slot="end" (click)="capturar(red)">
+            <ion-button class="io" slot="end" (click)="capturar()">
                 <!-- style="width: 43px;height:40px; border-radius: 60%" -->
             <ion-icon name="camera"></ion-icon>
             </ion-button>
+
+            
+           
+
+            <ion-button (click)="guardaImg()">
+              Guardar Imagen
+            </ion-button>
         </ion-card-content>
       </ion-card>
+
+      <ion-slides>
+          <ion-slide *ngFor="let foto of captureDataUrl">
+            <img class="vistaprevia" [src]="foto" *ngIf="captureDataUrl" />
+          </ion-slide>
+        </ion-slides>
   
   
   

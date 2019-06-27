@@ -14,9 +14,50 @@
   </ion-header>
 
   <ion-content padding>
-      <div class="images" >
-          <div class="one-image" *ngFor="let image of [1,2,3,4,5,6,7,8,9,10]">
+
+      <!-- <div id="datosPedido"> -->
+          <!-- <ion-card> -->
+      <!-- <div class="images" > -->
+          <!-- <div class="one-image" *ngFor="let image of [1,2,3,4,5,6,7,8,9,10]">
             <img src="../../assets/imgs/{{image}}.jpg">
-          </div>
-        </div>
+          </div> -->
+          <!-- <img src="{{imagen}}"> -->
+          <!-- <ion-grid shape="round" >
+          <ion-row>
+            <ion-col shape="round">
+                   <img [src]="imagen">
+                </ion-col>
+              </ion-row>  
+          </ion-grid>
+        </ion-card> -->
+
+        <!-- <ion-list> -->
+        <!-- <ion-slides>
+            <ion-slide *ngFor="let imagen of imagenes"> -->
+            <!-- <ion-item color="dark"> -->
+                <!-- <ion-slides > -->
+
+
+                  <ion-grid shape="round" *ngFor="let foto of imagenes" >
+                  <ion-row>
+                    <ion-col shape="round">
+                          <img [src]="foto">
+                        </ion-col>
+                      </ion-row>  
+                  </ion-grid>
+
+
+                    <!-- <ion-item  > -->
+                      <!-- <img src="assets/img/{{ img }}.png" tappable (click)="openPreview(img)"> -->
+                      <!-- <img [src]="foto"/> -->
+                    <!-- </ion-item> -->
+                  <!-- </ion-slides> -->
+            <!-- </ion-item> -->
+              
+            <!-- </ion-slide>
+          </ion-slides> -->
+        <!-- </ion-list> -->
+      <!-- </div> -->
+
+        <!-- </div> -->
       </ion-content>

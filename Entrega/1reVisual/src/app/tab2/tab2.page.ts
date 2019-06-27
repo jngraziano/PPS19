@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
 import { ToastController } from "@ionic/angular";
+import { FirebaseService } from "../services/firebase.service";
 import { Camera, CameraOptions, PictureSourceType } from "@ionic-native/Camera/ngx";
 
 import * as firebase from "firebase";
@@ -25,7 +26,8 @@ export class Tab2Page {
   constructor( 
               public router: Router,
               public toastController: ToastController,
-              public camera: Camera){
+              public camera: Camera,
+              private baseService: FirebaseService){
 
                 this.captureDataUrl = new Array<string>();
                 this.usuarioLogueado = JSON.parse(sessionStorage.getItem('Usuarios'));
@@ -45,8 +47,8 @@ export class Tab2Page {
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      correctOrientation: true,
-      sourceType: PictureSourceType.PHOTOLIBRARY
+      correctOrientation: true
+      // sourceType: PictureSourceType.PHOTOLIBRARY
     };
 
     this.camera.getPicture( options )
@@ -68,21 +70,41 @@ export class Tab2Page {
 
     let storageRef = firebase.storage().ref();
     let errores: number = 0;
-    let contador: number = 0;
+    // let contador: number = 0;
+    let usuarioLogueado: any = JSON.parse(sessionStorage.getItem('Usuarios'));
+    let date: Date = new Date();
+    let fechaSubida = {
+      dia: date.getDate(),
+      mes: date.getMonth(),
+      hora: date.getHours(),
+      minuto: date.getMinutes()
+    }
 
-    this.captureDataUrl.forEach(foto => {
-      let filename: string = this.usuarioLogueado.correo + "_" + contador;
-      const imageRef = storageRef.child(`1relVis/CosasLindas/${filename}.jpg`);
+    
 
-      // let datos: any = { 'nombre': this.nombre, 'apellido': this.apellido, 'DNI': this.DNI, 'CUIL': this.CUIL , 'perfil': this.perfil, 'correo': this.correo, 'clave': this.clave };
-      // console.log(datos);
-      // this.guardardatosDeDueSup(datos);
-      // let storageRef = firebase.database().ref('usuarios/');
-      // let imageData = storageRef.push();
-      // imageData.set(datos);
+
+ 
+      // (this.formClienteRegistrado.get('nombreRegistrado').value).replace(' ', '_');
+     
+      this.captureDataUrl.forEach(foto => {
+        let numeroRandom = Math.floor(Math.random() * Math.floor(1000000));
+
+        let filename: string = this.usuarioLogueado.correo + "_" + numeroRandom;
+        const imageRef = storageRef.child(`1relVis/CosasLindas/${filename}.jpg`);
+
+
+        let objetoEnviar = {
+          "nombreFile": filename,
+          "correo": usuarioLogueado.correo,
+          "fechaSubida": fechaSubida
+          
+        }
+  
+        this.baseService.addItem('cosasLindasEdificio', objetoEnviar);
 
       console.log(imageRef);
       imageRef.putString(foto, firebase.storage.StringFormat.DATA_URL).then((snapshot) => {
+
       })
         .catch(() => {
           errores++;

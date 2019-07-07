@@ -94,7 +94,8 @@ export class Tab3Page {
                       "correo": usuarioLogueado.correo,
                       "fechaSubida": fechaSubida,
                       "tipo": "cosafea",
-                      "url": foto
+                      "url": foto,
+                      "likes": 0
                       
                     }
               

@@ -14,48 +14,29 @@
   </ion-header>
 
   <ion-content padding>
-
-      <!-- <div id="datosPedido"> -->
-          <!-- <ion-card> -->
-      <!-- <div class="images" > -->
-          <!-- <div class="one-image" *ngFor="let image of [1,2,3,4,5,6,7,8,9,10]">
-            <img src="../../assets/imgs/{{image}}.jpg">
-          </div> -->
-          <!-- <img src="{{imagen}}"> -->
-          <!-- <ion-grid shape="round" >
-          <ion-row>
-            <ion-col shape="round">
-                   <img [src]="imagen">
-                </ion-col>
-              </ion-row>  
-          </ion-grid>
-        </ion-card> -->
-
-        <!-- <ion-list> -->
-        <!-- <ion-slides>
-            <ion-slide *ngFor="let imagen of imagenes"> -->
-            <!-- <ion-item color="dark"> -->
-                <!-- <ion-slides > -->
-
-
-                   
+                
 
 
                   <ion-grid  *ngIf="!spinner" shape="round" >
-                      <!-- *ngFor="let foto.urlImg of imagenes" -->
                   <ion-row>
-                    <ion-col shape="round">
-                      <ion-card color="success"*ngFor="let foto of imagenesLindas" >
+                    <ion-col shape="round" >
+                        <!-- [style.backgroundColor]=“cardColor” -->
+                        <!-- [color]="cardColor" -->
+                      <ion-card color="dark" *ngFor="let foto of imagenesTodas" >
                           <ion-card-header>
                               <ion-card-subtitle>Fecha: {{foto.fechaSubida.dia}}/{{foto.fechaSubida.mes}}-{{foto.fechaSubida.hora}}:{{foto.fechaSubida.minuto}}</ion-card-subtitle>
-                              <ion-card-title>Por: {{foto.correo}}</ion-card-title>
+                              <!-- <ion-card-title></ion-card-title> -->
                             </ion-card-header>
                           
                             <ion-card-content >
-                                <img [src]="foto.url">
-                                <ion-button color="dark"  shape="round" fill="outline" expand="block" (click)="like()">
+                              <label>Tipo {{foto.tipo}}</label>
+                                <label> Enviado por: {{foto.correo}}</label>
+                                <img [src]="foto.url" >
+                                <label>Likes: {{foto.likes}}</label>
+                                <ion-button  shape="round" fill="outline" expand="block" (click)="like(foto.nombreFile)">
                                
                                   <ion-icon name="heart"></ion-icon>
+                               
                                 </ion-button>
                             </ion-card-content>
 
@@ -67,8 +48,7 @@
                       </ion-row>  
                   </ion-grid>
 
-                  <ion-grid shape="round" *ngFor="let fotofea of imagenesFeas">
-                      <!-- *ngFor="let foto.urlImg of imagenes" -->
+                  <!-- <ion-grid shape="round" *ngFor="let fotofea of imagenesFeas">
                   <ion-row>
                     <ion-col shape="round">
                       <ion-card color="danger" *ngIf="!spinner">
@@ -79,7 +59,8 @@
                           
                             <ion-card-content >
                                 <img [src]="fotofea.url">
-                                <ion-button color="dark"  shape="round" fill="outline" expand="block" (click)="punt()">
+                                <label>Likes: {{fotofea.likes}}</label>
+                                <ion-button color="dark"  shape="round" fill="outline" expand="block" (click)="like(fotofea.nombreFile)">
                                  
                                 <ion-icon name="heart"></ion-icon>
                                 </ion-button>
@@ -91,11 +72,11 @@
 
                         </ion-col>
                       </ion-row>  
-                  </ion-grid>
+                  </ion-grid> -->
 
-                  <ion-grid style="height: 100%">
+                  <ion-grid  *ngIf="spinner" style="height: 100%">
                       <ion-row justify-content-center align-items-center style="height: 100%; flex-direction: column">
-                      <ion-spinner *ngIf="spinner" name="lines"></ion-spinner>
+                      <ion-spinner name="lines"></ion-spinner>
                       <ion-spinner name="ios"></ion-spinner>
                         </ion-row>
                       </ion-grid>
@@ -104,21 +85,4 @@
 
 
 
-
-
-
-
-                    <!-- <ion-item  > -->
-                      <!-- <img src="assets/img/{{ img }}.png" tappable (click)="openPreview(img)"> -->
-                      <!-- <img [src]="foto"/> -->
-                    <!-- </ion-item> -->
-                  <!-- </ion-slides> -->
-            <!-- </ion-item> -->
-              
-            <!-- </ion-slide>
-          </ion-slides> -->
-        <!-- </ion-list> -->
-      <!-- </div> -->
-
-        <!-- </div> -->
       </ion-content>

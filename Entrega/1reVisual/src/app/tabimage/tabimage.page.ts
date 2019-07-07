@@ -22,8 +22,12 @@ export class TabimagePage {
   imagenes: [] = [];
   // imgInfo: Array<string>;
   imagenesLindas : any;
+  imagenesTodas : any;
   imagenesFeas : any;
   spinner:boolean ; 
+
+ isenabled:boolean= false;
+ cardColor: string;
 
 
 
@@ -36,9 +40,9 @@ export class TabimagePage {
               public toastController: ToastController) {
               
                 this.spinner = true;
-
-                this.traerImagenesLindas();
-                this.traerImagenesFeas();
+                this.traerImagenesTodas();
+                // this.traerImagenesLindas();
+                // this.traerImagenesFeas();
                 setTimeout(() => this.spinner = false , 3000);
               }
   // galleryType = 'pinterest';
@@ -69,11 +73,45 @@ export class TabimagePage {
 
   // }
 
-  // getSomeText() {
-  //   firebase.storage().ref().child('1relVis/CosasLindas/').getDownloadURL()
-  //     .then(response => this.someTextUrl = response)
-  //     .catch(error => console.log('error', error))
-  // }
+  async traerImagenesTodas(){
+
+    await this.baseService.getItems('cosasEdificio').then(async ped => {
+      // this.imagenesLindas = ped;
+      this.imagenesTodas = ped;
+
+
+
+      for (let i = 0; i < this.imagenesTodas.length; i++) {
+        const element = this.imagenesTodas[i];
+        if(this.imagenesTodas[i].tipo == "cosalinda")
+        {
+
+          this.cardColor = "success";
+          console.log(this.imagenesTodas[i].tipo);
+        }
+        else{
+
+          this.cardColor = "danger";
+          console.log(this.imagenesTodas[i].tipo);
+
+  
+        }
+        
+        
+      }
+
+
+     
+     
+
+      // this.imagenesLindas = this.imagenesLindas.filter(imagen => imagen.tipo == "cosalinda");
+    
+    });  
+
+  }
+
+
+
 
 
 
@@ -92,6 +130,47 @@ export class TabimagePage {
      this.imagenesFeas = this.imagenesFeas.filter(imagen => imagen.tipo == "cosafea");
    
    });  
+ }
+
+ async like(nombreFile: any){
+  //  alert(nombreFile);
+
+   await this.baseService.getItems('cosasEdificio').then(async lista => {
+
+    let imagenElegida = lista.find(imagen => imagen.nombreFile == nombreFile);
+    let likes : number = parseInt(imagenElegida.likes)+1;
+    // console.log(likes);
+     let objetoEnviar = {
+        // "correo": imagenElegida.correo,
+        // "fechaElegida": imagenElegida.fechaElegida,
+        // "nombreFile": imagenElegida.nombreFile,
+        // "url":imagenElegida.url,
+        // "tipo": imagenElegida.tipo,
+        "likes": likes
+      }
+
+    this.baseService.updateItem('cosasEdificio', imagenElegida.key, objetoEnviar);  
+
+
+   });
+
+      // let usuarioLogueado: any = JSON.parse(sessionStorage.getItem('usuario'));
+      // await this.baseService.getItems('reservademesas').then(async lista => {
+      // this.reservaRealizada = lista.find(cliente => cliente.correo == usuarioLogueado.correo);
+      // let objetoEnviar = {
+      //   "correo": usuarioLogueado.correo,
+      //   "fechaElegida": this.fechaElegida,
+      //   "mesaSeleccionada": this.mesaSeleccionada,
+      //   "estadoConfirmacion": "pendiente"
+      // }
+      // if(this.reservaRealizada !== undefined)
+      // {
+      //   this.baseService.updateItem('reservademesas', this.reservaRealizada.key, objetoEnviar);  
+
+      // }
+
+
+
  }
 
 //  traerFoto(nombre:string){

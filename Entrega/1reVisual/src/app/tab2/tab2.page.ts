@@ -92,7 +92,8 @@ export class Tab2Page {
           "correo": usuarioLogueado.correo,
           "fechaSubida": fechaSubida,
           "tipo": "cosalinda",
-          "url": foto
+          "url": foto,
+          "likes": 0
           
         }
   

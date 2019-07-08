@@ -39,11 +39,11 @@ export class TabimagePage {
               public baseService: FirebaseService,
               public toastController: ToastController) {
               
-                this.spinner = true;
+                // this.spinner = true;
                 this.traerImagenesTodas();
                 // this.traerImagenesLindas();
                 // this.traerImagenesFeas();
-                setTimeout(() => this.spinner = false , 3000);
+                // setTimeout(() => this.spinner = false , 3000);
               }
   // galleryType = 'pinterest';
 
@@ -56,58 +56,16 @@ export class TabimagePage {
 
   }
  
-  // async logoff(){
-
-  //   const toast = await this.toastController.create({
-  //     message: 'Sesion Finalizada.',
-  //     color: 'dark',
-  //     showCloseButton: false,
-  //     position: 'top',
-  //     closeButtonText: 'Done',
-  //     duration: 2000
-  //   });
-
-  //   toast.present();
-
-  //   this.router.navigateByUrl('/login');
-
-  // }
+ 
 
   async traerImagenesTodas(){
 
+    this.spinner = true;
+
     await this.baseService.getItems('cosasEdificio').then(async ped => {
-      // this.imagenesLindas = ped;
       this.imagenesTodas = ped;
-
-
-
-      for (let i = 0; i < this.imagenesTodas.length; i++) {
-        const element = this.imagenesTodas[i];
-        if(this.imagenesTodas[i].tipo == "cosalinda")
-        {
-
-          this.cardColor = "success";
-          console.log(this.imagenesTodas[i].tipo);
-        }
-        else{
-
-          this.cardColor = "danger";
-          console.log(this.imagenesTodas[i].tipo);
-
-  
-        }
-        
-        
-      }
-
-
-     
-     
-
-      // this.imagenesLindas = this.imagenesLindas.filter(imagen => imagen.tipo == "cosalinda");
-    
     });  
-
+    this.spinner = false;
   }
 
 
@@ -137,6 +95,7 @@ export class TabimagePage {
 
    await this.baseService.getItems('cosasEdificio').then(async lista => {
 
+    this.spinner= true;
     let imagenElegida = lista.find(imagen => imagen.nombreFile == nombreFile);
     let likes : number = parseInt(imagenElegida.likes)+1;
     // console.log(likes);
@@ -150,7 +109,7 @@ export class TabimagePage {
       }
 
     this.baseService.updateItem('cosasEdificio', imagenElegida.key, objetoEnviar);  
-
+    this.traerImagenesTodas();
 
    });
 
@@ -172,6 +131,25 @@ export class TabimagePage {
 
 
  }
+
+ ionRefresh(event) {
+  setTimeout(() => {
+    event.target.complete();
+    // this.pedidos = [];
+    // this.hayPedidosACerrar = false;
+    this.traerImagenesTodas();
+  }, 2000);
+}
+
+ionPull(event) {
+  // Emitted while the user is pulling down the content and exposing the refresher.
+  // console.log('ionPull Event Triggered!');
+
+}
+ionStart(event) {
+  // Emitted when the user begins to start pulling down.
+  // console.log('ionStart Event Triggered!');
+}
 
 //  traerFoto(nombre:string){
 //     // nombre = nombre.replace(' ', '_');

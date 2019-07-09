@@ -2,33 +2,14 @@
 
   <ion-header>
 
+    <ion-toolbar  >
   
-
-    <ion-toolbar>
-     
-          <!-- <ion-select multiple="false" slot="start" cancelText="Cancelar" okText="Ok">
-              <ion-select-option  value="US" selected>US
-  
-             
-  
-              </ion-select-option>
-              <ion-select-option  value="ES" >ES</ion-select-option>
-              
-          </ion-select>
-         -->
-  
-  
-      
-      <ion-button class="io" color="danger"  slot="end" (click)="logoff()" routerDirection="root">
         
-        <ion-icon name="power"></ion-icon>
-      </ion-button>
-    
     </ion-toolbar>
   </ion-header>
   
 
-  <ion-content>
+  <ion-content class="ion-padding">
   
     
     <br>
@@ -54,9 +35,9 @@
            </ion-button>
      </ion-item>
 
-     <ion-item>
+     <ion-item class="ultimoBoton">
       
-      <ion-button color="outline" (click)="numbersB()" expand="full">
+      <ion-button  color="outline" (click)="numbersB()" expand="full">
           <img id="imgapp" src="../../assets/icon/numbers.png"   alt="" srcset="">
           <ion-text class="fuente" color="light">
               <!-- <h1>Numbers</h1> -->

@@ -6,28 +6,24 @@
 
   
 
-    <ion-toolbar>
-     
-          <ion-select multiple="false" slot="start" cancelText="Cancelar" okText="Ok">
-              <ion-select-option  value="US" selected>US
-  
-             
-  
-              </ion-select-option>
-              <ion-select-option  value="ES" >ES</ion-select-option>
-              
-          </ion-select>
-        
-  
-  
-          <ion-button color="tertiary" class="io" slot="end" (click)="mainM()" routerDirection="root">
-            <ion-icon name="home"></ion-icon>
-          </ion-button>
-      <ion-button class="io" color="danger"  slot="end" (click)="logoff()" routerDirection="root">
-        
-        <ion-icon name="power"></ion-icon>
-      </ion-button>
+    <ion-toolbar color="dark">
+            <ion-buttons slot="primary">
+            <ion-thumbnail slot="start">
+                <img *ngIf="idiomaSeleccionado == 'ES'" src="../../assets/icon/es.svg">
+                <img *ngIf="idiomaSeleccionado == 'US'" src="../../assets/icon/gb.svg">
+              </ion-thumbnail>
+            </ion-buttons>
     
+            <!-- <ion-button color="dark" class="io" shape="round" slot="start" (click)="mainM()" routerDirection="root">
+                <ion-icon name="home"></ion-icon>
+              </ion-button> -->
+        
+    
+            <ion-select multiple="false" [(ngModel)]="idiomaSeleccionado" slot="start" cancelText="Cancelar" okText="Ok">
+                <ion-select-option  value="ES" selected>ESPAÑOL</ion-select-option>
+                <ion-select-option  value="US" >INGLES</ion-select-option>
+            </ion-select>
+      
     </ion-toolbar>
   </ion-header>
   
@@ -37,10 +33,10 @@
      <br>
       <ion-item>
        
-          <ion-button color="danger" (click)="onClick()" expand="full" >
+          <ion-button color="danger" (click)="playUno()" expand="full" >
               <img id="imgapp" src="../../assets/icon/onenumber.png"   alt="" srcset="">
               <ion-text class="fuente" color="light">
-                  <h1>O</h1>
+                  <h1>U</h1>
                 </ion-text>
           </ion-button>
         
@@ -48,10 +44,10 @@
    
       <ion-item>
        
-          <ion-button color="primary" (click)="onClick()" expand="full">
+          <ion-button color="primary" (click)="playDos()" expand="full">
               <img id="imgapp" src="../../assets/icon/twonumber.png"   alt="" srcset="">
               <ion-text class="fuente" color="light">
-                  <h1>T</h1>
+                  <h1>D</h1>
                 </ion-text>
              
             </ion-button>
@@ -59,7 +55,7 @@
     
       <ion-item >
        
-           <ion-button color="warning" (click)="onClick()" expand="full">
+           <ion-button color="warning" (click)="playTres()" expand="full">
               <img id="imgapp" src="../../assets/icon/threenumber.png" alt="" srcset="">
               <ion-text class="fuente" color="light">
                   <h1>T</h1>
@@ -67,28 +63,30 @@
              
             </ion-button>
       </ion-item>
-    
-      <!-- <ion-item >
-        
-          <ion-button color="secondary" (click)="onClick()" expand="full">
-              <img id="imgapp" src="../../assets/icon/rabbit.png"   alt="" srcset="">
-              <ion-text class="fuente" color="light">
-                  <h1>R</h1>
-                </ion-text>
-             
-            </ion-button>
-      </ion-item> -->
-  
+
       <ion-item >
         
-          <ion-button color="success" (click)="onClick()" expand="full">
+          <ion-button color="success" (click)="playCuatro()" expand="full">
               <img id="imgapp" src="../../assets/icon/fournumber.png"   alt="" srcset="">
               <ion-text class="fuente" color="light">
-                  <h1>F</h1>
+                  <h1>C</h1>
                 </ion-text>
              
             </ion-button>
       </ion-item>
+    
+      <ion-item >
+        
+          <ion-button color="secondary" (click)="playCinco()" expand="full">
+              <img id="imgapp" src="../../assets/icon/fivenumber.png"   alt="" srcset="">
+              <ion-text class="fuente" color="light">
+                  <h1>C</h1>
+                </ion-text>
+             
+            </ion-button>
+      </ion-item>
+  
+     
     </ion-content>
    
   

@@ -1,6 +1,10 @@
 
+ion-content{
+  --ion-background-color:#9CA3DB;
 
-ion-item,ion-content{
+
+}
+ion-item{
   // --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
   // background: rgb(80, 118, 177);
   // background-image: url('../../img/inner_bg.png');
@@ -9,7 +13,10 @@ ion-item,ion-content{
   // margin-top: 5%;
   // margin-top:5%;
 }
+.ultimoBoton{
+  height: 10%;
 
+}
 
 
 .io{
@@ -20,6 +27,18 @@ ion-item,ion-content{
 }
 
 
+.banner{
+  border-radius: 20%;
+
+}
+
+ion-toolbar{
+ --background: url('../../assets/icon/banner_sound.jpg') no-repeat center / cover;
+height: 100%;
+}
+ion-header{
+  height: 10%;
+}
 
 
 
@@ -27,6 +46,7 @@ ion-item,ion-content{
 ion-button{
   height: 100%;
   width: 100%;
+  border:0.2em solid black;
   // background: transparent;
   // border: black;
   
@@ -34,26 +54,6 @@ ion-button{
 
 }
 
-h1{
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 10px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;
-  margin-top: 300%;
-
-
-}
-
-
-
-
-
-#imgicon{
-  width : 100px;
-  height : 80px ;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  
-}
 #imgapp{
   
   width: 41%;
@@ -62,22 +62,6 @@ h1{
   margin-left: auto;
   margin-right: auto;
       
-}
-
-#bird{
-  width: 34%;
-  height: 60%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#monkey{
-  width: 31%;
-  height: 45%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 

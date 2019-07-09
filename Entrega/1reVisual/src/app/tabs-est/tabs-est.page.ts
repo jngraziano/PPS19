@@ -28,31 +28,68 @@ export class TabsEstPage implements OnInit {
       this.estadisticas = est;
       // this.agruparOrdenGenerales();
       // this.crearGraficoOrdenGenerales();
-      this.agruparcosaslindas();
-      this.creargraficoLindas();
-      this.agruparcosasfeas();
-      this.crearGraficocosasfeas();
+      this.graficosTotal();
+    
      
     });
 
    }
 
   ngOnInit() {
+    this.graficosTotal();
+  }
+
+  async graficosTotal(){
+    await this.agruparcosaslindas();
+    await this.creargraficoLindas();
+    await this.agruparcosasfeas();
+    await this.crearGraficocosasfeas();
+  }
+
+  async ionRefresh(event) {
+    await setTimeout(() => {
+      event.target.complete();
+      // this.pedidos = [];
+      // this.hayPedidosACerrar = false;
+       this.graficosTotal();
+    }, 2000);
+  }
+  
+  ionPull(event) {
+    // Emitted while the user is pulling down the content and exposing the refresher.
+    // console.log('ionPull Event Triggered!');
+  
+  }
+  ionStart(event) {
+    // Emitted when the user begins to start pulling down.
+    // console.log('ionStart Event Triggered!');
   }
 
 
   agruparcosaslindas() {
-    console.log(this.estadisticas);
+    // console.log(this.estadisticas);
+
+    this.dbService.getItems("cosasEdificio").then(est => {
+    this.estadisticas = est;
+
     this.estadisticas.forEach(esta => {
 
-      let result = this.cosaslindas.find(conf => conf.leyenda == esta.likes );
+      if(esta.tipo == "cosalinda")
+      {
+        let result = this.cosaslindas.find(conf => conf.leyenda == esta.likes );
         if (result) {
           result.votos += 1;
         } else {
           this.cosaslindas.push({ leyenda: esta.likes, votos: 1 });
         }
-     
+
+      }
+
     });
+
+    });
+
+    
   }
 
   creargraficoLindas() {
@@ -93,14 +130,30 @@ export class TabsEstPage implements OnInit {
 
 
   agruparcosasfeas() {
-    this.estadisticas.forEach(esta => {
-      let result = this.cosasfeas.find(conf => conf.leyenda == esta.likes);
-      if (result) {
-        result.votos += 1;
-      } else {
-        this.cosasfeas.push({ leyenda: esta.likes, votos: 1 });
-      }
+
+
+    this.dbService.getItems("cosasEdificio").then(est => {
+      this.estadisticas = est;
+
+      this.estadisticas.forEach(esta => {
+        if(esta.tipo == "cosafea")
+        {
+          let result = this.cosasfeas.find(conf => conf.leyenda == esta.likes);
+          if (result) {
+            result.votos += 1;
+          } else {
+            this.cosasfeas.push({ leyenda: esta.likes, votos: 1 });
+          }
+
+
+        }
+       
+      });
+
+
     });
+
+    
   }
 
   crearGraficocosasfeas() {

@@ -19,7 +19,12 @@ const routes: Routes = [
   { path: 'tab3', loadChildren: './tab3/tab3.module#Tab3PageModule' },
 
   { path: '', loadChildren: './tabimage/tabimage.module#TabimagePageModule' },
-  { path: 'tabimage', loadChildren: './tabimage/tabimage.module#TabimagePageModule' }
+  { path: 'tabimage', loadChildren: './tabimage/tabimage.module#TabimagePageModule' },
+  
+  { path: '', loadChildren: './tab-estadisticas/tab-estadisticas.module#TabEstadisticasPageModule' },
+  { path: 'tab-estadisticas', loadChildren: './tab-estadisticas/tab-estadisticas.module#TabEstadisticasPageModule' },
+  { path: '', loadChildren: './tabs-est/tabs-est.module#TabsEstPageModule' },  
+  { path: 'tabs-est', loadChildren: './tabs-est/tabs-est.module#TabsEstPageModule' }
 
   
   //Agrego rutas

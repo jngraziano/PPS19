@@ -38,6 +38,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'tabs-est',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tabs-est/tabs-est.module#TabsEstPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

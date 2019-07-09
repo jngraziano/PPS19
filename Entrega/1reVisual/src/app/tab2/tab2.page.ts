@@ -85,6 +85,15 @@ export class Tab2Page {
 
         let filename: string = this.usuarioLogueado.correo + "_" + numeroRandom;
         const imageRef = storageRef.child(`1relVis/CosasLindas/${filename}.jpg`);
+
+        let objetoVotaciones = {
+          flagAdmin: false,
+          flagAnonimo: false,
+          flagInvitado: false,
+          flagTester: false,
+          flagUsuario: false
+
+        }
       
 
         let objetoEnviar = {
@@ -93,6 +102,7 @@ export class Tab2Page {
           "fechaSubida": fechaSubida,
           "tipo": "cosalinda",
           "url": foto,
+          "votaciones": objetoVotaciones,
           "likes": 0
           
         }

@@ -88,6 +88,15 @@ export class Tab3Page {
                     let filename: string = this.usuarioLogueado.correo + "_" + numeroRandom;
                     const imageRef = storageRef.child(`1relVis/CosasFeas/${filename}.jpg`);
                     // console.log(imageRef.putString(foto, firebase.storage.StringFormat.DATA_URL));
+
+                    let objetoVotaciones = {
+                      flagAdmin: false,
+                      flagAnonimo: false,
+                      flagInvitado: false,
+                      flagTester: false,
+                      flagUsuario: false
+            
+                    }
             
                     let objetoEnviar = {
                       "nombreFile": filename,
@@ -95,9 +104,11 @@ export class Tab3Page {
                       "fechaSubida": fechaSubida,
                       "tipo": "cosafea",
                       "url": foto,
+                      "votaciones": objetoVotaciones,
                       "likes": 0
                       
                     }
+
               
                     this.baseService.addItem('cosasEdificio', objetoEnviar);
             

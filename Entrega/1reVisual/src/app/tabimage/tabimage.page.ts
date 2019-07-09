@@ -91,43 +91,80 @@ export class TabimagePage {
  }
 
  async like(nombreFile: any){
-  //  alert(nombreFile);
+
 
    await this.baseService.getItems('cosasEdificio').then(async lista => {
+    let usuarioLogueado: any = JSON.parse(sessionStorage.getItem('Usuarios'));
+    let nombreUsuario = usuarioLogueado.correo;
+    
+    let flag = false;
 
-    this.spinner= true;
     let imagenElegida = lista.find(imagen => imagen.nombreFile == nombreFile);
     let likes : number = parseInt(imagenElegida.likes)+1;
-    // console.log(likes);
-     let objetoEnviar = {
-        // "correo": imagenElegida.correo,
-        // "fechaElegida": imagenElegida.fechaElegida,
-        // "nombreFile": imagenElegida.nombreFile,
-        // "url":imagenElegida.url,
-        // "tipo": imagenElegida.tipo,
-        "likes": likes
-      }
 
-    this.baseService.updateItem('cosasEdificio', imagenElegida.key, objetoEnviar);  
-    this.traerImagenesTodas();
+    // console.log(imagenElegida.votaciones);
+    // console.log(imagenElegida.votaciones.flagAdmin);
+
+
+  
+
+    if(imagenElegida.votaciones.flagAdmin == true && nombreUsuario == "admin@gmail.com" || 
+       imagenElegida.votaciones.flagAnonimo == true && nombreUsuario == "anonimo@gmail.com"  ||
+      imagenElegida.votaciones.flagInvitado == true  && nombreUsuario == "invitado@gmail.com"  || 
+      imagenElegida.votaciones.flagTester == true  && nombreUsuario == "tester@gmail.com"   ||
+      imagenElegida.votaciones.flagUsuario == true  && nombreUsuario == "usuario@gmail.com"  
+      )
+    {
+      
+      this.creoToast(false);
+      
+    }
+    else{
+
+      let objetoVotos = imagenElegida.votaciones;
+      
+  
+      switch (usuarioLogueado.correo) {
+        case 'admin@gmail.com':
+              objetoVotos.flagAdmin = true;
+          
+          break;
+          case 'invitado@gmail.com':
+               objetoVotos.flagInvitado = true;
+          
+            break;
+            case 'usuario@gmail.com':
+                objetoVotos.flagUsuario = true;
+          
+              break;
+              case 'anonimo@gmail.com':
+                  objetoVotos.flagAnonimo = true;
+          
+                break;
+                case 'tester@gmail.com':
+                    objetoVotos.flagTester = true;
+          
+                  break;
+      
+        default:
+          break;
+      }
+  
+      let objetoEnviar = {
+        "votaciones": objetoVotos,
+         "likes": likes,
+       
+       }
+  
+  
+           // this.baseService.addItem('cosasEdificio/'+imagenElegida.key+'/'+'votaciones/', objetoVotos);
+      this.baseService.updateItem('cosasEdificio', imagenElegida.key, objetoEnviar);  
+      this.traerImagenesTodas();
+  
+
+    }
 
    });
-
-      // let usuarioLogueado: any = JSON.parse(sessionStorage.getItem('usuario'));
-      // await this.baseService.getItems('reservademesas').then(async lista => {
-      // this.reservaRealizada = lista.find(cliente => cliente.correo == usuarioLogueado.correo);
-      // let objetoEnviar = {
-      //   "correo": usuarioLogueado.correo,
-      //   "fechaElegida": this.fechaElegida,
-      //   "mesaSeleccionada": this.mesaSeleccionada,
-      //   "estadoConfirmacion": "pendiente"
-      // }
-      // if(this.reservaRealizada !== undefined)
-      // {
-      //   this.baseService.updateItem('reservademesas', this.reservaRealizada.key, objetoEnviar);  
-
-      // }
-
 
 
  }
@@ -151,13 +188,37 @@ ionStart(event) {
   // console.log('ionStart Event Triggered!');
 }
 
-//  traerFoto(nombre:string){
-//     // nombre = nombre.replace(' ', '_');
-//     let storageRef = firebase.storage().ref();
-//     console.log(nombre);
-//     const imageRef = storageRef.child('1relVis/CosasLindas/' + nombre + '.jpg');
-//     return imageRef.getDownloadURL();
-//   }
+async creoToast(rta: boolean) {
+
+  if(rta == true)
+  {
+    const toast = await this.toastController.create({
+      message: 'OK',
+      color: 'dark',
+      showCloseButton: false,
+      position: 'top',
+      // closeButtonText: 'Done',
+      duration: 2000 
+    });
+
+    toast.present();
+
+
+  }
+  else{
+    const toast = await this.toastController.create({
+      message: 'Usted ya voto esta imagen',
+      color: 'danger',
+      showCloseButton: false,
+      position: 'top',
+      // closeButtonText: 'Done',
+      duration: 2000 
+    });
+
+    toast.present();
+
+  }
+}
    
   
   

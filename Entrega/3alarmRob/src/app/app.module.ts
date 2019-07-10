@@ -16,6 +16,13 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
+import { NativeAudio } from '@ionic-native/native-audio/ngx';
+
+import { Flashlight } from '@ionic-native/flashlight/ngx';
+import { Vibration } from '@ionic-native/vibration/ngx';
+
 import { AuthService } from "../app/auth.service";
 
 export const firebaseConfig = {
@@ -43,7 +50,12 @@ export const firebaseConfig = {
     TranslateService,
     FirebaseAuthentication,
     AuthService,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Gyroscope,
+    DeviceMotion,
+    NativeAudio,
+    Flashlight,
+    Vibration
   ],
   bootstrap: [AppComponent]
 })

@@ -16,19 +16,19 @@ export class TabsEstPage implements OnInit {
   graficoFeas: any;
  
   estadisticas: any;
-  // OrdenGenerales: { leyenda: string, votos: number }[] = [];
   cosaslindas: { leyenda: string, votos: number }[] = [];
   cosasfeas: { leyenda: string, votos: number }[] = [];
-  // limpiezas: { leyenda: string, votos: number }[] = [];
 
 
   constructor( private dbService: FirebaseService) {
 
     this.dbService.getItems("cosasEdificio").then(est => {
       this.estadisticas = est;
-      // this.agruparOrdenGenerales();
-      // this.crearGraficoOrdenGenerales();
-      this.graficosTotal();
+       this.agruparcosaslindas();
+       this.creargraficoLindas();
+       this.agruparcosasfeas();
+       this.crearGraficocosasfeas();
+      // this.graficosTotal();
     
      
     });
@@ -36,18 +36,24 @@ export class TabsEstPage implements OnInit {
    }
 
   ngOnInit() {
-    this.graficosTotal();
+    // this.graficosTotal();
   }
 
-  async graficosTotal(){
-    await this.agruparcosaslindas();
-    await this.creargraficoLindas();
-    await this.agruparcosasfeas();
-    await this.crearGraficocosasfeas();
+ graficosTotal(){
+    this.dbService.getItems("cosasEdificio").then(est => {
+      this.estadisticas = est;
+       this.agruparcosaslindas();
+       this.creargraficoLindas();
+       this.agruparcosasfeas();
+       this.crearGraficocosasfeas();
+      // this.graficosTotal();
+    
+     
+    });
   }
 
-  async ionRefresh(event) {
-    await setTimeout(() => {
+   ionRefresh(event) {
+     setTimeout(() => {
       event.target.complete();
       // this.pedidos = [];
       // this.hayPedidosACerrar = false;
@@ -67,26 +73,16 @@ export class TabsEstPage implements OnInit {
 
 
   agruparcosaslindas() {
-    // console.log(this.estadisticas);
-
-    this.dbService.getItems("cosasEdificio").then(est => {
-    this.estadisticas = est;
-
+    console.log(this.estadisticas);
     this.estadisticas.forEach(esta => {
 
-      if(esta.tipo == "cosalinda")
-      {
-        let result = this.cosaslindas.find(conf => conf.leyenda == esta.likes );
+      let result = this.cosaslindas.find(conf => conf.leyenda == esta.likes );
         if (result) {
           result.votos += 1;
         } else {
           this.cosaslindas.push({ leyenda: esta.likes, votos: 1 });
         }
-
-      }
-
-    });
-
+     
     });
 
     
@@ -132,25 +128,13 @@ export class TabsEstPage implements OnInit {
   agruparcosasfeas() {
 
 
-    this.dbService.getItems("cosasEdificio").then(est => {
-      this.estadisticas = est;
-
-      this.estadisticas.forEach(esta => {
-        if(esta.tipo == "cosafea")
-        {
-          let result = this.cosasfeas.find(conf => conf.leyenda == esta.likes);
-          if (result) {
-            result.votos += 1;
-          } else {
-            this.cosasfeas.push({ leyenda: esta.likes, votos: 1 });
-          }
-
-
-        }
-       
-      });
-
-
+    this.estadisticas.forEach(esta => {
+      let result = this.cosasfeas.find(conf => conf.leyenda == esta.likes);
+      if (result) {
+        result.votos += 1;
+      } else {
+        this.cosasfeas.push({ leyenda: esta.likes, votos: 1 });
+      }
     });
 
     
@@ -196,4 +180,5 @@ export class TabsEstPage implements OnInit {
       }
     });
   }
+
 }

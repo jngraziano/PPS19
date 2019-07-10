@@ -1,98 +1,40 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
     <!-- <ion-title style=" text-align: center"> -->
-    <!-- <ion-title slot="start">
+    <ion-title slot="start">
     Alarma de robo    
-    </ion-title> -->
-    <ion-button class="io" color="danger" slot="end" (click)="logoff()" routerDirection="root">
-        <!-- style="width: 43px;height:40px; border-radius: 60%" -->
-      <ion-icon name="power"></ion-icon>
-    </ion-button>
+    </ion-title>
+  
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   
-
-
-    <!-- <ion-card id="tab1card">
-        <ion-card-header>
-          <ion-card-subtitle>Alarma de robo</ion-card-subtitle>
-          <ion-card-title>Bienvenido</ion-card-title>
-        </ion-card-header>
-        Sistema de Alarma de robo.
-        <ion-card-content>
-        </ion-card-content>
-      </ion-card> -->
-
-
-      <!-- <ion-button (click)="onClick()">
-        ACTIVAR
-      </ion-button>
-
-      <ion-button (click)="onClick()">
-       DESACTIVAR
-      </ion-button> -->
-
-
-
-
-     
-      
-        
-       
-      
-      
-      <!-- <div class="content-3d">
-      <div class="btn-container">
-          <a href="#" class="btn-3d green">ACTIVAR</a> -->
-          
-      <!-- </div>
-      
-      
-      </div> -->
-
-      <!-- <div class="content-3d">
-      <div class="btn-container">
-      <a href="#" class="btn-3d red">DESACTIVAR</a> -->
-          <!-- <pre>&lt;<span class="anc">a</span> <span class="att">href</span>=<span class="val">"#"</span> <span class="att">class</span>=<span class="val">"btn-3d green"</span>>Button&lt;/<span class="anc">a</span>></pre> -->
-      <!-- </div>
-      
-      
-      </div> -->
-
-    <!-- <ion-item class="botones">
-      <a class="push_button red" href="#">ACTIVAR ALARMA</a> 
-      <a class="push_button blue" href="#">DESACTIVAR ALARMA</a>
-    </ion-item> -->
-
-
-     <!-- <ion-card id="tab1card">
-        <ion-card-header>
-          <ion-card-subtitle>Alarma de robo</ion-card-subtitle>
-          <ion-card-title>Bienvenido</ion-card-title>
-        </ion-card-header>
-        Sistema de Alarma de robo.
-        <ion-card-content>
-        </ion-card-content>
-      </ion-card> -->
-
-
-    <ion-toolbar class="toolbar">
-    <ion-button class="iButton" color="danger" shape="round" (click)="greenB()" expand="full">
-        <img src="../../assets/icon/padlock.png" alt="">
-       
-     </ion-button>
-    
-    </ion-toolbar>
-    <ion-toolbar class="toolbar">
-    <ion-button class="iButton" color="success" shape="round" (click)="greenB()" expand="full">
+  
+   
+    <!-- <ion-toolbar class="toolbar"> -->
+    <ion-button *ngIf="activar" class="iButton" color="success"  (click)="activoAcelerometro()" expand="full">
         <img src="../../assets/icon/padlockU.png" alt="">
        
      </ion-button>
-    </ion-toolbar>
+    <!-- </ion-toolbar> -->
 
+     <!-- <ion-toolbar class="toolbar"> -->
+        <ion-button *ngIf="!activar" class="iButton" color="danger"  (click)="desactivoAcelerometro()" expand="full">
+            <img src="../../assets/icon/padlock.png" alt="">
+           
+         </ion-button>
+        
+        <!-- </ion-toolbar> -->
 
+      <ion-footer>
+       
+          <ion-title>Estado:</ion-title>
+          <br>
+          <ion-text> {{estado}}</ion-text> 
+        
+      </ion-footer>
+    
 
 
 

@@ -29,71 +29,83 @@
     </ion-toolbar>
   </ion-header>
   
-    <ion-content>
-  
-    
-     <br>
-      <ion-item>
+    <ion-content no-padding no-margin>
+        <ion-grid no-padding no-margin>
+          <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
+     
        
-          <ion-button color="danger" (click)="playPerro()" expand="full" >
-              <img id="imgapp" src="../../assets/icon/dog.png"   alt="" srcset="">
-              <ion-text class="fuente" color="light">
-                  <h1>P</h1>
-                </ion-text>
-          </ion-button>
+              <ion-button color="danger" (click)="playPerro()" expand="full" size="large" no-margin responsive-lg>
+                  <img class="imgapp" no-margin no-padding src="../../assets/icon/dog.png"   alt="" srcset="">
+                  <ion-text class="fuente" color="light">
+                      <h1 *ngIf="idiomaSeleccionado == 'ES'">P</h1>
+                      <h1 *ngIf="idiomaSeleccionado == 'US'">D</h1>
+                    </ion-text>
+              </ion-button>
+
+            </ion-col>
+          </ion-row>
         
-      </ion-item>
+    
    
-      <ion-item>
+          <ion-row no-padding no-margin >
+              <ion-col no-padding no-margin>
        
-          <ion-button color="primary" (click)="playGato()" expand="full">
-              <img id="imgapp" src="../../assets/icon/cat.png"   alt="" srcset="">
+          <ion-button color="primary" (click)="playGato()" expand="full" size="large" no-margin responsive-lg>
+              <img class="imgapp" no-margin no-padding src="../../assets/icon/cat.png"   alt="" srcset="">
               <ion-text class="fuente" color="light">
-                  <h1>G</h1>
+                  <h1 *ngIf="idiomaSeleccionado == 'ES'">G</h1>
+                  <h1 *ngIf="idiomaSeleccionado == 'US'">C</h1>
                 </ion-text>
              
             </ion-button>
-      </ion-item>
     
-      <ion-item >
+          </ion-col>
+        </ion-row>
+    
+        <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
        
-           <ion-button color="warning" (click)="playPajaro()" expand="full">
-              <img id="imgapp" src="../../assets/icon/bird.png" alt="" srcset="">
-              <ion-text class="fuente" color="light">
-                  <h1>P</h1>
-                </ion-text>
-             
-            </ion-button>
-      </ion-item>
+              <ion-button color="warning" (click)="playPajaro()" expand="full" size="large" no-margin responsive-lg>
+                  <img class="imgapp"  no-margin no-padding src="../../assets/icon/bird.png" alt="" srcset="">
+                  <ion-text class="fuente" color="light">
+                      <h1 *ngIf="idiomaSeleccionado == 'ES'">P</h1>
+                      <h1 *ngIf="idiomaSeleccionado == 'US'">B</h1>
+                    </ion-text>
+                
+                </ion-button>
+            </ion-col>
+        </ion-row>
     
-      <ion-item >
-        
-          <ion-button color="secondary" (click)="playConejo()" expand="full">
-              <img id="imgapp" src="../../assets/icon/rabbit.png"   alt="" srcset="">
-              <ion-text class="fuente" color="light">
-                  <h1>C</h1>
-                </ion-text>
-             
-            </ion-button>
-      </ion-item>
+        <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
+
+                <ion-button color="secondary" (click)="playConejo()" expand="full" size="large" no-margin responsive-lg>
+                    <img class="imgapp"  no-margin no-padding src="../../assets/icon/rabbit.png"   alt="" srcset="">
+                    <ion-text class="fuente" color="light">
+                        <h1 *ngIf="idiomaSeleccionado == 'ES'">C</h1>
+                        <h1 *ngIf="idiomaSeleccionado == 'US'">R</h1>
+                      </ion-text>
+                  
+                </ion-button>
+            </ion-col>
+        </ion-row>
   
-      <ion-item >
+        <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
+
+                <ion-button color="success" (click)="playMono()" expand="full" size="large" no-margin responsive-lg>
+                    <img class="imgapp"  no-margin no-padding src="../../assets/icon/monkey.png"   alt="" srcset="">
+                    <ion-text class="fuente" color="light">
+                        <h1>M</h1>
+                      </ion-text>
+                  
+                  </ion-button>
+          </ion-col>
+        </ion-row>
         
-          <ion-button color="success" (click)="playMono()" expand="full">
-              <img id="imgapp" src="../../assets/icon/monkey.png"   alt="" srcset="">
-              <ion-text class="fuente" color="light">
-                  <h1>M</h1>
-                </ion-text>
-             
-            </ion-button>
-      </ion-item>
 
-      <!-- <ion-footer>
-      
-          
-       
-      </ion-footer> -->
-
+      </ion-grid>
 
     </ion-content>
    

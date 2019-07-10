@@ -27,64 +27,79 @@
       </ion-toolbar>
   </ion-header>
   
-    <ion-content>
-  
-    
-     <br>
-      <ion-item>
+  <ion-content no-padding no-margin>
+        <ion-grid no-padding no-margin>
+          <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
        
-          <ion-button color="danger" (click)="playRojo()" expand="full" >
-              <img id="imgapp" src="../../assets/icon/redcolor.png"   alt="" srcset="">
+          <ion-button color="danger" (click)="playRojo()" expand="full" size="large" no-margin responsive-lg >
+              <img class="imgapp"  no-margin no-padding src="../../assets/icon/redcolor.png"   alt="" srcset="">
               <ion-text class="fuente" color="light">
                   <h1>R</h1>
                 </ion-text>
           </ion-button>
         
-      </ion-item>
+        </ion-col>
+    </ion-row>
    
-      <ion-item>
+    <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
        
-          <ion-button color="primary" (click)="playAzul()" expand="full">
-              <img id="imgapp" src="../../assets/icon/bluecolor.png"   alt="" srcset="">
+          <ion-button color="primary" (click)="playAzul()" expand="full" size="large" no-margin responsive-lg>
+              <img class="imgapp"  no-margin no-padding src="../../assets/icon/bluecolor.png"   alt="" srcset="">
               <ion-text class="fuente" color="light">
-                  <h1>A</h1>
+                    <h1 *ngIf="idiomaSeleccionado == 'ES'">A</h1>
+                    <h1 *ngIf="idiomaSeleccionado == 'US'">B</h1>
                 </ion-text>
              
             </ion-button>
-      </ion-item>
+        </ion-col>
+    </ion-row>
     
-      <ion-item >
+    <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
        
-           <ion-button color="warning" (click)="playAmarillo()" expand="full">
-              <img id="imgapp" src="../../assets/icon/yellowcolor.png" alt="" srcset="">
+           <ion-button color="warning" (click)="playAmarillo()" expand="full" size="large" no-margin responsive-lg>
+              <img class="imgapp"  no-margin no-padding src="../../assets/icon/yellowcolor.png" alt="" srcset="">
               <ion-text class="fuente" color="light">
-                  <h1>A</h1>
+                    <h1 *ngIf="idiomaSeleccionado == 'ES'">A</h1>
+                    <h1 *ngIf="idiomaSeleccionado == 'US'">Y</h1>
                 </ion-text>
              
             </ion-button>
-      </ion-item>
+        </ion-col>
+    </ion-row>
     
-      <ion-item >
+    <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
         
-          <ion-button class="orange" (click)="playNaranja()" expand="full">
-              <img id="imgapp" src="../../assets/icon/orangecolor.png"   alt="" srcset="">
+          <ion-button class="orange" (click)="playNaranja()" expand="full" size="large" no-margin responsive-lg>
+              <img class="imgapp"  no-margin no-padding src="../../assets/icon/orangecolor.png"   alt="" srcset="">
               <ion-text class="fuente" color="light">
-                  <h1>N</h1>
+                    <h1 *ngIf="idiomaSeleccionado == 'ES'">N</h1>
+                    <h1 *ngIf="idiomaSeleccionado == 'US'">O</h1>
                 </ion-text>
              
             </ion-button>
-      </ion-item>
+        </ion-col>
+    </ion-row>
   
-      <ion-item >
+    <ion-row no-padding no-margin >
+            <ion-col no-padding no-margin>
         
-          <ion-button color="success" (click)="playVerde()" expand="full">
-              <img id="imgapp" src="../../assets/icon/greencolor.png"   alt="" srcset="">
+          <ion-button color="success" (click)="playVerde()" expand="full" size="large" no-margin responsive-lg>
+              <img class="imgapp"  no-margin no-padding src="../../assets/icon/greencolor.png"   alt="" srcset="">
               <ion-text class="fuente" color="light">
-                  <h1>V</h1>
+                    <h1 *ngIf="idiomaSeleccionado == 'ES'">V</h1>
+                    <h1 *ngIf="idiomaSeleccionado == 'US'">G</h1>
                 </ion-text>
              
             </ion-button>
-      </ion-item>
+        </ion-col>
+    </ion-row>
+    
+
+  </ion-grid>
     </ion-content>
    
   

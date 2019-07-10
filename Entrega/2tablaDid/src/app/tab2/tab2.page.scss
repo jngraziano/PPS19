@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+ion-item{
+  --ion-background-color:#9CA3DB;
 
+}
 
-ion-item,ion-content{
+ion-content{
   // --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
   // background: rgb(80, 118, 177);
   // background-image: url('../../img/inner_bg.png');
   --ion-background-color:#9CA3DB;
-  // margin-top: 5%;
+ 
   // margin-top:5%;
+}
+
+ion-grid{
+  margin-top:0.5%;
 }
 
 
@@ -21,61 +28,97 @@ ion-item,ion-content{
 
 
 
-
-
-
-
-ion-button{
-  height: 95%;
-  width: 100%;
-  border:0.2em solid black;
+// ion-button{
+//   height: 95%;
+//   width: 100%;
+//   border:0.2em solid black;
 
  
   
   
-
-}
-
-h1{
-  font-family:  'Pacifico', cursive;
-  color: black;
-  -webkit-text-stroke-width: 1.5px;
- -webkit-text-stroke-color: white;
- font-size: 300%;
-
-
-}
-ion-text{
-  margin-right: 5%;
-}
-
-// ion-content{
-//   background-color: #9CA3DB;
- 
-
 
 // }
 
 
 
-#imgicon{
-  width : 100px;
-  height : 80px ;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  
-}
-#imgapp{
-  
-  width: 41%;
-  height: 90%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-      
-}
 
+// .imgapp{
+  
+//   // width: 41%;
+//   // height: 90%;
+//   // display: block;
+//   // margin-left: auto;
+//   // margin-right: auto;
+
+
+//   display: flex;
+//   justify-content: center; /* align horizontal */
+//   align-items: center; /* align vertical */
+//   // height: 82px;
+//   // width:  82px;
+//   height: 46px;
+//   width: 60px;
+      
+// }
+
+
+ion-grid{
+  justify-content: space-around;
+  height: 100%;
+  ion-row{
+      height: 20%;
+      top: 0 !important;
+      left: 0 !important;
+      bottom: 0 !important;
+      right: 0 !important;
+      ion-col {
+        height: 90%;
+      }
+  
+      ion-button{
+          height: 100%;
+          position: relative;
+          background-size: cover;
+          border:0.2em solid black;
+          
+          img{
+              display: flex;
+              justify-content: center; /* align horizontal */
+              align-items: center; /* align vertical */
+              // height: 50px;
+              // width:  80px;
+              height: 50%;
+              width:  50%;
+          }
+
+          h1{
+            font-family:  'Pacifico', cursive;
+            color: black;
+            -webkit-text-stroke-width: 1.5px;
+           -webkit-text-stroke-color: white;
+           font-size: 200%;
+          
+          
+          }
+       
+
+          .imgapp{
+              display: flex;
+              justify-content: center; /* align horizontal */
+              align-items: center; /* align vertical */
+              // height: 82px;
+              // width:  82px;
+              height: 46px;
+              width: 60px;
+
+              // width: 41%;
+
+              // height: 90%;
+          }
+              
+      }
+    }
+  }
 
 
 

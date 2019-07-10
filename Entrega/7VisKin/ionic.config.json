@@ -1,6 +1,8 @@
 {
   "name": "7VisKin",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "3dccb2d5"
 }

@@ -162,7 +162,7 @@ export class LoginPage implements OnInit {
         // this.events.publish('usuarioLogueado', usuarioLogueado.perfil);
         this.creoToast(true);
   
-        this.router.navigateByUrl('/tabs'); 
+        this.router.navigateByUrl('/tabinicial'); 
       }
       else{
         this.creoToast(false);

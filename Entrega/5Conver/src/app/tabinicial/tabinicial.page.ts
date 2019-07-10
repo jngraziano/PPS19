@@ -38,12 +38,9 @@ export class TabinicialPage {
     this.router.navigateByUrl('/tab1'); 
   }
   cursoB(){
-    this.router.navigateByUrl('/tab1'); 
+    this.router.navigateByUrl('/tab2'); 
   }
-  cursoC(){
-    this.router.navigateByUrl('/tab1'); 
-  }
-
+  
 
 
   

@@ -11,19 +11,8 @@ export class Tab2Page {
 
   constructor(public alertController: AlertController, public router: Router){}
 
-  async logoff(){
-
-
-    const alert = await this.alertController.create({
-      header: 'Salida.',
-      subHeader: '',
-      message: 'Sesion cerrada.',
-      buttons: ['OK']
-    });
-
-    await alert.present();
-    this.router.navigateByUrl('/login'); 
-
+  mainM(){
+    this.router.navigateByUrl('/tabinicial'); 
   }
 
 }

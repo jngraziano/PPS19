@@ -2,12 +2,9 @@
 
   
 
-  <ion-toolbar>
+  <ion-toolbar color="dark">
 
-    <ion-button class="io" color="danger"  slot="end" (click)="logoff()" routerDirection="root">
-      
-      <ion-icon name="power"></ion-icon>
-    </ion-button>
+  <ion-title>Conversando en el Aula</ion-title>
   
   </ion-toolbar>
 </ion-header>
@@ -27,27 +24,27 @@
        
      </ion-item> -->
      
-     <ion-card (click)="cursoA()"  expand="full">
-      <ion-card-header color="dark" ><b></b></ion-card-header>
+     <ion-card  (click)="cursoA()"  expand="full">
+      <ion-card-header color="medium" ><b></b></ion-card-header>
       <ion-card-content class="cursoA">
         <br>
         <br>
        
-        <h1>Curso A</h1>
+        <h1>PPS-4A</h1>
       </ion-card-content>
     </ion-card>
   
-    <ion-card (click)="cursoB()"  expand="full">
-        <ion-card-header color="dark" ><b></b></ion-card-header>
+    <ion-card  (click)="cursoB()"  expand="full">
+        <ion-card-header color="tertiary" ><b></b></ion-card-header>
         <ion-card-content class="cursoB">
           <br>
           <br>
         
-          <h1>Curso B</h1>
+          <h1>PPS-4B</h1>
         </ion-card-content>
       </ion-card>
 
-      <ion-card (click)="cursoC()"  expand="full">
+      <!-- <ion-card (click)="cursoC()"  expand="full">
           <ion-card-header color="dark" ><b></b></ion-card-header>
           <ion-card-content class="cursoC">
          
@@ -58,8 +55,8 @@
            
             <h1>Curso C</h1>
             </ion-card-content>
-          <!-- </ion-card-content> -->
-        </ion-card>
+     
+        </ion-card> -->
 
 
   </ion-content>

@@ -1,12 +1,8 @@
-.welcome-card ion-img {
-  max-height: 35vh;
-  overflow: hidden;
-}
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
 
-// .hydrated{
-//   background-image: url('');
-//   background-color: transparent;
-// }
+
+
 
 
 ion-content{
@@ -43,23 +39,31 @@ ion-chip{
 }
 .saldoPantalla{
   // margin-left: 1%;
+  font-family: 'Lobster', cursive;
  font-size: 273%;
  text-align: center;
  width: 100%;
 }
+.suSaldo{
+  font-family: 'Varela Round', sans-serif;
+}
 
 #tablero{
-  margin-left: 23%;
+  text-align: center;
+  margin-left: 30%;
 }
 
 ion-toolbar{
 
-  padding-top: 65%;
+  padding-top: 55%;
   --background: transparent;
+ 
   // height: 50%;
 }
 
-// ion-fab-button{
-//   width: 25%;
-//   height: 20%;
-// }
+ion-fab-button{
+  width: 130px;
+  height: 130px;
+
+  
+}

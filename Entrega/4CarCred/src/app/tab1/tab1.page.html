@@ -1,13 +1,6 @@
 <ion-header>
-  <ion-toolbar>
-    <!-- <ion-title style=" text-align: center"> -->
-    <!-- <ion-title slot="start">
-    Carga Credito    
-    </ion-title> -->
-    <ion-button class="io" color="danger" slot="end" (click)="logoff()" routerDirection="root">
-        <!-- style="width: 43px;height:40px; border-radius: 60%" -->
-      <ion-icon name="power"></ion-icon>
-    </ion-button>
+  <ion-toolbar color="dark">
+   <ion-title slot="start">Carga Credito</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -26,8 +19,8 @@
       </ion-card> -->
       <ion-chip>
         <div id="tablero">
-        <ion-label> Su saldo: </ion-label><br>
-        <ion-label class="saldoPantalla"  name="saldoPantalla">$ 0.00</ion-label>
+        <ion-label class="suSaldo"> Su saldo: </ion-label><br><br>
+        <ion-label class="saldoPantalla"  name="saldoPantalla">$ {{saldoPantalla}}</ion-label>
         <!-- [(ngModel)]="saldoPantalla" -->
       </div>
       </ion-chip>
@@ -38,12 +31,12 @@
           
           <ion-toolbar>
           <!-- <ion-button slot="start" shape="round" (click)="onClick()" > -->
-              <ion-fab-button color="primary">
+              <ion-fab-button color="primary" (click)="escaneoQR()">
               <!-- Escanear codigo QR -->
             <ion-icon name="add-circle"></ion-icon>
           </ion-fab-button>
              <!-- </ion-button> -->
-             <ion-fab-button color="warning" slot="end"(click)="onClick()" >
+             <ion-fab-button color="warning" slot="end"(click)="borroQR()" >
                 <!-- Limpiar creditos -->
              <ion-icon name="trash"></ion-icon>
 

@@ -14,23 +14,7 @@ export class TabinicialPage {
               public toastController: ToastController
   ) { }
 
-  async logoff(){
-
-
-    const toast = await this.toastController.create({
-      message: 'Sesion Finalizada.',
-      color: 'light',
-      showCloseButton: false,
-      position: 'top',
-      closeButtonText: 'Done',
-      duration: 2000 
-    });
-
-    toast.present();
-
-    this.router.navigateByUrl('/login'); 
-
-  }
+ 
 
 
 

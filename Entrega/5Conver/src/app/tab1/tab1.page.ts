@@ -15,11 +15,11 @@ export class Tab1Page {
 
   public usuario: any;
   public inputText: string;
-  public esClienteConPedido: boolean = false;
-  public esDeliveryBoy: boolean = false;
+  // public esClienteConPedido: boolean = false;
+  // public esDeliveryBoy: boolean = false;
   chats: { texto: string, usuario: string, destino: string, hora: string }[] = [];
   public chatListoEntrega: any[] = [];
-  public cliente: string = "";
+  // public cliente: string = "";
 
   constructor(public toastController: ToastController,
     private baseService: FirebaseService,

@@ -1,7 +1,71 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+
 
 .io{
 
   width: 43px;
   height:40px; 
   border-radius: 50%;
+}
+
+// ion-header,  ion-list, ion-item{
+//     --background: #22333B;
+//   }
+ 
+
+ion-card {
+  --color: #FFFFFF;
+}
+
+.input{
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: #FFFFFF;
+  font-size: 16px;
+  color: #000000;
+}
+
+.text-input-md{
+  margin: 0 !important;
+}
+
+.toolbarText .toolbar-background-md{
+  background-color: transparent !important;
+}
+
+.grid {
+  padding: 0;
+}
+
+.caja {
+  border-radius: 5px;
+  margin: 0;
+}
+
+.sender .caja{
+  font-family: 'Inconsolata', monospace;
+  background-color: #FFF5F3;
+  padding: 12px 10px;
+  color: black;
+  font-size: 100%;
+}
+
+.me .caja {
+  background-color: #8cb3f7;
+  color: #000000;
+  padding: 12px 10px;
+}
+
+.mensaje {
+  font-size: 16px;
+}
+
+.remitente {
+  font-weight: bold;
+  color: blue;
+}
+
+.fecha {
+  text-align: right;
+  color: grey;
 }

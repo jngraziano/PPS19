@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
 
 
 .io{
@@ -42,8 +43,11 @@ ion-card {
 }
 
 .sender .caja{
-  background-color: #0bb8cc33;
+  font-family: 'Inconsolata', monospace;
+  background-color: #FFF5F3;
   padding: 12px 10px;
+  color: black;
+  font-size: 100%;
 }
 
 .me .caja {

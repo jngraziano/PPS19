@@ -47,7 +47,8 @@ export class Tab1Page {
                       this.cargaAux = 10;
 
                     }
-                    if(this.datosEscaneados.text == "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172")
+                    if(this.datosEscaneados.text == "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172" ||
+                    this.datosEscaneados.text == "ae338e4e0cbb4e4bcffaf9ce5b409feb8edd5172 ")
                     {
                       this.cargaAux = 50;
                     }
@@ -166,8 +167,16 @@ export class Tab1Page {
                   let usuarioLogueado: any = JSON.parse(sessionStorage.getItem('Usuarios'));
                   this.cargaCreditoBase = cargas.find(client => client.usuario == usuarioLogueado.correo);
 
+                  for (let i = 0; i < cargas.length; i++) {
+                    if(cargas[i].usuario == usuarioLogueado.correo)
+                    {
+                      this.baseService.removeItem('cargaCredito', cargas[i].key );
+                    }
+                    
+                  }
+                  this.creoToastBorro();
+
                
-                  this.baseService.removeItem('cargaCredito', this.cargaCreditoBase.key );
                   this.levantarCreditoDB();
                   });
 
@@ -203,5 +212,18 @@ export class Tab1Page {
                   toast.present();
             
                 }
+              }
+
+              async creoToastBorro(){
+                const toast = await this.toastController.create({
+                  message: 'Los creditos fueron limpiados.',
+                  color: 'warning',
+                  showCloseButton: false,
+                  position: 'top',
+                  duration: 2000 
+                });
+            
+                toast.present();
+          
               }
 }

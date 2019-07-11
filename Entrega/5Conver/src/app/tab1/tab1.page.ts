@@ -20,11 +20,16 @@ export class Tab1Page {
   chats: { texto: string, usuario: string, destino: string, hora: string }[] = [];
   public chatListoEntrega: any[] = [];
   // public cliente: string = "";
+  usuarioLOG = {
+    "correo": ""
+  }
 
   constructor(public toastController: ToastController,
     private baseService: FirebaseService,
               public router: Router){
                 // this.inicializarChats();
+                let usuarioLogeado = JSON.parse(sessionStorage.getItem('Usuarios'));
+                this.usuarioLOG.correo = usuarioLogeado.correo;
                 this.traerChats();
 
               }

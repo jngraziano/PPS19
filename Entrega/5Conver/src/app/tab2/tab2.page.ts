@@ -14,6 +14,9 @@ export class Tab2Page {
 
   public usuario: any;
   public inputText: string;
+  usuarioLOG = {
+    "correo": ""
+  }
   // public esClienteConPedido: boolean = false;
   // public esDeliveryBoy: boolean = false;
   chats: { texto: string, usuario: string, destino: string, hora: string }[] = [];
@@ -22,7 +25,13 @@ export class Tab2Page {
 
   constructor( private baseService: FirebaseService,
     public toastController: ToastController, 
-               public router: Router){}
+               public router: Router){
+              let usuarioLogeado = JSON.parse(sessionStorage.getItem('Usuarios'));
+              this.usuarioLOG.correo = usuarioLogeado.correo;
+                this.traerChats();
+
+
+               }
 
   mainM(){
     this.router.navigateByUrl('/tabinicial'); 
@@ -32,7 +41,7 @@ export class Tab2Page {
   traerChats() {
     this.baseService.getItems('chat').then(chat => {
       // if (this.esClienteConPedido) {
-        this.chats = chat.filter(ch => ch.aula == "PPS-4A" );
+        this.chats = chat.filter(ch => ch.aula == "PPS-4B" );
     
       // } else {
       //   if (this.cliente != "") {

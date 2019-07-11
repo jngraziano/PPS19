@@ -134,7 +134,7 @@
           <ion-row>
             <ion-col size="10">
               <div class="caja">
-                <div class="remitente">
+                <div class="remitente" *ngIf="chat.usuario != usuarioLOG.correo">
                   {{chat.usuario}}
                 </div>
                 <div class="mensaje">
@@ -157,7 +157,7 @@
 
   <ion-toolbar color="primary" class="toolbarText">
       <!-- [disabled]="esDeliveryBoy && cliente == ''" -->
-    <ion-textarea [(ngModel)]="inputText"  placeholder="Ingrese su mensaje" name="message" class="input"></ion-textarea>
+    <ion-textarea [(ngModel)]="inputText"  placeholder="Ingrese su mensaje" name="message" class="input" maxlength="21"></ion-textarea>
     <ion-buttons slot="end">
         <!-- [disabled]="esDeliveryBoy && cliente == ''" -->
       <ion-button (click)="doSend()" >

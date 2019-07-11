@@ -69,3 +69,13 @@ ion-card {
   text-align: right;
   color: grey;
 }
+
+.es-enviador{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  
+  width: 81%;
+  margin-left: 40%;
+}

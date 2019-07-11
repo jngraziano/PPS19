@@ -1,0 +1,72 @@
+<div id="custom-overlay" [style.display]=" splash ? 'block' : 'none' ">
+    
+
+   
+        <div class="contenedorPresentacion">
+
+        <div><p>VISUALIZADOR KINETICO 
+          <br>
+                PPS 19 UTN <br>
+                JULIAN GRAZIANO <br>
+                DIVISION 4A
+        </p></div>
+
+      </div>
+        <div class="logoPresentacion">
+            <img id="imgScreen"  src="../../assets/icon/icon.png">	
+            
+          </div> 
+
+
+   
+
+</div> 
+
+
+<ion-content color="dark" [style.display]=" splash ? 'none' : 'block'">
+   
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div text-center>
+        <ion-card>
+            <ion-card-header class="titlecard">
+              <ion-card-subtitle class="subticard">Visualizador Kinetico</ion-card-subtitle>
+              <ion-card-title class="titlecard">Bienvenido</ion-card-title>
+                <!-- SPINNER -->
+                <ion-spinner *ngIf="spinner" class="color-green" name="lines"></ion-spinner>
+                  
+            </ion-card-header>
+
+          
+            <ion-card-content>
+              <div *ngIf="!spinner"  >
+                <img id="imgapp" src="../../assets/icon/edificio.png"   alt="" srcset="">
+                <ion-button expand="block" (click)="creoSheet()">
+                    Acceder como...
+                </ion-button>
+              </div>
+             
+            </ion-card-content>
+
+        </ion-card>
+        </div>
+
+        <div *ngIf="!spinner"  class="fire-logo">
+          <div class="inputs">
+            <ion-item color="dark">
+                <ion-label position="fixed">Usuario:</ion-label>
+                <ion-input  class="fonte" type="email" [(ngModel)]="cuenta.usuario" placeholder="email"></ion-input>
+            </ion-item>
+    
+            <ion-item color="dark">
+                <ion-label position="fixed">Contraseña:</ion-label>
+                <ion-input  class="fonte" type="password" [(ngModel)]="cuenta.password" placeholder="*****"></ion-input>
+            </ion-item>
+            <ion-button size="large" class="ingresarButton" (click)="login()" routerDirection="root"  expand="block">INGRESAR</ion-button>
+          </div>
+        </div>
+        </ion-col>
+    </ion-row>
+
+            
+</ion-content>

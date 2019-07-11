@@ -24,7 +24,8 @@ const routes: Routes = [
   { path: '', loadChildren: './tab-estadisticas/tab-estadisticas.module#TabEstadisticasPageModule' },
   { path: 'tab-estadisticas', loadChildren: './tab-estadisticas/tab-estadisticas.module#TabEstadisticasPageModule' },
   { path: '', loadChildren: './tabs-est/tabs-est.module#TabsEstPageModule' },  
-  { path: 'tabs-est', loadChildren: './tabs-est/tabs-est.module#TabsEstPageModule' }
+  { path: 'tabs-est', loadChildren: './tabs-est/tabs-est.module#TabsEstPageModule' },  { path: 'tab4', loadChildren: './tab4/tab4.module#Tab4PageModule' }
+
 
   
   //Agrego rutas

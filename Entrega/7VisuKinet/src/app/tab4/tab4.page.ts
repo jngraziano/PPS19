@@ -9,11 +9,11 @@ import * as firebase from 'firebase';
 
 
 @Component({
-  selector: 'app-tabimage',
-  templateUrl: './tabimage.page.html',
-  styleUrls: ['./tabimage.page.scss'],
+  selector: 'app-tab4',
+  templateUrl: './tab4.page.html',
+  styleUrls: ['./tab4.page.scss'],
 })
-export class TabimagePage {
+export class Tab4Page implements OnInit {
 
   someTextUrl;
   selectedPhoto;
@@ -29,68 +29,29 @@ export class TabimagePage {
  isenabled:boolean= false;
  cardColor: string;
 
+  constructor( 
+    public navCtrl: NavController,
+    public router: Router,
+    public baseService: FirebaseService,
+    public toastController: ToastController) { 
+      this.traerImagenesFeas();
 
-
-
-  constructor(
-              // private navParams: NavParams,
-              public navCtrl: NavController,
-              public router: Router,
-              public baseService: FirebaseService,
-              public toastController: ToastController) {
-              
-                // this.spinner = true;
-                // this.traerImagenesTodas();
-                this.traerImagenesLindas();
-                // this.traerImagenesFeas();
-                // setTimeout(() => this.spinner = false , 3000);
-              }
-  // galleryType = 'pinterest';
+    }
 
   ngOnInit() {
-    // this. getSomeText();
-    // this.imagen = this.navParams.get('img');
-    // this.traerImagenesLindas();
-    // this.traerImagenesFeas();
-
-
   }
- 
- 
 
-  async traerImagenesTodas(){
+
+  async traerImagenesFeas() {
 
     this.spinner = true;
-
     await this.baseService.getItems('cosasEdificio').then(async ped => {
-      this.imagenesTodas = ped;
-    });  
-    this.spinner = false;
-  }
-
-
-
-
-
-
-   async traerImagenesLindas() {
-
-    this.spinner = true;
-     await this.baseService.getItems('cosasEdificio').then(async ped => {
-      this.imagenesLindas = ped;
-      this.imagenesLindas = this.imagenesLindas.filter(imagen => imagen.tipo == "cosalinda");
-    
-    });  
-    this.spinner = false;
-
-  }
-  traerImagenesFeas() {
-
-    this.baseService.getItems('cosasEdificio').then(ped => {
      this.imagenesFeas = ped;
      this.imagenesFeas = this.imagenesFeas.filter(imagen => imagen.tipo == "cosafea");
    
    });  
+   this.spinner = false;
+
  }
 
  async like(nombreFile: any){
@@ -162,7 +123,7 @@ export class TabimagePage {
   
            // this.baseService.addItem('cosasEdificio/'+imagenElegida.key+'/'+'votaciones/', objetoVotos);
       this.baseService.updateItem('cosasEdificio', imagenElegida.key, objetoEnviar);  
-      this.traerImagenesTodas();
+      this.traerImagenesFeas();
   
 
     }
@@ -177,7 +138,7 @@ export class TabimagePage {
     event.target.complete();
     // this.pedidos = [];
     // this.hayPedidosACerrar = false;
-    this.traerImagenesTodas();
+    this.traerImagenesFeas();
   }, 2000);
 }
 

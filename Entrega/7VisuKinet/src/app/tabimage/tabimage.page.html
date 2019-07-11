@@ -2,7 +2,7 @@
     <ion-toolbar color= "dark">
       <!-- <ion-title style=" text-align: center"> -->
       <ion-title slot="start">
-      Galeria    
+      Galeria Lindas   
       </ion-title>
    
       <!-- <ion-button  color="danger" class="io" slot="end" (click)="logoff()" routerDirection="root">
@@ -23,7 +23,7 @@
 
 
             <ion-list *ngIf="!spinner" shape="round">
-              <ion-item class="item-text-wrap card" *ngFor="let foto of imagenesTodas.reverse()">
+              <ion-item class="item-text-wrap card" *ngFor="let foto of imagenesLindas.reverse()">
                   <ion-col col-12 col-md-6 col-lg-4 col-xl-3>
                       <ion-card color="dark" *ngIf="foto.tipo == 'cosalinda'" >
                           <ion-card-header color="success">
@@ -46,7 +46,7 @@
                             </ion-card-content>
                         </ion-card>
 
-                        <ion-card color="dark" *ngIf="foto.tipo == 'cosafea'">
+                        <!-- <ion-card color="dark" *ngIf="foto.tipo == 'cosafea'">
                             <ion-card-header  color="danger" >
                                 <ion-card-title>Fecha: {{foto.fechaSubida.dia}}/{{foto.fechaSubida.mes}} - {{foto.fechaSubida.hora}}:{{foto.fechaSubida.minuto}}</ion-card-title>
         
@@ -65,7 +65,7 @@
                               </ion-card-content>
         
                             
-                          </ion-card>
+                          </ion-card> -->
                   </ion-col>
 
               </ion-item>

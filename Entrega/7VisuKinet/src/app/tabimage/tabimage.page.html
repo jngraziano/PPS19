@@ -25,7 +25,8 @@
             <ion-list *ngIf="!spinner" shape="round">
               <ion-item class="item-text-wrap card" *ngFor="let foto of imagenesLindas.reverse()">
                   <ion-col col-12 col-md-6 col-lg-4 col-xl-3>
-                      <ion-card color="dark" *ngIf="foto.tipo == 'cosalinda'" >
+                      <!-- *ngIf="foto.tipo == 'cosalinda'"  -->
+                      <ion-card color="dark" >
                           <ion-card-header color="success">
                               <ion-card-title>Fecha: {{foto.fechaSubida.dia}}/{{foto.fechaSubida.mes}} - {{foto.fechaSubida.hora}}:{{foto.fechaSubida.minuto}}</ion-card-title>
                               <!-- <ion-card-title></ion-card-title> -->

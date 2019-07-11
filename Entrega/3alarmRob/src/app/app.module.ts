@@ -25,23 +25,26 @@ import { Vibration } from '@ionic-native/vibration/ngx';
 
 import { AuthService } from "../app/auth.service";
 
-export const firebaseConfig = {
-  apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
-  authDomain: "ppslogindata.firebaseapp.com",
-  databaseURL: "https://ppslogindata.firebaseio.com",
-  projectId: "ppslogindata",
-  storageBucket: "ppslogindata.appspot.com",
-  messagingSenderId: "794910733526"
-};
+// export const firebaseConfig = {
+//   apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
+//   authDomain: "ppslogindata.firebaseapp.com",
+//   databaseURL: "https://ppslogindata.firebaseio.com",
+//   projectId: "ppslogindata",
+//   storageBucket: "ppslogindata.appspot.com",
+//   messagingSenderId: "794910733526"
+// };
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, 
+    IonicModule.forRoot(), 
+    AppRoutingModule,
     //estos los agregue yo:
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule],
+    // AngularFireModule.initializeApp(firebaseConfig),
+    // AngularFireDatabaseModule,
+    // AngularFireAuthModule
+  ],
 
   providers: [
     StatusBar,

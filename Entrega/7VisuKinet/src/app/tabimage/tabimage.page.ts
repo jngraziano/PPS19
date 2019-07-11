@@ -3,7 +3,8 @@ import { NavController } from '@ionic/angular';
 import { Router } from "@angular/router";
 import { ToastController,NavParams } from "@ionic/angular";
 import { FirebaseService } from "../services/firebase.service";
-
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
 
 import * as firebase from 'firebase';
 
@@ -14,6 +15,22 @@ import * as firebase from 'firebase';
   styleUrls: ['./tabimage.page.scss'],
 })
 export class TabimagePage {
+
+
+  public xOrient:any;
+  public yOrient:any;
+  public zOrient:any;
+  public timestamp:any
+  public accX:any;
+  public accY:any;
+  public accZ:any;
+  public activar:boolean = true;
+  public subscription;
+  public estado;
+
+
+
+
 
   someTextUrl;
   selectedPhoto;
@@ -37,6 +54,8 @@ export class TabimagePage {
               public navCtrl: NavController,
               public router: Router,
               public baseService: FirebaseService,
+              private gyroscope: Gyroscope,
+              private deviceMotion: DeviceMotion,
               public toastController: ToastController) {
               
                 // this.spinner = true;
@@ -222,6 +241,69 @@ async creoToast(rta: boolean) {
 
   }
 }
+
+activoAcelerometro()
+  {
+    this.Accelerometer();
+    this.activar = !this.activar;
+  }
+
+  desactivoAcelerometro()
+  {
+    this.subscription.unsubscribe();
+    this.activar = !this.activar;
+  }
+
+
+  Accelerometer(){
+    this.subscription = this.deviceMotion.watchAcceleration({frequency:6000}).subscribe((acceleration: DeviceMotionAccelerationData) => {
+      console.log("esta es el watch: ",acceleration);
+      this.accX=acceleration.x;
+      this.accY=acceleration.y;
+      this.accZ=acceleration.z;
+
+
+      //VERTICAL
+      if( this.accY >= 9 ) {
+         console.log("Está parado"); 
+         this.estado="PARADO";
+        //  this.luzFlash.switchOn();
+         setTimeout(function() {this.luzFlash.switchOff();}, 3000);
+        //  this.playVert();
+        }
+
+      //HORIZONTAL
+      else if ( this.accZ >= 9) { 
+        console.log("Está horizontal"); 
+        this.estado="ACOSTADO";
+        // this.playHoriz();
+        // this.vibration.vibrate(5000);
+        // setTimeout(function() {this.vibration.vibrate(0);}, 5000);
+      }
+
+      //IZQ
+      else if ( this.accX >= 9) { 
+        console.log("Está de costado IZQ"); 
+        this.estado="IZQUIERDA";
+        // this.playIzq();
+      }
+ 
+      //DER
+      else if ( this.accX <= -9) {
+         console.log("Está de costado DER"); 
+         this.estado="DERECHA";
+        //  this.playDer();
+        }
+
+      //RESTO
+      else {
+        console.log("-----Registro de Watch------ ");
+    
+      
+      }
+    });
+    
+  }
    
   
   

@@ -26,6 +26,9 @@ import { File } from '@ionic-native/File/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
 import { IonicStorageModule } from '@ionic/storage';
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
+
 
 // export const firebaseConfig = {
 //   apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
@@ -61,6 +64,8 @@ import { IonicStorageModule } from '@ionic/storage';
     FilePath,
     WebView,
     FirebaseService,
+    Gyroscope,
+    DeviceMotion,
     // AuthService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

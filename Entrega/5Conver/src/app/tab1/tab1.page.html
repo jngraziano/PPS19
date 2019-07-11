@@ -100,4 +100,69 @@
                        
 
   </ion-list> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="message-wrap">
+    <div *ngFor="let chat of chats">
+      <!-- <div class="sender" *ngIf="chat.usuario != usuario.correo"> -->
+      <div class="sender">
+
+        <ion-grid>
+          <ion-row>
+            <ion-col size="10">
+              <div class="caja">
+                <div class="remitente">
+                  {{chat.usuario}}
+                </div>
+                <div class="mensaje">
+                  {{chat.texto}}
+                </div>
+                <div class="fecha">
+                  {{chat.hora}}
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      </div>
+      </div>
 </ion-content>
+
+<!-- <ion-footer no-border *ngIf="esClienteConPedido || esDeliveryBoy"> -->
+<ion-footer no-border>
+
+  <ion-toolbar color="primary" class="toolbarText">
+      <!-- [disabled]="esDeliveryBoy && cliente == ''" -->
+    <ion-textarea [(ngModel)]="inputText"  placeholder="Ingrese su mensaje" name="message" class="input"></ion-textarea>
+    <ion-buttons slot="end">
+        <!-- [disabled]="esDeliveryBoy && cliente == ''" -->
+      <ion-button (click)="doSend()" >
+        <ion-icon name="send" color="light" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

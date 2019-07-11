@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Estadisticas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content padding>
+
+    <ion-refresher slot="fixed" (ionRefresh)="ionRefresh($event)" (ionPull)="ionPull($event)"
+    (ionStart)="ionStart($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Estire para actualizar" refreshingSpinner="circles"
+      refreshingText="Actualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+  
+
+    <ion-card color = "dark" class="fuente" >
+        <ion-card-header>
+          Ranking cosas lindas
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #canvasLindas></canvas>
+        </ion-card-content>
+      </ion-card>
+      <ion-card color = "dark" class="fuente">
+        <ion-card-header>
+            Ranking cosas feas          
+        </ion-card-header>
+        <ion-card-content>
+          <canvas #canvasFeas></canvas>
+        </ion-card-content>
+      </ion-card>
+     
+
+</ion-content>

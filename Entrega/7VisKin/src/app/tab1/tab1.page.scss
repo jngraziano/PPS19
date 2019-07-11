@@ -1,4 +1,31 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+
+#tab1card{
+  --background: #fff;
 }
+
+ion-content{
+  // --background: #fff url('https://png.pngtree.com/element_origin_min_pic/16/08/19/1657b6c9722c4a4.jpg') no-repeat center center / cover;
+  // background-color: 
+}
+
+.io{
+
+  width: 43px;
+  height:40px; 
+  border-radius: 50%;
+}
+
+// .buttons{
+//   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+//   height: 100%;
+//   width: 49%;
+// }
+
+
+ion-grid, ion-row, ion-col{
+  height: 100%;
+}
+ion-button{
+  height: 95%;
+}
+

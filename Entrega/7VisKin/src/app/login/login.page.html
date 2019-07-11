@@ -41,7 +41,7 @@
       <ion-card-content>
         <div *ngIf="!spinner"  >
           <img id="imgapp" src="../../assets/icon/edificio.png"   alt="" srcset="">
-          <ion-button expand="block" color="dark" (click)="creoSheet()">
+          <ion-button expand="block" (click)="creoSheet()">
               Acceder como...
           </ion-button>
         </div>
@@ -53,16 +53,16 @@
 
   <div *ngIf="!spinner"  class="fire-logo">
     <div class="inputs">
-      <ion-item >
+      <ion-item color="dark" >
           <ion-label position="fixed">Usuario:</ion-label>
           <ion-input  class="fonte" type="email" [(ngModel)]="cuenta.usuario" placeholder="email"></ion-input>
       </ion-item>
 
-      <ion-item >
+      <ion-item color="dark" >
           <ion-label position="fixed">Contraseña:</ion-label>
           <ion-input  class="fonte" type="password" [(ngModel)]="cuenta.password" placeholder="*****"></ion-input>
       </ion-item>
-      <ion-button size="large" class="ingresarButton" color="dark" (click)="login()" routerDirection="root"  expand="block">INGRESAR</ion-button>
+      <ion-button size="large" class="ingresarButton" (click)="login()" routerDirection="root"  expand="block">INGRESAR</ion-button>
     </div>
   </div>
   </ion-col>

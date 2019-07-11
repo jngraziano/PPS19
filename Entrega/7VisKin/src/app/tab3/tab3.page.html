@@ -1,9 +1,48 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Three
-    </ion-title>
+  <ion-toolbar color= "dark">
+      <ion-button color="danger" class="io" slot="end" (click)="mainM()" routerDirection="root">
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
+      <!-- <ion-button  color="danger" class="io" slot="end" (click)="logoff()" routerDirection="root"> -->
+          <!-- style="width: 43px;height:40px; border-radius: 60%" -->
+        <!-- <ion-icon name="power"></ion-icon>
+      </ion-button> -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+    <ion-card id="tab2card">
+        <ion-card-header>
+          <ion-card-subtitle></ion-card-subtitle>
+          <ion-card-title>Agregar foto</ion-card-title>
+        </ion-card-header>
+       Pulse para agregar una foto fea.
+       
+        <ion-card-content>
+
+            <ion-button class="io" slot="end" (click)="capturar()">
+                <!-- style="width: 43px;height:40px; border-radius: 60%" -->
+            <ion-icon name="camera"></ion-icon>
+            </ion-button>
+
+            
+           
+
+            <ion-button (click)="guardaImg()">
+              Guardar Imagen
+            </ion-button>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-slides>
+          <ion-slide *ngFor="let foto of captureDataUrl">
+            <img class="vistaprevia" [src]="foto" *ngIf="captureDataUrl" />
+          </ion-slide>
+        </ion-slides>
+  
+  
+  
+  
+  
+  </ion-content>
+  

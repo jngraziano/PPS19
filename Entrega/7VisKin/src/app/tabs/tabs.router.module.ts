@@ -13,15 +13,18 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            // loadChildren: '../login/login.module#LoginPageModule'
+
+
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'tabimage',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../tabimage/tabimage.module#TabimagePageModule'
           }
         ]
       },
@@ -31,6 +34,15 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab3/tab3.module#Tab3PageModule'
+          }
+        ]
+      },
+      {
+        path: 'tabs-est',
+        children: [
+          {
+            path: '',
+            loadChildren: '../tabs-est/tabs-est.module#TabsEstPageModule'
           }
         ]
       },
@@ -46,6 +58,7 @@ const routes: Routes = [
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
   }
+  
 ];
 
 @NgModule({

@@ -21,7 +21,8 @@
           <ion-row>
             <ion-col size="10">
               <div class="caja" [ngClass]="{
-                'es-enviador': chat.usuario == usuarioLOG.correo}">
+                'es-enviador': chat.usuario == usuarioLOG.correo}"
+                >
                 <div class="remitente" *ngIf="chat.usuario != usuarioLOG.correo">
                   {{chat.usuario}}
                 </div>

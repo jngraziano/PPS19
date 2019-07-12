@@ -2,7 +2,7 @@
     <ion-toolbar color= "dark">
       <!-- <ion-title style=" text-align: center"> -->
       <ion-title slot="start">
-      Galeria Lindas   
+      Galeria
       </ion-title>
    
       <!-- <ion-button  color="danger" class="io" slot="end" (click)="logoff()" routerDirection="root">
@@ -21,32 +21,33 @@
     </ion-refresher-content>
   </ion-refresher>
 
-
-            <ion-list *ngIf="!spinner" shape="round">
-              <ion-item class="item-text-wrap card" *ngFor="let foto of imagenesLindas.reverse()">
-                  <ion-col col-12 col-md-6 col-lg-4 col-xl-3>
+  <ion-slides *ngIf="!spinner" pager="true" [options]="slideOpts" #slideWithNav>
+      <ion-slide *ngFor="let foto of imagenesTodas.reverse()">
+            <!-- <ion-list  shape="round"> -->
+              <ion-item  class="item-text-wrap card" >
+              <!-- <ion-item class="item-text-wrap card"> -->
+                  <!-- <ion-col col-12 col-md-6 col-lg-4 col-xl-3> -->
                       <!-- *ngIf="foto.tipo == 'cosalinda'"  -->
-                      <ion-card color="dark" >
-                          <ion-card-header color="success">
+                      <ion-card color="medium" >
+                          <ion-card-header>
                               <ion-card-title>Fecha: {{foto.fechaSubida.dia}}/{{foto.fechaSubida.mes}} - {{foto.fechaSubida.hora}}:{{foto.fechaSubida.minuto}}</ion-card-title>
                               <!-- <ion-card-title></ion-card-title> -->
                             </ion-card-header>
                           
                             <ion-card-content >
-                              <!-- <label>Tipo {{foto.tipo}}</label> -->
+                              <label>Tipo {{foto.tipo}}</label><br>
                                 <label> Enviado por: {{foto.correo}}</label>
                                 <img [src]="foto.url" >
                                 <br>
                                 <label>Likes: {{foto.likes}}</label>
-                                <br><br>
-                                <ion-button color="light"   shape="round" fill="outline" expand="block" (click)="like(foto.nombreFile)">
-                                    <!-- ngIf*="foto.votaciones." -->
+                                <br>
+                                <ion-button color="dark"   shape="round" fill="outline" expand="block" (click)="like(foto.nombreFile)">
                                   <ion-icon name="heart"></ion-icon>
                                 
                                 </ion-button>
                             </ion-card-content>
                         </ion-card>
-
+                     
                         <!-- <ion-card color="dark" *ngIf="foto.tipo == 'cosafea'">
                             <ion-card-header  color="danger" >
                                 <ion-card-title>Fecha: {{foto.fechaSubida.dia}}/{{foto.fechaSubida.mes}} - {{foto.fechaSubida.hora}}:{{foto.fechaSubida.minuto}}</ion-card-title>
@@ -67,11 +68,13 @@
         
                             
                           </ion-card> -->
-                  </ion-col>
+                  <!-- </ion-col> -->
 
               </ion-item>
-            </ion-list>
-
+              
+            <!-- </ion-list> -->
+          </ion-slide>        
+        </ion-slides>
 
            
 

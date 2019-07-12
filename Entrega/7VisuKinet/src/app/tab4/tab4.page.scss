@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One&display=swap');
 
-ion-card{
+.card{
     font-family: 'Rubik Mono One', sans-serif;
     -webkit-text-stroke-width: 1px;
    -webkit-text-stroke-color: black;
+   margin-left: 1%;
 }
 
 ion-card-title{
 
     font-size: 110%;
+}
+
+ion-list{
+    margin-left: 4px !important;
 }

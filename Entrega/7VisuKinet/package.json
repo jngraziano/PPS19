@@ -40,6 +40,7 @@
     "angularfire2": "^5.1.2",
     "chart.js": "^2.8.0",
     "cordova-android": "8.0.0",
+    "cordova-android-support-gradle-release": "^3.0.1",
     "cordova-plugin-camera": "4.0.3",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-device-motion": "2.0.1",
@@ -109,7 +110,10 @@
       "cordova-plugin-filepath": {},
       "cordova-plugin-camera": {},
       "cordova-plugin-gyroscope": {},
-      "cordova-plugin-device-motion": {}
+      "cordova-plugin-device-motion": {},
+      "cordova-android-support-gradle-release": {
+        "ANDROID_SUPPORT_VERSION": "26.+"
+      }
     },
     "platforms": [
       "android"

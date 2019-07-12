@@ -21,24 +21,35 @@ export class Tab4Page implements OnInit {
   imagen : any;
   imagenes: [] = [];
   // imgInfo: Array<string>;
-  imagenesLindas : any;
-  imagenesTodas : any;
+  // imagenesLindas : any;
+  // imagenesTodas : any;
   imagenesFeas : any;
   spinner:boolean ; 
 
  isenabled:boolean= false;
  cardColor: string;
 
+
+ 
+ imagenMuestro: string;
+ listaRecorreAux: any;
+ hayLista: any; 
+ usuarioLogueado: any;
+
+
   constructor( 
     public navCtrl: NavController,
     public router: Router,
     public baseService: FirebaseService,
     public toastController: ToastController) { 
-      this.traerImagenesFeas();
+      // this.traerImagenesFeas();
 
     }
 
   ngOnInit() {
+    this.traerImagenesFeas();
+    this.usuarioLogueado = JSON.parse(sessionStorage.getItem('Usuarios'));
+
   }
 
 
@@ -50,7 +61,26 @@ export class Tab4Page implements OnInit {
      this.imagenesFeas = this.imagenesFeas.filter(imagen => imagen.tipo == "cosafea");
    
    });  
-   this.spinner = false;
+
+   if (this.imagenesFeas.length == 0) {
+    this.hayLista = false;
+  } else {
+    this.hayLista = true;
+
+  }
+  for (let i = 0; i < this.imagenesFeas.length; i++) {
+    const element = this.imagenesFeas[i];
+    
+    // console.log(this.imagenesLindas[i]);
+
+    this.imagenMuestro = this.imagenesFeas[i].url;
+    // console.log("imagen actual", this.imagenActual);
+    
+}
+
+setTimeout(() => {
+  this.spinner = false;
+}, 2000);
 
  }
 

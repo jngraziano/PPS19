@@ -5,6 +5,10 @@ import { ToastController,NavParams } from "@ionic/angular";
 import { FirebaseService } from "../services/firebase.service";
 import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
 import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
+import { ViewChild } from '@angular/core';
+import { IonSlides } from '@ionic/angular';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { timer } from 'rxjs';
 
 import * as firebase from 'firebase';
 
@@ -16,6 +20,7 @@ import * as firebase from 'firebase';
 })
 export class TabimagePage {
 
+  @ViewChild('slideWithNav') slideWithNav: IonSlides;
 
   public xOrient:any;
   public yOrient:any;
@@ -24,30 +29,36 @@ export class TabimagePage {
   public accX:any;
   public accY:any;
   public accZ:any;
+
+
+
   public activar:boolean = true;
   public subscription;
   public estado;
 
+  imagenMuestro: string;
+  listaRecorreAux: any;
+  hayLista: any; 
+  usuarioLogueado: any;
+  listaImagenes: any;
+  slideOpts = {
+    initialSlide: 0,
+    speed: 200,
+    slidesPerView: 1
+    // autoplay:true
+  };
 
+  slideEspecifico: number = 0;
 
-
-
-  someTextUrl;
-  selectedPhoto;
-  loading;
-  imagen : any;
-  imagenes: [] = [];
-  // imgInfo: Array<string>;
   imagenesLindas : any;
   imagenesTodas : any;
   imagenesFeas : any;
   spinner:boolean ; 
 
+
  isenabled:boolean= false;
- cardColor: string;
 
-
-
+//  ref = firebase.database().ref('imagenes/');
 
   constructor(
               // private navParams: NavParams,
@@ -60,18 +71,25 @@ export class TabimagePage {
               
                 // this.spinner = true;
                 // this.traerImagenesTodas();
-                this.traerImagenesLindas();
+                // this.traerImagenesLindas();
                 // this.traerImagenesFeas();
                 // setTimeout(() => this.spinner = false , 3000);
+
+          
+
+
               }
   // galleryType = 'pinterest';
 
   ngOnInit() {
     // this. getSomeText();
     // this.imagen = this.navParams.get('img');
+    this.usuarioLogueado = JSON.parse(sessionStorage.getItem('Usuarios'));
     // this.traerImagenesLindas();
+    this.traerImagenesTodas();
     // this.traerImagenesFeas();
-
+    this.Accelerometer();
+    // this.activar = !this.activar;
 
   }
  
@@ -84,7 +102,9 @@ export class TabimagePage {
     await this.baseService.getItems('cosasEdificio').then(async ped => {
       this.imagenesTodas = ped;
     });  
-    this.spinner = false;
+    setTimeout(() => {
+      this.spinner = false;
+    }, 2000);
   }
 
 
@@ -100,7 +120,26 @@ export class TabimagePage {
       this.imagenesLindas = this.imagenesLindas.filter(imagen => imagen.tipo == "cosalinda");
     
     });  
+  //   if (this.imagenesLindas.length == 0) {
+  //     this.hayLista = false;
+  //   } else {
+  //     this.hayLista = true;
+  
+  //   }
+
+  //   for (let i = 0; i < this.imagenesLindas.length; i++) {
+  //     const element = this.imagenesLindas[i];
+      
+  //     // console.log(this.imagenesLindas[i]);
+  
+  //     this.imagenMuestro = this.imagenesLindas[i].url;
+  //     // console.log("imagen actual", this.imagenActual);
+      
+  // }
+
+  setTimeout(() => {
     this.spinner = false;
+  }, 2000);
 
   }
   traerImagenesFeas() {
@@ -242,11 +281,11 @@ async creoToast(rta: boolean) {
   }
 }
 
-activoAcelerometro()
-  {
-    this.Accelerometer();
-    this.activar = !this.activar;
-  }
+// activoAcelerometro()
+//   {
+//     this.Accelerometer();
+//     this.activar = !this.activar;
+//   }
 
   desactivoAcelerometro()
   {
@@ -256,43 +295,79 @@ activoAcelerometro()
 
 
   Accelerometer(){
-    this.subscription = this.deviceMotion.watchAcceleration({frequency:6000}).subscribe((acceleration: DeviceMotionAccelerationData) => {
+    this.activar=false;
+    var flag = true;
+    // var flagIzq =  true;
+    // var flagDer = true;
+
+    this.deviceMotion.getCurrentAcceleration().then(
+      (acceleration: DeviceMotionAccelerationData) =>
+       console.log(acceleration),
+   
+    //  (error: any) => console.log(error)
+ 
+    );
+
+
+
+
+
+
+    this.subscription = this.deviceMotion.watchAcceleration({frequency:1500}).subscribe((acceleration: DeviceMotionAccelerationData) => {
       console.log("esta es el watch: ",acceleration);
       this.accX=acceleration.x;
       this.accY=acceleration.y;
       this.accZ=acceleration.z;
+      let tap;
+      this.slideEspecifico;
 
 
       //VERTICAL
       if( this.accY >= 9 ) {
          console.log("Está parado"); 
          this.estado="PARADO";
-        //  this.luzFlash.switchOn();
-         setTimeout(function() {this.luzFlash.switchOff();}, 3000);
-        //  this.playVert();
+       
+        //  setTimeout(function() {this.luzFlash.switchOff();}, 3000);
+
+      
+     
         }
 
       //HORIZONTAL
       else if ( this.accZ >= 9) { 
         console.log("Está horizontal"); 
         this.estado="ACOSTADO";
-        // this.playHoriz();
-        // this.vibration.vibrate(5000);
-        // setTimeout(function() {this.vibration.vibrate(0);}, 5000);
+        // timer(3000).subscribe(() => {
+          // if(this.accY > 3){
+            
+          //YO LE AGREGO ESTA FUNCION, ES LA EXTRA QUE PIDE
+            this.slideWithNav.slideTo(0);
+         
+          // }
+      
+        // });
       }
 
       //IZQ
       else if ( this.accX >= 9) { 
         console.log("Está de costado IZQ"); 
         this.estado="IZQUIERDA";
-        // this.playIzq();
+
+        this.slideWithNav.slidePrev(500).then(() => {
+          //this.checkIfNavDisabled(object, slideView);
+        });
+        // this.slideWithNav.slideTo(this.slideEspecifico-1);
+      
       }
  
       //DER
       else if ( this.accX <= -9) {
          console.log("Está de costado DER"); 
          this.estado="DERECHA";
-        //  this.playDer();
+         this.slideWithNav.slideNext(500).then(() => {
+          //this.checkIfNavDisabled(object, slideView);
+        });
+        // this.slideWithNav.slideTo(this.slideEspecifico+1);
         }
 
       //RESTO
@@ -305,7 +380,10 @@ activoAcelerometro()
     
   }
    
-  
+  Frenar(){
+    this.subscription.unsubscribe();
+    this.activar = true;
+  }
   
 
 

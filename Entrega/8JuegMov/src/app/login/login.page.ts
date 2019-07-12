@@ -55,10 +55,10 @@ export class LoginPage implements OnInit{
     {
       const toast = await this.toastController.create({
         message: 'Autenticación exitosa.',
-        color: 'dark',
+        color: 'success',
         showCloseButton: false,
         position: 'top',
-        closeButtonText: 'Done',
+   
         duration: 2000 
       });
   
@@ -69,10 +69,10 @@ export class LoginPage implements OnInit{
     else{
       const toast = await this.toastController.create({
         message: 'Usuario/contraseña incorrectos.',
-        color: 'dark',
+        color: 'danger',
         showCloseButton: false,
         position: 'top',
-        closeButtonText: 'Done',
+    
         duration: 2000 
       });
   

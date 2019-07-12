@@ -34,7 +34,7 @@
     "@ngx-translate/core": "^11.0.1",
     "add": "^2.0.6",
     "angularfire2": "^5.1.2",
-    "cordova-android": "^8.0.0",
+    "cordova-android": "8.0.0",
     "cordova-plugin-compat": "1.2.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-device-motion": "2.0.1",

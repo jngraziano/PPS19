@@ -89,7 +89,9 @@
         "FIREBASE_AUTH_VERSION": "16.1.+"
       },
       "cordova-support-google-services": {},
-      "phonegap-plugin-barcodescanner": {}
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      }
     },
     "platforms": [
       "android"

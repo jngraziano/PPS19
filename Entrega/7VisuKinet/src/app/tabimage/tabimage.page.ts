@@ -329,15 +329,7 @@ async creoToast(rta: boolean) {
        
         //  setTimeout(function() {this.luzFlash.switchOff();}, 3000);
 
-        timer(3000).subscribe(() => {
-          if(this.accY > 3){
-            
-            // this.slideWithNav.slideTo(slideEspecifico);
-            //lo saque me parecio al pedo
-          
-          }
       
-        });
      
         }
 
@@ -345,9 +337,15 @@ async creoToast(rta: boolean) {
       else if ( this.accZ >= 9) { 
         console.log("Está horizontal"); 
         this.estado="ACOSTADO";
-        // this.playHoriz();
-        // this.vibration.vibrate(5000);
-        // setTimeout(function() {this.vibration.vibrate(0);}, 5000);
+        // timer(3000).subscribe(() => {
+          // if(this.accY > 3){
+            
+          //YO LE AGREGO ESTA FUNCION, ES LA EXTRA QUE PIDE
+            this.slideWithNav.slideTo(0);
+         
+          // }
+      
+        // });
       }
 
       //IZQ

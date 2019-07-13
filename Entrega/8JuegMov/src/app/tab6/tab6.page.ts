@@ -41,12 +41,13 @@ let firingTimer = 0;
 let stateText;
 let livingEnemies = [];
 
+
 @Component({
-  selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  selector: 'app-tab6',
+  templateUrl: './tab6.page.html',
+  styleUrls: ['./tab6.page.scss'],
 })
-export class Tab2Page  implements OnInit  {
+export class Tab6Page implements OnInit {
 
   personaje:any;
   rutaMarvel: string;
@@ -74,34 +75,27 @@ export class Tab2Page  implements OnInit  {
     // autoplay:true
   };
 
-  
-
-
-  constructor(
-    private menuCtrl: MenuController,
+  constructor(private menuCtrl: MenuController,
     private router: Router,
     private gyroscope: Gyroscope,
-    public baseService: FirebaseService,
     private deviceMotion: DeviceMotion,
-    private activatedRoute: ActivatedRoute){
 
-         
+    private activatedRoute: ActivatedRoute) {
 
-
-    game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'space-invaders',
-    { preload: this.preload, create: this.create, update: this.update,  render: this.render });
-
-  that = Object.create(this.constructor.prototype);
-    // this.activoGiroscopio();
+      game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, 'space-invaders',
+      { preload: this.preload, create: this.create, update: this.update,  render: this.render });
+  
+    that = Object.create(this.constructor.prototype);
     this.Accelerometer();
-    }
 
-    ionViewDidEnter() {
-      this.menuCtrl.enable(false, 'start');
-      this.menuCtrl.enable(false, 'end');
-    }
+     }
 
-   ngOnInit(){
+  ionViewDidEnter() {
+    this.menuCtrl.enable(false, 'start');
+    this.menuCtrl.enable(false, 'end');
+  }
+
+  ngOnInit(){
     // this.activoGiroscopio();
     this.Accelerometer();
 
@@ -244,10 +238,10 @@ export class Tab2Page  implements OnInit  {
     // game.load.image('bullet', 'assets/phaser/bullet.png');
     // game.load.image('enemyBullet', 'assets/phaser/enemy-bullet.png');
     game.load.spritesheet('invader', 'assets/phaser/invader32x32x4.png', 32, 32);
-    game.load.image('ship', 'assets/icon/ironman_fly.png');
+    game.load.image('ship', 'assets/icon/wolverine_fly.png');
     
     game.load.spritesheet('kaboom', 'assets/phaser/explode.png', 128, 128);
-    game.load.image('starfield', 'assets/icon/sky.jpg');
+    game.load.image('starfield', 'assets/phaser/starfield.png');
     game.load.image('background', 'assets/phaser/background2.png');
 
   }
@@ -511,7 +505,5 @@ export class Tab2Page  implements OnInit  {
 
 
  
- 
-
 
 }

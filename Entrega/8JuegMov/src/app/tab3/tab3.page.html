@@ -11,24 +11,24 @@
 
 <ion-content color="medium">
 
-    <ion-grid color="medium">
+    <ion-grid color="medium" *ngFor="let score of scoreTotal">
      
       <ion-list  >
           <!-- style="border-bottom: groove;" -->
         <ion-row  >
-          <ion-col>
+          <!-- <ion-col>
            Puesto
         
       
            <ion-item>
-             <!-- base.puesto -->
+           
            </ion-item>
-          </ion-col>
+          </ion-col> -->
           <ion-col >
             Usuario
            
             <ion-item>
-                <!-- base.usuario -->
+              {{score.usuario}}
               </ion-item>
           </ion-col>
          
@@ -36,7 +36,7 @@
             Puntaje
            
             <ion-item>
-                <!-- base.puntaje -->
+              {{score.puntaje}}
               </ion-item>
           </ion-col>
           

@@ -27,15 +27,38 @@ export class Tab1Page implements OnInit {
 
   seleccionoPersonaje(personaje: string){
 
-    let objectEnviar = {
-      personaje: personaje
-      }
+    // let objectEnviar = {
+    //   personaje: personaje
+    //   }
+
+    switch (personaje) {
+      case "ironman":
+      this.router.navigateByUrl('/tab2');
+          break;
+          case "captainamerica":
+              this.router.navigateByUrl('/tab4');          
+              break;
+              case "spiderman":
+                  this.router.navigateByUrl('/tab5');      
+                  break;
+                  case "wolverine":
+                      this.router.navigateByUrl('/tab6');          
+                      break;
+                      case "thor":
+                          this.router.navigateByUrl('/tab7');          
+                          break;
+      
+    
+      default:
+        break;
+    }
+  }
   
     // this.router.navigateByUrl('/tab2');
     
-    this.router.navigate(['/tab2'], {
-      queryParams: objectEnviar ,
-      });
+  //   this.router.navigate(['/tab2'], {
+  //     queryParams: objectEnviar ,
+  //     });
 
-  }
+  // }
 }

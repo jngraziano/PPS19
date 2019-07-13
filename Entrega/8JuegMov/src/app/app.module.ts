@@ -17,6 +17,8 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AuthService } from "../app/auth.service";
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyD4EV28tAjiq_k2sqf_lYzjP7elor5eqOE",
@@ -45,6 +47,8 @@ export const firebaseConfig = {
     SplashScreen,
     FirebaseAuthentication,
     AuthService,
+    Gyroscope,
+    DeviceMotion,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
